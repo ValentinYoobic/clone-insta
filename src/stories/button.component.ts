@@ -13,7 +13,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   >
     {{ label }}
   </button>`,
-  styleUrls: ['./button.css'],
+  styleUrls: ['./button.scss'],
 })
 export class ButtonComponent {
   /**
@@ -34,6 +34,9 @@ export class ButtonComponent {
   @Input()
   size: 'small' | 'medium' | 'large' = 'medium';
 
+  @Input()
+  border = false;
+
   /**
    * Button contents
    *
@@ -50,7 +53,8 @@ export class ButtonComponent {
 
   public get classes(): string[] {
     const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+    const circled = this.border ? 'storybook-button--border' : 'storybook-button';
 
-    return ['storybook-button', `storybook-button--${this.size}`, mode];
+    return ['storybook-button', `storybook-button--${this.size}`, mode, circled];
   }
 }

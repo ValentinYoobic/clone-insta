@@ -50,3 +50,10 @@ export const Small: Story = {
     label: 'Button',
   },
 };
+
+export const Border: Story = {
+  args: {
+    border: true,
+    label: 'Button',
+  }
+}
