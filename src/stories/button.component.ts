@@ -13,7 +13,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   >
     {{ label }}
   </button>`,
-  styleUrls: ['./button.css'],
+  styleUrls: ['./button.sass'],
 })
 export class ButtonComponent {
   /**
