@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, ElementRef } from '@angular/core';
+import { Component, Input, ElementRef, Output, EventEmitter  } from '@angular/core';
 
 
 @Component({
@@ -30,6 +30,15 @@ export class ProfilePictureComponent {
   @Input()
   hasStory: boolean = false;
 
+  /**
+  *Has the story been seen?
+  */
+  @Input()
+  viewedStory: boolean = false;
+
+  @Output()
+  onClick = new EventEmitter<Event>();
+
   constructor(private el: ElementRef) {}
 
   ngAfterViewInit() {
@@ -58,6 +67,12 @@ export class ProfilePictureComponent {
       return [
         [`profile-picture-padding--story--${this.size}`, `profile-picture-padding--${this.size}`], 
         [`story-gradient--${this.size}`]
+      ]
+    }
+    if (this.viewedStory) {
+      return [
+        [`profile-picture-padding--story--${this.size}`, `profile-picture-padding--${this.size}`], 
+        [`viewed-story-gradient--${this.size}`]
       ]
     }
     return [

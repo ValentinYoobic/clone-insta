@@ -1,4 +1,5 @@
 $insta-gradient: linear-gradient(45deg, #edc042 10%, #e1393a, #e231cc ,#771bed 98%)
+$viewed-story: #d9d9d9
 
 .story-gradient--medium
     clip-path: circle(at center)
@@ -15,7 +16,23 @@ $insta-gradient: linear-gradient(45deg, #edc042 10%, #e1393a, #e231cc ,#771bed 9
     align-items: center
     background: $insta-gradient
     width: 66px
-    
+
+.viewed-story-gradient--medium
+    clip-path: circle(at center)
+    display: flex
+    justify-content: center
+    align-items: center
+    background: $viewed-story
+    width: 54px
+
+.viewed-story-gradient--large
+    clip-path: circle(at center)
+    display: flex
+    justify-content: center
+    align-items: center
+    background: $viewed-story
+    width: 66px
+
 .profile-picture-padding--story--medium
     cursor: pointer
     background-color: white
