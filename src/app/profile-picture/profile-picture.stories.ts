@@ -46,7 +46,12 @@ export const Large: Story = {
 
 export const Story: Story = {
     args: {
-        size: 'large',
         hasStory: true,
+    }
+}
+
+export const ViewedStory: Story = {
+    args: {
+        viewedStory: true,
     }
 }

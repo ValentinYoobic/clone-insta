@@ -4,7 +4,8 @@
     <img
       [ngClass]="imageClasses"
       [src]="profilePictureUrl"
-      alt="Not working profile pic"
+      (click)="onClick.emit($event)"
+      alt="User profile picture"
     />
     <div class="circle"></div>
   </div>
