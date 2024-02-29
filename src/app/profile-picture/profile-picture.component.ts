@@ -56,13 +56,13 @@ export class ProfilePictureComponent {
   public get paddingClasses(): string[][] {
     if (this.hasStory) {
       return [
-        ['profile-picture-padding--story', 'profile-picture-padding--large'], 
-        ['story-gradient--on']
+        [`profile-picture-padding--story--${this.size}`, `profile-picture-padding--${this.size}`], 
+        [`story-gradient--${this.size}`]
       ]
     }
     return [
       ['profile-picture-padding', `profile-picture-padding--${this.size}`],
-      ['story-gradient--off']
+      []
     ]
   } 
 
