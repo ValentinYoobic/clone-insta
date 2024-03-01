@@ -1,6 +1,14 @@
 $insta-gradient: linear-gradient(45deg, #edc042 10%, #e1393a, #e231cc ,#771bed 98%)
 $viewed-story: #d9d9d9
 
+.story-gradient--small
+    clip-path: circle(at center)
+    display: flex
+    justify-content: center
+    align-items: center
+    background: $insta-gradient
+    width: 42px
+
 .story-gradient--medium
     clip-path: circle(at center)
     display: flex
@@ -17,6 +25,14 @@ $viewed-story: #d9d9d9
     background: $insta-gradient
     width: 66px
 
+.viewed-story-gradient--small
+    clip-path: circle(at center)
+    display: flex
+    justify-content: center
+    align-items: center
+    background: $viewed-story
+    width: 42px
+
 .viewed-story-gradient--medium
     clip-path: circle(at center)
     display: flex
@@ -32,6 +48,14 @@ $viewed-story: #d9d9d9
     align-items: center
     background: $viewed-story
     width: 66px
+
+.profile-picture-padding--story--small
+    cursor: pointer
+    background-color: white
+    clip-path: circle(20px at center)
+    display: flex
+    justify-content: center
+    align-items: center
 
 .profile-picture-padding--story--medium
     cursor: pointer

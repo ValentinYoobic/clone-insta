@@ -1,1 +1,54 @@
-<p>publication-header works! {{this.audioName}}</p>
+<div class="publication-header">
+    <div class="info-bar">
+
+        <div class="profile-picture-wrapper" >
+            <div class="profile-picture-wrapper">
+                <app-profile-picture 
+                size="small" 
+                [hasStory]="this.user.hasStory" 
+                [profilePictureUrl]="this.user.profilePictureUrl" 
+                [viewedStory]='false'
+                />
+            </div>
+        </div>
+
+        <div class="title-wrapper">
+            <div class="main-title-wrapper" >
+                <span class="bold">{{this.user.userName}}</span>
+                @if (this.user.isCertified) {
+                    <img src="/assets/certified-icon.png" alt="certified" width="18px">
+                }
+                <app-text-separator size="medium" SeparatorType="middle-point" class="grey"/>
+                <span class="date grey">{{this.timeSincePublication(this.publicationDate)}}</span>
+                @if (!this.user.isFollowed) {
+                    <app-text-separator size="medium" SeparatorType="middle-point" class="grey"/>
+                    <button class="follow-button">Follow</button>
+                }
+            </div>
+            @if (this.subTitleType === 'Audio') {
+                <a class="sub-title-wrapper" href="">
+                    @if (this.artistName) {
+                        <span>{{this.artistName}}</span>
+                        <app-text-separator size="medium" SeparatorType="middle-point"/>
+                    }
+                    <span>{{this.audioName}}</span>
+                </a>
+            }
+            @else if (this.subTitleType === 'Location') {
+                <a class="sub-title-wrapper" href="">
+                    {{this.location}}
+                </a>
+            }
+
+
+        </div>
+
+        
+        <button class="menu-wrapper">
+            <app-text-separator size="medium" SeparatorType="middle-point"/>
+            <app-text-separator size="medium" SeparatorType="middle-point"/>
+            <app-text-separator size="medium" SeparatorType="middle-point"/>
+        </button>
+        
+    </div>
+</div>
