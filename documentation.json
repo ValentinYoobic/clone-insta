@@ -87,7 +87,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->\n<!-- * * * * * * * to get started with your project! * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n\n<style>\n\n  main {\n    width: 100%;\n    min-height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding: 1rem;\n    box-sizing: inherit;\n    position: relative;\n  }\n\n</style>\n\n<main class=\"main\">\n  <app-profile-picture profilePictureUrl=\"assets/profileImage.jpeg\"></app-profile-picture>\n  <app-profile-picture size=\"large\" profilePictureUrl=\"assets/profileImage.jpeg\" [hasStory]=\"true\"></app-profile-picture>\n  <app-profile-picture profilePictureUrl=\"assets/profileImage2.jpeg\"></app-profile-picture>\n  <app-profile-picture size=\"large\" profilePictureUrl=\"assets/profileImage2.jpeg\"></app-profile-picture>\n  \n</main>\n\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n\n\n<router-outlet />\n"
+            "templateData": "<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->\n<!-- * * * * * * * to get started with your project! * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n\n<style>\n\n</style>\n\n<main class=\"main\">\n  <app-profile-picture profilePictureUrl=\"assets/profileImage.jpeg\"></app-profile-picture>\n  <app-profile-picture size=\"large\" profilePictureUrl=\"assets/profileImage.jpeg\" [hasStory]=\"true\"></app-profile-picture>\n  <app-profile-picture profilePictureUrl=\"assets/profileImage2.jpeg\"></app-profile-picture>\n  <app-profile-picture size=\"large\" profilePictureUrl=\"assets/profileImage2.jpeg\"></app-profile-picture>\n  \n</main>\n\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n\n\n<router-outlet />\n"
         },
         {
             "name": "ButtonComponent",
@@ -540,7 +540,7 @@
         },
         {
             "name": "ProfilePictureComponent",
-            "id": "component-ProfilePictureComponent-802c494d3384a680e4a984939fcbe7f200dec2220d7e776113db1c2ef49b22084f7f9fdb03b1cb8187bbf14e7ed7f369fc5c54001bd92f9eaf8b5ac5380e5961",
+            "id": "component-ProfilePictureComponent-86a308f911d0042df97ce5272ad0f1d33476c6f6657da17e870b30c672fbf17389db87397226dd46b16e2a7e05eb8cf76dea92d727add83808f443ee5411bdb8",
             "file": "src/app/profile-picture/profile-picture.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -588,9 +588,29 @@
                     "line": 25,
                     "type": "\"xxs\" | \"xs\" | \"small\" | \"medium\" | \"large\"",
                     "decorators": []
+                },
+                {
+                    "name": "viewedStory",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHas the story been seen?\n",
+                    "description": "<p>Has the story been seen?</p>\n",
+                    "line": 37,
+                    "type": "boolean",
+                    "decorators": []
                 }
             ],
-            "outputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 40,
+                    "type": "EventEmitter"
+                }
+            ],
             "propertiesClass": [
                 {
                     "name": "isPortrait",
@@ -610,7 +630,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 39,
+                    "line": 48,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -623,7 +643,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 35,
+                    "line": 44,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -642,7 +662,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, ElementRef } from '@angular/core';\n\n\n@Component({\n  selector: 'app-profile-picture',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './profile-picture.component.html',\n  styleUrl: './profile-picture.component.sass'\n})\nexport class ProfilePictureComponent {\n\n  isPortrait: boolean = false;\n  /**\n  *What profile picture to use?\n  */\n  @Input()\n  profilePictureUrl: string = 'assets/profileImage.jpeg' ;\n\n  /**\n  *What profile picture to use?\n  */\n  @Input()\n  size: 'xxs' | 'xs' | 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n  *Has the user posted a story?\n  */\n  @Input()\n  hasStory: boolean = false;\n\n  constructor(private el: ElementRef) {}\n\n  ngAfterViewInit() {\n    this.checkImageOrientation();\n  }\n\n  private checkImageOrientation() {\n    const img = new Image();\n    img.onload = () => {\n      this.isPortrait = img.height > img.width;\n      console.log('width'+img.width);\n      console.log('height'+img.height);\n      console.log(this.isPortrait);\n    };\n    img.src = this.profilePictureUrl;\n  }\n\n  public get imageClasses(): string[] {\n    const format = this.isPortrait ? 'portrait' : 'landscape'\n    console.log(format);\n    return ['profile-picture', `profile-picture--${this.size}--${format}`]\n  } \n\n  public get paddingClasses(): string[][] {\n    if (this.hasStory) {\n      return [\n        ['profile-picture-padding--story', 'profile-picture-padding--large'], \n        ['story-gradient--on']\n      ]\n    }\n    return [\n      ['profile-picture-padding', `profile-picture-padding--${this.size}`],\n      ['story-gradient--off']\n    ]\n  } \n\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, ElementRef, Output, EventEmitter  } from '@angular/core';\n\n\n@Component({\n  selector: 'app-profile-picture',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './profile-picture.component.html',\n  styleUrl: './profile-picture.component.sass'\n})\nexport class ProfilePictureComponent {\n\n  isPortrait: boolean = false;\n  /**\n  *What profile picture to use?\n  */\n  @Input()\n  profilePictureUrl: string = 'assets/profileImage.jpeg' ;\n\n  /**\n  *What profile picture to use?\n  */\n  @Input()\n  size: 'xxs' | 'xs' | 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n  *Has the user posted a story?\n  */\n  @Input()\n  hasStory: boolean = false;\n\n  /**\n  *Has the story been seen?\n  */\n  @Input()\n  viewedStory: boolean = false;\n\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  constructor(private el: ElementRef) {}\n\n  ngAfterViewInit() {\n    this.checkImageOrientation();\n  }\n\n  private checkImageOrientation() {\n    const img = new Image();\n    img.onload = () => {\n      this.isPortrait = img.height > img.width;\n      console.log('width'+img.width);\n      console.log('height'+img.height);\n      console.log(this.isPortrait);\n    };\n    img.src = this.profilePictureUrl;\n  }\n\n  public get imageClasses(): string[] {\n    const format = this.isPortrait ? 'portrait' : 'landscape'\n    console.log(format);\n    return ['profile-picture', `profile-picture--${this.size}--${format}`]\n  } \n\n  public get paddingClasses(): string[][] {\n    if (this.hasStory) {\n      return [\n        [`profile-picture-padding--story--${this.size}`, `profile-picture-padding--${this.size}`], \n        [`story-gradient--${this.size}`]\n      ]\n    }\n    if (this.viewedStory) {\n      return [\n        [`profile-picture-padding--story--${this.size}`, `profile-picture-padding--${this.size}`], \n        [`viewed-story-gradient--${this.size}`]\n      ]\n    }\n    return [\n      ['profile-picture-padding', `profile-picture-padding--${this.size}`],\n      []\n    ]\n  } \n\n}\n",
             "styleUrl": "./profile-picture.component.sass",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -660,7 +680,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 31,
+                "line": 40,
                 "jsdoctags": [
                     {
                         "name": "el",
@@ -681,7 +701,7 @@
                         "name": "imageClasses",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 50
+                        "line": 59
                     }
                 },
                 "paddingClasses": {
@@ -690,11 +710,11 @@
                         "name": "paddingClasses",
                         "type": "[]",
                         "returnType": "[][]",
-                        "line": 56
+                        "line": 65
                     }
                 }
             },
-            "templateData": "<div [ngClass]=\"paddingClasses[1]\">\n  <div [ngClass]=\"paddingClasses[0]\">\n    <!-- <div [ngClass]=\"classes\"> -->\n    <img\n      [ngClass]=\"imageClasses\"\n      [src]=\"profilePictureUrl\"\n      alt=\"Not working profile pic\"\n    />\n    <div class=\"circle\"></div>\n  </div>\n</div>"
+            "templateData": "<div [ngClass]=\"paddingClasses[1]\">\n  <div [ngClass]=\"paddingClasses[0]\">\n    <!-- <div [ngClass]=\"classes\"> -->\n    <img\n      [ngClass]=\"imageClasses\"\n      [src]=\"profilePictureUrl\"\n      (click)=\"onClick.emit($event)\"\n      alt=\"User profile picture\"\n    />\n    <div class=\"circle\"></div>\n  </div>\n</div>"
         },
         {
             "name": "PublicationHeaderComponent",
@@ -862,21 +882,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/publication-header/publication-header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<PublicationHeaderComponent>",
-                "defaultValue": "{\n  title: 'Components/PublicationHeader',\n  component: PublicationHeaderComponent,\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/profile-picture/profile-picture.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ProfilePictureComponent>",
                 "defaultValue": "{\n    title: 'App/Profile Picture',\n    component: ProfilePictureComponent,\n    tags: ['autodocs'],\n    // argTypes: {\n    //     profilePictureUrl: {\n    //       control: 'assets/profileImage.jpeg',\n    //     },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/publication-header/publication-header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<PublicationHeaderComponent>",
+                "defaultValue": "{\n  title: 'Components/PublicationHeader',\n  component: PublicationHeaderComponent,\n}"
             },
             {
                 "name": "meta",
@@ -986,7 +1006,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        size: 'large',\n        hasStory: true,\n    }\n}"
+                "defaultValue": "{\n    args: {\n        hasStory: true,\n    }\n}"
             },
             {
                 "name": "user1",
@@ -997,6 +1017,16 @@
                 "deprecationMessage": "",
                 "type": "User",
                 "defaultValue": "{\n  id: 1,\n  userName: 'Michael_Jackson',\n  hasStory: true,\n  profilePhotoUrl: 'assets/profileImage.jpeg',\n  isCertified: true,\n  isFollowed: false\n}"
+            },
+            {
+                "name": "ViewedStory",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/profile-picture/profile-picture.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        viewedStory: true,\n    }\n}"
             },
             {
                 "name": "XS",
@@ -1069,8 +1099,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<PublicationHeaderComponent>",
-                "file": "src/app/publication-header/publication-header.stories.ts",
+                "rawtype": "StoryObj<ProfilePictureComponent>",
+                "file": "src/app/profile-picture/profile-picture.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1080,8 +1110,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ProfilePictureComponent>",
-                "file": "src/app/profile-picture/profile-picture.stories.ts",
+                "rawtype": "StoryObj<PublicationHeaderComponent>",
+                "file": "src/app/publication-header/publication-header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1268,7 +1298,17 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        size: 'large',\n        hasStory: true,\n    }\n}"
+                    "defaultValue": "{\n    args: {\n        hasStory: true,\n    }\n}"
+                },
+                {
+                    "name": "ViewedStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/profile-picture/profile-picture.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        viewedStory: true,\n    }\n}"
                 },
                 {
                     "name": "XS",
@@ -1477,19 +1517,6 @@
                     "kind": 183
                 }
             ],
-            "src/app/publication-header/publication-header.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<PublicationHeaderComponent>",
-                    "file": "src/app/publication-header/publication-header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "src/app/profile-picture/profile-picture.stories.ts": [
                 {
                     "name": "Story",
@@ -1497,6 +1524,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ProfilePictureComponent>",
                     "file": "src/app/profile-picture/profile-picture.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/publication-header/publication-header.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<PublicationHeaderComponent>",
+                    "file": "src/app/publication-header/publication-header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1651,8 +1691,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ProfilePictureComponent",
-                "coveragePercent": 37,
-                "coverageCount": "3/8",
+                "coveragePercent": 40,
+                "coverageCount": "4/10",
                 "status": "medium"
             },
             {
@@ -1701,6 +1741,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/profile-picture/profile-picture.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ViewedStory",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
