@@ -1,0 +1,10 @@
+<div class="story-banner">
+  <div class="user-story" *ngFor="let user of usersWithStory">
+    <app-profile-picture
+      [hasStory]="user.hasStory"
+      [profilePictureUrl]="user.profilePhotoUrl"
+      size="large"
+    ></app-profile-picture>
+    <div class="username">{{user.userName}}</div>
+  </div>
+</div>

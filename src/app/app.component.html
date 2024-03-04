@@ -7,16 +7,33 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<style>
-
-</style>
+<style></style>
 
 <main class="main">
-  <app-profile-picture profilePictureUrl="assets/profileImage.jpeg"></app-profile-picture>
-  <app-profile-picture size="large" profilePictureUrl="assets/profileImage.jpeg" [hasStory]="true"></app-profile-picture>
-  <app-profile-picture profilePictureUrl="assets/profileImage2.jpeg"></app-profile-picture>
-  <app-profile-picture size="large" profilePictureUrl="assets/profileImage2.jpeg"></app-profile-picture>
-  
+  <app-profile-picture
+    profilePictureUrl="assets/profileImage.jpeg"
+  ></app-profile-picture>
+  <app-profile-picture
+    size="large"
+    profilePictureUrl="assets/profileImage.jpeg"
+    [hasStory]="true"
+  ></app-profile-picture>
+  <app-profile-picture
+    profilePictureUrl="assets/profileImage2.jpeg"
+  ></app-profile-picture>
+  <app-profile-picture
+    size="large"
+    profilePictureUrl="assets/profileImage2.jpeg"
+  ></app-profile-picture>
+
+  <app-story-banner></app-story-banner>
+  <!-- <div [style]="{ 'background-color': '#d0a741' }"> -->
+  <div [style]="{ 'background-color': 'white' }">
+    <app-slider-arrow></app-slider-arrow>
+  </div>
+  <app-slide></app-slide>
+
+  <app-slider-carousel type="picturePost" [slides]="slides"></app-slider-carousel>
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
@@ -26,6 +43,5 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 
 <router-outlet />

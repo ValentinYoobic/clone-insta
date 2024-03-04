@@ -6,7 +6,7 @@ const user1: User = {
   id: 1,
   userName: 'Michael_Jackson',
   hasStory: false,
-  profilePictureUrl: '/assets/profileImage.jpeg',
+  profilePhotoUrl: '/assets/profileImage.jpeg',
   isCertified: true,
   isFollowed: false
 }
