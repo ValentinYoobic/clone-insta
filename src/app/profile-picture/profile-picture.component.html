@@ -5,6 +5,7 @@
       [ngClass]="imageClasses"
       [src]="profilePictureUrl"
       (click)="onClick.emit($event)"
+      (load)="onImageLoad($event)"
       alt="User profile picture"
     />
     <div class="circle"></div>

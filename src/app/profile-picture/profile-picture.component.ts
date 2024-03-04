@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, ElementRef, Output, EventEmitter  } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 type ProfilePictureSizes = 'xxs' | 'xs' | 'small' | 'medium' | 'large'
 
@@ -40,26 +40,13 @@ export class ProfilePictureComponent {
   @Output()
   onClick = new EventEmitter<Event>();
 
-  constructor(private el: ElementRef) {}
-
-  ngAfterViewInit() {
-    this.checkImageOrientation();
-  }
-
-  private checkImageOrientation() {
-    const img = new Image();
-    img.onload = () => {
-      this.isPortrait = img.height > img.width;
-      console.log('width'+img.width);
-      console.log('height'+img.height);
-      console.log(this.isPortrait);
-    };
-    img.src = this.profilePictureUrl;
+  public onImageLoad(event: Event): void {
+    const img = event.target as HTMLImageElement;
+    this.isPortrait = img.height > img.width;
   }
 
   public get imageClasses(): string[] {
     const format = this.isPortrait ? 'portrait' : 'landscape'
-    console.log(format);
     return ['profile-picture', `profile-picture--${this.size}--${format}`]
   } 
 
