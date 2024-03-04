@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { User } from '../user';
-import { ProfilePictureComponent } from '../profile-picture/profile-picture.component';
-import { TextSeparatorComponent } from '../text-separator/text-separator.component';
-import { TagComponent } from '../tag/tag.component';
-import { DateService } from '../date.service';
-import { TextButonComponent } from '../text-buton/text-buton.component';
+import { User } from '../../user';
+import { ProfilePictureComponent } from '../../profile-picture/profile-picture.component';
+import { TextSeparatorComponent } from '../../general-components/text-separator/text-separator.component';
+import { TagComponent } from '../../general-components/tag/tag.component';
+import { DateService } from '../../general-services/date.service';
+import { TextButonComponent } from '../../general-components/text-buton/text-buton.component';
 
 type SubtitleType = 'Location' | 'Audio' | null
 
@@ -23,7 +23,7 @@ export class PublicationHeaderComponent {
   @Input() audioName: string | null = null;
   @Input() artistName: string | null = null;
   @Input() location: string | null = null;
-  timeSincePublication: string = 'Bizarre'
+  timeSincePublication: string = '';
   
   ngOnInit() {
     this.timeSincePublication = this.dateService.timeSinceDate(this.publicationDate)

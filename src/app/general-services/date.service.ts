@@ -18,8 +18,10 @@ export class DateService {
   const millisecondsInDay: number = 86400000;
   const millisecondsInWeek: number = 604800000;
   const millisecondsInYear: number = 31536000000;
-  console.log(publicationDate)
-  if (timeDifference < millisecondsInMinute) {
+  
+  if (timeDifference < millisecondsInSecond) {
+    return "Now";
+  } else if (timeDifference < millisecondsInMinute) {
       return Math.floor(timeDifference / millisecondsInSecond) + " s";
   } else if (timeDifference < millisecondsInHour) {
       return Math.floor(timeDifference / millisecondsInMinute) + " min";
