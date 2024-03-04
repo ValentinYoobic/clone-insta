@@ -15,7 +15,6 @@ type Story = StoryObj<SliderCarouselComponent>;
 
 export const StorySlider: Story = {
   args: {
-    visibleSlides: 8,
     type: 'story',
     slides: [
       {
@@ -109,7 +108,6 @@ export const StorySlider: Story = {
 
 export const PostSlider: Story = {
   args: {
-    visibleSlides: 1,
     type: 'picturePost',
     slides: [
       {

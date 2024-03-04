@@ -35,13 +35,13 @@ export class SliderCarouselComponent {
     },
   ];
 
-  @Input()
-  visibleSlides: 1 | 8 = 8;
+  // @Input()
+  // visibleSlides: 1 | 8 = 8;
 
   currentIndex: number = 0;
 
   goToNext(): void {
-    if (this.visibleSlides === 1) {
+    if (this.type === 'picturePost') {
       const isLastSlide = this.currentIndex === this.slides.length - 1;
       const newIndex = isLastSlide ? this.currentIndex : this.currentIndex + 1;
       this.currentIndex = newIndex;
@@ -54,7 +54,7 @@ export class SliderCarouselComponent {
 
   goToPrevious(): void {
     const isFirstSlide = this.currentIndex === 0;
-    if (this.visibleSlides === 1) {
+    if (this.type === 'picturePost') {
       const newIndex = isFirstSlide ? this.currentIndex : this.currentIndex - 1;
       this.currentIndex = newIndex;
     } else {
@@ -68,7 +68,7 @@ export class SliderCarouselComponent {
   }
 
   getVisibleSlidesList(): Slide[] {
-    if (this.visibleSlides === 1) {
+    if (this.type === 'picturePost') {
       return [this.slides[this.currentIndex]];
     } else {
       let newVisibleSlides = [];
@@ -86,7 +86,7 @@ export class SliderCarouselComponent {
   }
 
   getVisibleRightArrow(): boolean {
-    if (this.visibleSlides === 1) {
+    if (this.type === 'picturePost') {
       return this.currentIndex < this.slides.length - 1;
     } else {
       return this.currentIndex + 8 < this.slides.length;
