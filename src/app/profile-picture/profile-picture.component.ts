@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, ElementRef, Output, EventEmitter  } from '@angular/core';
 
+type ProfilePictureSizes = 'xxs' | 'xs' | 'small' | 'medium' | 'large'
 
 @Component({
   selector: 'app-profile-picture',
@@ -16,13 +17,13 @@ export class ProfilePictureComponent {
   *What profile picture to use?
   */
   @Input()
-  profilePictureUrl: string = 'assets/profileImage.jpeg' ;
+  profilePictureUrl: string = '/assets/profileImage.jpeg' ;
 
   /**
   *What profile picture to use?
   */
   @Input()
-  size: 'xxs' | 'xs' | 'small' | 'medium' | 'large' = 'medium';
+  size: ProfilePictureSizes = 'medium';
 
   /**
   *Has the user posted a story?
