@@ -16,13 +16,13 @@
             <div class="main-title-wrapper" >
                 <span class="bold">{{this.user.userName}}</span>
                 @if (this.user.isCertified) {
-                    <img src="/assets/certified-icon.png" alt="certified" width="18px">
+                    <app-tag type="Certified" size="medium"/>
                 }
                 <app-text-separator size="medium" SeparatorType="middle-point" class="grey"/>
-                <span class="date grey">{{this.timeSincePublication(this.publicationDate)}}</span>
+                <span class="grey">{{timeSincePublication}}</span>
                 @if (!this.user.isFollowed) {
                     <app-text-separator size="medium" SeparatorType="middle-point" class="grey"/>
-                    <button class="follow-button">Follow</button>
+                    <app-text-buton [class.text-blue]="true">Follow</app-text-buton>
                 }
             </div>
             @if (this.subTitleType === 'Audio') {
@@ -43,12 +43,9 @@
 
         </div>
 
-        
-        <button class="menu-wrapper">
-            <app-text-separator size="medium" SeparatorType="middle-point"/>
-            <app-text-separator size="medium" SeparatorType="middle-point"/>
-            <app-text-separator size="medium" SeparatorType="middle-point"/>
-        </button>
+        <app-text-buton class="menu-wrapper">
+            <app-text-separator size="medium" SeparatorType="meatballs"/>
+        </app-text-buton>
         
     </div>
 </div>

@@ -26,7 +26,59 @@
             "extends": []
         }
     ],
-    "injectables": [],
+    "injectables": [
+        {
+            "name": "DateService",
+            "id": "injectable-DateService-0ac5d4c6d1d7ad27f6751a72f4a0d43c45cb4b8fe1b30b2af869fe8f0ec6cda22dd9afba41f44c9a32a84ae2e011d2430b6e90d3abc21ac9f54d59c0b75865fb",
+            "file": "src/app/date.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "timeSinceDate",
+                    "args": [
+                        {
+                            "name": "publicationDate",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 7,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "publicationDate",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class DateService {\n  timeSinceDate(\n    publicationDate: number // timestamp in s\n  ): string {\n\n  // Calculate the time difference in milliseconds\n  let timeDifference: number = Math.abs(publicationDate - (new Date()).getTime());\n  \n  // Convert milliseconds to other units\n  const millisecondsInSecond: number = 1000;\n  const millisecondsInMinute: number = 60000;\n  const millisecondsInHour: number = 3600000;\n  const millisecondsInDay: number = 86400000;\n  const millisecondsInWeek: number = 604800000;\n  const millisecondsInYear: number = 31536000000;\n  console.log(publicationDate)\n  if (timeDifference < millisecondsInMinute) {\n      return Math.floor(timeDifference / millisecondsInSecond) + \" s\";\n  } else if (timeDifference < millisecondsInHour) {\n      return Math.floor(timeDifference / millisecondsInMinute) + \" min\";\n  } else if (timeDifference < millisecondsInDay) {\n      return Math.floor(timeDifference / millisecondsInHour) + \" h\";\n  } else if (timeDifference < millisecondsInWeek) {\n      return Math.floor(timeDifference / millisecondsInDay) + \" d\";\n  } else if (timeDifference < millisecondsInYear) {\n      return Math.floor(timeDifference / millisecondsInWeek) + \" w\";\n  } else {\n      return Math.floor(timeDifference / millisecondsInYear) + \" y\";\n  }\n}\n  constructor() { }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 35
+            },
+            "extends": [],
+            "type": "injectable"
+        }
+    ],
     "guards": [],
     "interceptors": [],
     "classes": [],
@@ -718,7 +770,7 @@
         },
         {
             "name": "PublicationHeaderComponent",
-            "id": "component-PublicationHeaderComponent-6d82b02fd8c7f911ef25aed125c0e2297501d0574c368e4a304fbfac120a3718adb96afaefe67565cdf9160e8da3c6a93a34042c51d3b065c77ff09298c0187b",
+            "id": "component-PublicationHeaderComponent-4cde8eec8ae41a7b4295827b943163b9a5e91b55740267f0b15c452f15a0aaae481fcb16e73d6581bd0d28907e82d3a0757171f3207d7e8886002c8b3d4b188d",
             "file": "src/app/publication-header/publication-header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -739,7 +791,7 @@
                     "defaultValue": "null",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 24,
                     "type": "string | null",
                     "decorators": []
                 },
@@ -748,7 +800,7 @@
                     "defaultValue": "null",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 23,
                     "type": "string | null",
                     "decorators": []
                 },
@@ -757,7 +809,7 @@
                     "defaultValue": "null",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 25,
                     "type": "string | null",
                     "decorators": []
                 },
@@ -765,7 +817,7 @@
                     "name": "publicationDate",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 21,
                     "type": "number",
                     "decorators": []
                 },
@@ -774,7 +826,7 @@
                     "defaultValue": "null",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 22,
                     "type": "SubtitleType",
                     "decorators": []
                 },
@@ -782,41 +834,34 @@
                     "name": "user",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 20,
                     "type": "User",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
+            "propertiesClass": [
                 {
                     "name": "timeSincePublication",
-                    "args": [
-                        {
-                            "name": "publicationDate",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "string",
-                    "typeParameters": [],
-                    "line": 23,
+                    "defaultValue": "'Bizarre'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "publicationDate",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": ""
                 }
             ],
             "deprecated": false,
@@ -832,18 +877,207 @@
                 {
                     "name": "TextSeparatorComponent",
                     "type": "component"
+                },
+                {
+                    "name": "TagComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "TextButonComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { User } from '../user';\nimport { ProfilePictureComponent } from '../profile-picture/profile-picture.component';\nimport { TextSeparatorComponent } from '../text-separator/text-separator.component';\n\ntype SubtitleType = 'Location' | 'Audio' | null\n\n@Component({\n  selector: 'app-publication-header',\n  standalone: true,\n  imports: [ProfilePictureComponent, TextSeparatorComponent],\n  templateUrl: './publication-header.component.html',\n  styleUrl: './publication-header.component.sass'\n})\nexport class PublicationHeaderComponent {\n  @Input() user!: User;\n  @Input() publicationDate!: number; // timestamp in s\n  @Input() subTitleType: SubtitleType = null;\n  @Input() audioName: string | null = null;\n  @Input() artistName: string | null = null;\n  @Input() location: string | null = null;\n\n  timeSincePublication(\n      publicationDate: number // timestamp in s\n    ): string {\n\n    // Calculate the time difference in milliseconds\n    let timeDifference: number = Math.abs(publicationDate - (new Date()).getTime());\n    \n    // Convert milliseconds to other units\n    const millisecondsInSecond: number = 1000;\n    const millisecondsInMinute: number = 60000;\n    const millisecondsInHour: number = 3600000;\n    const millisecondsInDay: number = 86400000;\n    const millisecondsInWeek: number = 604800000;\n    const millisecondsInYear: number = 31536000000;\n    \n    if (timeDifference < millisecondsInMinute) {\n        return Math.floor(timeDifference / millisecondsInSecond) + \" s\";\n    } else if (timeDifference < millisecondsInHour) {\n        return Math.floor(timeDifference / millisecondsInMinute) + \" min\";\n    } else if (timeDifference < millisecondsInDay) {\n        return Math.floor(timeDifference / millisecondsInHour) + \" h\";\n    } else if (timeDifference < millisecondsInWeek) {\n        return Math.floor(timeDifference / millisecondsInDay) + \" d\";\n    } else if (timeDifference < millisecondsInYear) {\n        return Math.floor(timeDifference / millisecondsInWeek) + \" w\";\n    } else {\n        return Math.floor(timeDifference / millisecondsInYear) + \" y\";\n    }\n}\n\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { User } from '../user';\nimport { ProfilePictureComponent } from '../profile-picture/profile-picture.component';\nimport { TextSeparatorComponent } from '../text-separator/text-separator.component';\nimport { TagComponent } from '../tag/tag.component';\nimport { DateService } from '../date.service';\nimport { TextButonComponent } from '../text-buton/text-buton.component';\n\ntype SubtitleType = 'Location' | 'Audio' | null\n\n@Component({\n  selector: 'app-publication-header',\n  standalone: true,\n  imports: [ProfilePictureComponent, TextSeparatorComponent, TagComponent, TextButonComponent],\n  templateUrl: './publication-header.component.html',\n  styleUrl: './publication-header.component.sass'\n})\nexport class PublicationHeaderComponent {\n  constructor(private dateService: DateService) {}\n  @Input() user!: User;\n  @Input() publicationDate!: number; // timestamp in s\n  @Input() subTitleType: SubtitleType = null;\n  @Input() audioName: string | null = null;\n  @Input() artistName: string | null = null;\n  @Input() location: string | null = null;\n  timeSincePublication: string = 'Bizarre'\n  \n  ngOnInit() {\n    this.timeSincePublication = this.dateService.timeSinceDate(this.publicationDate)\n}\n}\n",
             "styleUrl": "./publication-header.component.sass",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dateService",
+                        "type": "DateService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 18,
+                "jsdoctags": [
+                    {
+                        "name": "dateService",
+                        "type": "DateService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
             "extends": [],
-            "templateData": "<div class=\"publication-header\">\n    <button class=\"follow-button\">Follow</button>\n\n    <div class=\"info-bar\">\n\n        <div class=\"profile-picture-wrapper\" >\n            <div class=\"profile-picture-wrapper\">\n                <app-profile-picture \n                size=\"small\" \n                [hasStory]=\"this.user.hasStory\" \n                [profilePictureUrl]=\"this.user.profilePictureUrl\" \n                [viewedStory]='false'\n                />\n            </div>\n        </div>\n\n        <div class=\"title-wrapper\">\n            <div class=\"main-title-wrapper\" >\n                <span class=\"bold\">{{this.user.userName}}</span>\n                @if (this.user.isCertified) {\n                    <span class=\"certified-icon-wrapper\"><img src=\"/assets/certified-icon.png\" alt=\"certified\" width=\"18px\"></span>\n                }\n                <span class=\"middle-point grey\">●</span>\n                <span class=\"date grey\">{{this.timeSincePublication(this.publicationDate)}}</span>\n                @if (!this.user.isFollowed) {\n                    <span class=\"middle-point grey\">●</span>\n                    <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n                }\n            </div>\n            @if (this.subTitleType === 'Audio') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    @if (this.artistName) {\n                        <span>{{this.artistName}}</span><span class=\"middle-point\">●</span>\n                    }\n                    <span>{{this.audioName}}</span>\n                </a>\n            }\n            @else if (this.subTitleType === 'Location') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    {{this.location}}\n                </a>\n            }\n\n\n        </div>\n\n        \n        <button class=\"menu-wrapper\">\n            <span class=\"middle-point\">●</span>\n            <span class=\"middle-point\">●</span>\n            <span class=\"middle-point\">●</span>\n        </button>\n        \n    </div>\n</div>"
+            "templateData": "<div class=\"publication-header\">\n    <div class=\"info-bar\">\n\n        <div class=\"profile-picture-wrapper\" >\n            <div class=\"profile-picture-wrapper\">\n                <app-profile-picture \n                size=\"small\" \n                [hasStory]=\"this.user.hasStory\" \n                [profilePictureUrl]=\"this.user.profilePictureUrl\" \n                [viewedStory]='false'\n                />\n            </div>\n        </div>\n\n        <div class=\"title-wrapper\">\n            <div class=\"main-title-wrapper\" >\n                <span class=\"bold\">{{this.user.userName}}</span>\n                @if (this.user.isCertified) {\n                    <app-tag type=\"Certified\" size=\"medium\"/>\n                }\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                <span class=\"grey\">{{timeSincePublication}}</span>\n                @if (!this.user.isFollowed) {\n                    <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                    <app-text-buton [class.text-blue]=\"true\">Follow</app-text-buton>\n                }\n            </div>\n            @if (this.subTitleType === 'Audio') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    @if (this.artistName) {\n                        <span>{{this.artistName}}</span>\n                        <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n                    }\n                    <span>{{this.audioName}}</span>\n                </a>\n            }\n            @else if (this.subTitleType === 'Location') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    {{this.location}}\n                </a>\n            }\n\n\n        </div>\n\n        <div class=\"test\"></div>\n        <button class=\"menu-wrapper\">\n            <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n            <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n            <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n        </button>\n        <app-text-buton>\n            <div class=\"menu-wrapper\">\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n            </div>\n        </app-text-buton>\n        \n    </div>\n</div>"
+        },
+        {
+            "name": "TagComponent",
+            "id": "component-TagComponent-60ad7041c8532ed2d91a8f67c7a937b74214756018cf8191bf2bf0e8a24c060a281d89bfec5bde55844a3609510ff6045d46811683c265a560cb5de5bc1acada",
+            "file": "src/app/tag/tag.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tag",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./tag.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "Size",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'Certified'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "TagType",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "width",
+                    "defaultValue": "this.computeWidth(this.size)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "computeWidth",
+                    "args": [
+                        {
+                            "name": "size",
+                            "type": "Size",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "size",
+                            "type": "Size",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Signal, WritableSignal, computed, signal } from '@angular/core';\n\ntype TagType = \"Certified\"\ntype Size = \"medium\"\n\n@Component({\n  selector: 'app-tag',\n  standalone: true,\n  imports: [],\n  templateUrl: './tag.component.html',\n  styleUrl: './tag.component.sass'\n})\nexport class TagComponent {\n  @Input() type: TagType = 'Certified';\n  @Input() size: Size = 'medium';\n  width: number = this.computeWidth(this.size)\n\n  computeWidth(size: Size) {\n    switch (size) {\n      case 'medium':\n        return 16;\n        break\n      default:\n        return 16\n    }\n  }\n\n  \n}\n",
+            "styleUrl": "./tag.component.sass",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "@if (type === 'Certified') {\n    <img src=\"/assets/certified-icon.png\" alt=\"certified\" [width]=\"width\" [height]=\"width\">\n}"
+        },
+        {
+            "name": "TextButonComponent",
+            "id": "component-TextButonComponent-5fd14829d7aa4d54909e675a1c56eba21671a8f50b50c942a87f1e53ee5bb27d0e76e6f6f55344547b7f669cadafe25d4f038f313e27607d492bdeaa58d7bfbf",
+            "file": "src/app/text-buton/text-buton.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-text-buton",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./text-buton.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "handleClick",
+                    "defaultValue": "() => console.log(\"You clicked on the button\")",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "function",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-text-buton',\n  standalone: true,\n  imports: [],\n  templateUrl: './text-buton.component.html',\n  styleUrl: './text-buton.component.sass'\n})\nexport class TextButonComponent {\n  @Input() handleClick: () => void = () => console.log(\"You clicked on the button\")\n  @Input({required: true}) text!: string;\n}\n",
+            "styleUrl": "./text-buton.component.sass",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<button (click)=\"handleClick()\"><ng-content></ng-content></button>\n"
         },
         {
             "name": "TextSeparatorComponent",
@@ -900,7 +1134,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "@if (SeparatorType === \"middle-point\") {\n    <span [class]=\"size\">●</span>\n}\n"
+            "templateData": "@if (SeparatorType === \"middle-point\") {\n    <span class=\"medium\">●</span>\n}\n"
         }
     ],
     "modules": [],
@@ -915,6 +1149,16 @@
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
                 "defaultValue": "{\n  providers: [provideRouter(routes)]\n}"
+            },
+            {
+                "name": "CertifiedTag",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/tag/tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    type: 'Certified',\n    size: 'medium',\n  },\n}"
             },
             {
                 "name": "HeartButton",
@@ -1035,6 +1279,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<ProfilePictureComponent>",
                 "defaultValue": "{\n    title: 'App/Profile Picture',\n    component: ProfilePictureComponent,\n    tags: ['autodocs'],\n    // argTypes: {\n    //     profilePictureUrl: {\n    //       control: 'assets/profileImage.jpeg',\n    //     },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/tag/tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<TagComponent>",
+                "defaultValue": "{\n  title: 'Components/Tag',\n  component: TagComponent,\n}"
             },
             {
                 "name": "meta",
@@ -1237,6 +1491,17 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "",
+                "file": "src/app/tag/tag.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 201
+            },
+            {
+                "name": "Size",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
                 "file": "src/app/text-separator/text-separator.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1291,6 +1556,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<TagComponent>",
+                "file": "src/app/tag/tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<PublicationHeaderComponent>",
                 "file": "src/app/publication-header/publication-header.stories.ts",
                 "deprecated": false,
@@ -1332,6 +1608,17 @@
                 "kind": 192
             },
             {
+                "name": "TagType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/app/tag/tag.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 201
+            },
+            {
                 "name": "User",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -1355,6 +1642,28 @@
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
                     "defaultValue": "{\n  providers: [provideRouter(routes)]\n}"
+                }
+            ],
+            "src/app/tag/tag.stories.ts": [
+                {
+                    "name": "CertifiedTag",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/tag/tag.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    type: 'Certified',\n    size: 'medium',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/tag/tag.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<TagComponent>",
+                    "defaultValue": "{\n  title: 'Components/Tag',\n  component: TagComponent,\n}"
                 }
             ],
             "src/app/navigation/navigation-button/navigation-button.stories.ts": [
@@ -1707,6 +2016,30 @@
                     "kind": 201
                 }
             ],
+            "src/app/tag/tag.component.ts": [
+                {
+                    "name": "Size",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/app/tag/tag.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 201
+                },
+                {
+                    "name": "TagType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/app/tag/tag.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 201
+                }
+            ],
             "src/stories/button.stories.ts": [
                 {
                     "name": "Story",
@@ -1753,6 +2086,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ProfilePictureComponent>",
                     "file": "src/app/profile-picture/profile-picture.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/tag/tag.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TagComponent>",
+                    "file": "src/app/tag/tag.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1828,7 +2174,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 3,
+        "count": 2,
         "status": "low",
         "files": [
             {
@@ -1858,6 +2204,15 @@
                 "name": "appConfig",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/date.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "DateService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -2023,7 +2378,7 @@
                 "linktype": "component",
                 "name": "PublicationHeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {
@@ -2054,6 +2409,44 @@
                 "name": "user1",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tag/tag.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TagComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tag/tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CertifiedTag",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tag/tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/text-buton/text-buton.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextButonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
