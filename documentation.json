@@ -2,6 +2,48 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "Slide",
+            "id": "interface-Slide-a15646e64178ab650de464c5b089f275418afd86e244ad4c0b63f81bb0d4b4c4077f80d3edacd10e903b1bf8106423820490f77c971f83577f3d03cd333b182a",
+            "file": "src/app/slide.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Slide {\n    type: 'story' | 'picturePost',\n    pictureUrl: string,\n    userName: string,\n}",
+            "properties": [
+                {
+                    "name": "pictureUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"story\" | \"picturePost\"",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "userName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "User",
             "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
             "file": "src/stories/user.ts",
@@ -29,7 +71,7 @@
     "injectables": [
         {
             "name": "DateService",
-            "id": "injectable-DateService-0ac5d4c6d1d7ad27f6751a72f4a0d43c45cb4b8fe1b30b2af869fe8f0ec6cda22dd9afba41f44c9a32a84ae2e011d2430b6e90d3abc21ac9f54d59c0b75865fb",
+            "id": "injectable-DateService-897d40faac2d92ec7552f4d8fe3e522154a176d08d4d3fde8b6bda1a81386f39c3e24d15d68a2f3de9f1ac28e29c595a7260c3c486db01d1abc70bd7a65c6dcf",
             "file": "src/app/general-services/date.service.ts",
             "properties": [],
             "methods": [
@@ -66,15 +108,61 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class DateService {\n  timeSinceDate(\n    publicationDate: number // timestamp in s\n  ): string {\n\n  // Calculate the time difference in milliseconds\n  let timeDifference: number = Math.abs(publicationDate - (new Date()).getTime());\n  \n  // Convert milliseconds to other units\n  const millisecondsInSecond: number = 1000;\n  const millisecondsInMinute: number = 60000;\n  const millisecondsInHour: number = 3600000;\n  const millisecondsInDay: number = 86400000;\n  const millisecondsInWeek: number = 604800000;\n  const millisecondsInYear: number = 31536000000;\n  console.log(publicationDate)\n  if (timeDifference < millisecondsInMinute) {\n      return Math.floor(timeDifference / millisecondsInSecond) + \" s\";\n  } else if (timeDifference < millisecondsInHour) {\n      return Math.floor(timeDifference / millisecondsInMinute) + \" min\";\n  } else if (timeDifference < millisecondsInDay) {\n      return Math.floor(timeDifference / millisecondsInHour) + \" h\";\n  } else if (timeDifference < millisecondsInWeek) {\n      return Math.floor(timeDifference / millisecondsInDay) + \" d\";\n  } else if (timeDifference < millisecondsInYear) {\n      return Math.floor(timeDifference / millisecondsInWeek) + \" w\";\n  } else {\n      return Math.floor(timeDifference / millisecondsInYear) + \" y\";\n  }\n}\n  constructor() { }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class DateService {\n  timeSinceDate(\n    publicationDate: number // timestamp in s\n  ): string {\n\n  // Calculate the time difference in milliseconds\n  let timeDifference: number = Math.abs(publicationDate - (new Date()).getTime());\n  \n  // Convert milliseconds to other units\n  const millisecondsInSecond: number = 1000;\n  const millisecondsInMinute: number = 60000;\n  const millisecondsInHour: number = 3600000;\n  const millisecondsInDay: number = 86400000;\n  const millisecondsInWeek: number = 604800000;\n  const millisecondsInYear: number = 31536000000;\n  \n  if (timeDifference < millisecondsInSecond) {\n    return \"Now\";\n  } else if (timeDifference < millisecondsInMinute) {\n      return Math.floor(timeDifference / millisecondsInSecond) + \" s\";\n  } else if (timeDifference < millisecondsInHour) {\n      return Math.floor(timeDifference / millisecondsInMinute) + \" min\";\n  } else if (timeDifference < millisecondsInDay) {\n      return Math.floor(timeDifference / millisecondsInHour) + \" h\";\n  } else if (timeDifference < millisecondsInWeek) {\n      return Math.floor(timeDifference / millisecondsInDay) + \" d\";\n  } else if (timeDifference < millisecondsInYear) {\n      return Math.floor(timeDifference / millisecondsInWeek) + \" w\";\n  } else {\n      return Math.floor(timeDifference / millisecondsInYear) + \" y\";\n  }\n}\n  constructor() { }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 35
+                "line": 37
             },
+            "extends": [],
+            "type": "injectable"
+        },
+        {
+            "name": "UsersService",
+            "id": "injectable-UsersService-f3c023fd3294fbec591cf0a5f92b18eba219631d3ab766122b81d2a37a91e4444f68c8ee1b5de83117ce21209ba2a79d85df772daa9fb563111e2665879c698c",
+            "file": "src/app/users.service.ts",
+            "properties": [
+                {
+                    "name": "usersList",
+                    "defaultValue": "[\n    {\n      id: 0,\n      userName: 'michael_jackson',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: true,\n      isFollowed: true,\n    },\n    {\n      id: 1,\n      userName: 'michael_impersonator',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 2,\n      userName: 'hello_kitty',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 3,\n      userName: 'lauren90',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage2.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 4,\n      userName: 'fanny_pack',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 5,\n      userName: 'michael_jackson',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: true,\n      isFollowed: true,\n    },\n    {\n      id: 6,\n      userName: 'michael_impersonator',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 7,\n      userName: 'hello_kitty',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 8,\n      userName: 'lauren90',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage2.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 9,\n      userName: 'fanny_pack',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 10,\n      userName: 'michael_jackson',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: true,\n      isFollowed: true,\n    },\n    {\n      id: 11,\n      userName: 'michael_impersonator',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 12,\n      userName: 'hello_kitty',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 13,\n      userName: 'lauren90',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage2.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 14,\n      userName: 'fanny_pack',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 15,\n      userName: 'uninteresting_ad',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: true,\n      isFollowed: false,\n    },\n    {\n      id: 16,\n      userName: 'unfollowed_person',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: false,\n    },\n    {\n      id: 17,\n      userName: 'hello_kitty',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 18,\n      userName: 'noStoryUser',\n      hasStory: false,\n      profilePhotoUrl: 'assets/profileImage2.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 19,\n      userName: 'anonymous',\n      hasStory: false,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    }\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methods": [
+                {
+                    "name": "getAllUsers",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "User[]",
+                    "typeParameters": [],
+                    "line": 172,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getUsersWithStory",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "[] | undefined",
+                    "typeParameters": [],
+                    "line": 176,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { User } from './user';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class UsersService {\n\n  usersList: User[] = [\n    {\n      id: 0,\n      userName: 'michael_jackson',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: true,\n      isFollowed: true,\n    },\n    {\n      id: 1,\n      userName: 'michael_impersonator',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 2,\n      userName: 'hello_kitty',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 3,\n      userName: 'lauren90',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage2.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 4,\n      userName: 'fanny_pack',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 5,\n      userName: 'michael_jackson',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: true,\n      isFollowed: true,\n    },\n    {\n      id: 6,\n      userName: 'michael_impersonator',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 7,\n      userName: 'hello_kitty',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 8,\n      userName: 'lauren90',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage2.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 9,\n      userName: 'fanny_pack',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 10,\n      userName: 'michael_jackson',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: true,\n      isFollowed: true,\n    },\n    {\n      id: 11,\n      userName: 'michael_impersonator',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 12,\n      userName: 'hello_kitty',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 13,\n      userName: 'lauren90',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage2.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 14,\n      userName: 'fanny_pack',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 15,\n      userName: 'uninteresting_ad',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: true,\n      isFollowed: false,\n    },\n    {\n      id: 16,\n      userName: 'unfollowed_person',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: false,\n    },\n    {\n      id: 17,\n      userName: 'hello_kitty',\n      hasStory: true,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 18,\n      userName: 'noStoryUser',\n      hasStory: false,\n      profilePhotoUrl: 'assets/profileImage2.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    },\n    {\n      id: 19,\n      userName: 'anonymous',\n      hasStory: false,\n      profilePhotoUrl: 'assets/profileImage.jpeg', // starting by assets/\n      isCertified: false,\n      isFollowed: true,\n    }\n  ]\n\n  getAllUsers(): User[] {\n    return this.usersList;\n  }\n\n  getUsersWithStory(): User[] | undefined {\n    return this.usersList.filter((user)=> user.hasStory && user.isFollowed);\n  }\n}\n",
             "extends": [],
             "type": "injectable"
         }
@@ -86,7 +174,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-6101b6509eb2be5bb1b723b62b8232c516055d786488e144cfb4d5f768a10ae9fbc1266055c3f587dec193e0aaa397461dbbaa62ece1ef27dc04f0c41327639d",
+            "id": "component-AppComponent-f4b653385ac06297352797c7f3cec048d4f5c12e6daa9f16f4acef685f36724f0482fd8d926a9b98dca4e7db7198bc029f7783373fb0f787cb498ad72219fa49",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -105,6 +193,16 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "slides",
+                    "defaultValue": "[\n    {\n      pictureUrl: 'assets/profileImage.jpeg',\n      type: 'picturePost',\n      userName: 'michael_jackson',\n    },\n    {\n      pictureUrl: 'assets/profileImage2.jpeg',\n      type: 'picturePost',\n      userName: 'lauren90',\n    },\n    {\n      pictureUrl: 'assets/marvin_gaye.jpeg',\n      type: 'picturePost',\n      userName: 'marvin_gaye',\n    },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Slide[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
                     "name": "title",
                     "defaultValue": "'clone-insta'",
                     "deprecated": false,
@@ -112,7 +210,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 22
                 }
             ],
             "methodsClass": [],
@@ -128,18 +226,30 @@
                 {
                     "name": "ProfilePictureComponent",
                     "type": "component"
+                },
+                {
+                    "name": "SliderArrowComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "SlideComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "SliderCarouselComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\nimport { ProfilePictureComponent } from './profile-picture/profile-picture.component';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [RouterOutlet, ProfilePictureComponent],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.sass'\n})\nexport class AppComponent {\n  title = 'clone-insta';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\nimport { ProfilePictureComponent } from './profile-picture/profile-picture.component';\nimport { SliderArrowComponent } from './slider-arrow/slider-arrow.component';\nimport { SlideComponent } from './slide/slide.component';\nimport { SliderCarouselComponent } from './slider-carousel/slider-carousel.component';\nimport { Slide } from './slide';\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [\n    RouterOutlet,\n    ProfilePictureComponent,\n    SliderArrowComponent,\n    SlideComponent,\n    SliderCarouselComponent,\n  ],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.sass',\n})\nexport class AppComponent {\n  title = 'clone-insta';\n\n  slides: Slide[] = [\n    {\n      pictureUrl: 'assets/profileImage.jpeg',\n      type: 'picturePost',\n      userName: 'michael_jackson',\n    },\n    {\n      pictureUrl: 'assets/profileImage2.jpeg',\n      type: 'picturePost',\n      userName: 'lauren90',\n    },\n    {\n      pictureUrl: 'assets/marvin_gaye.jpeg',\n      type: 'picturePost',\n      userName: 'marvin_gaye',\n    },\n  ];\n}\n",
             "styleUrl": "./app.component.sass",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->\n<!-- * * * * * * * to get started with your project! * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n\n<style>\n\n</style>\n\n<main class=\"main\">\n  <app-profile-picture profilePictureUrl=\"assets/profileImage.jpeg\"></app-profile-picture>\n  <app-profile-picture size=\"large\" profilePictureUrl=\"assets/profileImage.jpeg\" [hasStory]=\"true\"></app-profile-picture>\n  <app-profile-picture profilePictureUrl=\"assets/profileImage2.jpeg\"></app-profile-picture>\n  <app-profile-picture size=\"large\" profilePictureUrl=\"assets/profileImage2.jpeg\"></app-profile-picture>\n  \n</main>\n\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n\n\n<router-outlet />\n"
+            "templateData": "<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->\n<!-- * * * * * * * to get started with your project! * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n\n<style></style>\n\n<main class=\"main\">\n  <app-profile-picture\n    profilePictureUrl=\"assets/profileImage.jpeg\"\n  ></app-profile-picture>\n  <app-profile-picture\n    size=\"large\"\n    profilePictureUrl=\"assets/profileImage.jpeg\"\n    [hasStory]=\"true\"\n  ></app-profile-picture>\n  <app-profile-picture\n    profilePictureUrl=\"assets/profileImage2.jpeg\"\n  ></app-profile-picture>\n  <app-profile-picture\n    size=\"large\"\n    profilePictureUrl=\"assets/profileImage2.jpeg\"\n  ></app-profile-picture>\n\n  <div [style]=\"{ 'background-color': 'white' }\">\n    <app-slider-arrow></app-slider-arrow>\n  </div>\n  <app-slide></app-slide>\n\n  <app-slider-carousel type=\"picturePost\" [slides]=\"slides\"></app-slider-carousel>\n</main>\n\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n\n<router-outlet />\n"
         },
         {
             "name": "ButtonComponent",
@@ -592,7 +702,7 @@
         },
         {
             "name": "ProfilePictureComponent",
-            "id": "component-ProfilePictureComponent-68bbb7e920e44e055534327c8a7674e6e987384989dd68ec873735610d5abb510562f4a8bc3f9abfb7a7476eecc04bd9b831ac4496749b6cce28aed0a83d7b8c",
+            "id": "component-ProfilePictureComponent-39fe82b88e717731aaab350e4f3968f1c1a1eb6e54c7468e86bec67941c031b62896b92e0d01e8b7e25255a2ed20f603f5e19822ae7f9c241d22b005616ca332",
             "file": "src/app/profile-picture/profile-picture.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -677,27 +787,35 @@
             ],
             "methodsClass": [
                 {
-                    "name": "checkImageOrientation",
-                    "args": [],
+                    "name": "onImageLoad",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 49,
+                    "line": 43,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
                     ]
-                },
-                {
-                    "name": "ngAfterViewInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 45,
-                    "deprecated": false,
-                    "deprecationMessage": ""
                 }
             ],
             "deprecated": false,
@@ -714,37 +832,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, ElementRef, Output, EventEmitter  } from '@angular/core';\n\ntype ProfilePictureSizes = 'xxs' | 'xs' | 'small' | 'medium' | 'large'\n\n@Component({\n  selector: 'app-profile-picture',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './profile-picture.component.html',\n  styleUrl: './profile-picture.component.sass'\n})\nexport class ProfilePictureComponent {\n\n  isPortrait: boolean = false;\n  /**\n  *What profile picture to use?\n  */\n  @Input()\n  profilePictureUrl: string = '/assets/profileImage.jpeg' ;\n\n  /**\n  *What profile picture to use?\n  */\n  @Input()\n  size: ProfilePictureSizes = 'medium';\n\n  /**\n  *Has the user posted a story?\n  */\n  @Input()\n  hasStory: boolean = false;\n\n  /**\n  *Has the story been seen?\n  */\n  @Input()\n  viewedStory: boolean = false;\n\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  constructor(private el: ElementRef) {}\n\n  ngAfterViewInit() {\n    this.checkImageOrientation();\n  }\n\n  private checkImageOrientation() {\n    const img = new Image();\n    img.onload = () => {\n      this.isPortrait = img.height > img.width;\n      console.log('width'+img.width);\n      console.log('height'+img.height);\n      console.log(this.isPortrait);\n    };\n    img.src = this.profilePictureUrl;\n  }\n\n  public get imageClasses(): string[] {\n    const format = this.isPortrait ? 'portrait' : 'landscape'\n    console.log(format);\n    return ['profile-picture', `profile-picture--${this.size}--${format}`]\n  } \n\n  public get paddingClasses(): string[][] {\n    if (this.hasStory) {\n      return [\n        [`profile-picture-padding--story--${this.size}`, `profile-picture-padding--${this.size}`], \n        [`story-gradient--${this.size}`]\n      ]\n    }\n    if (this.viewedStory) {\n      return [\n        [`profile-picture-padding--story--${this.size}`, `profile-picture-padding--${this.size}`], \n        [`viewed-story-gradient--${this.size}`]\n      ]\n    }\n    return [\n      ['profile-picture-padding', `profile-picture-padding--${this.size}`],\n      []\n    ]\n  } \n\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\ntype ProfilePictureSizes = 'xxs' | 'xs' | 'small' | 'medium' | 'large'\n\n@Component({\n  selector: 'app-profile-picture',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './profile-picture.component.html',\n  styleUrl: './profile-picture.component.sass'\n})\nexport class ProfilePictureComponent {\n\n  isPortrait: boolean = false;\n  /**\n  *What profile picture to use?\n  */\n  @Input()\n  profilePictureUrl: string = '/assets/profileImage.jpeg' ;\n\n  /**\n  *What profile picture to use?\n  */\n  @Input()\n  size: ProfilePictureSizes = 'medium';\n\n  /**\n  *Has the user posted a story?\n  */\n  @Input()\n  hasStory: boolean = false;\n\n  /**\n  *Has the story been seen?\n  */\n  @Input()\n  viewedStory: boolean = false;\n\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public onImageLoad(event: Event): void {\n    const img = event.target as HTMLImageElement;\n    this.isPortrait = img.height > img.width;\n  }\n\n  public get imageClasses(): string[] {\n    const format = this.isPortrait ? 'portrait' : 'landscape'\n    return ['profile-picture', `profile-picture--${this.size}--${format}`]\n  } \n\n  public get paddingClasses(): string[][] {\n    if (this.hasStory) {\n      return [\n        [`profile-picture-padding--story--${this.size}`, `profile-picture-padding--${this.size}`], \n        [`story-gradient--${this.size}`]\n      ]\n    }\n    if (this.viewedStory) {\n      return [\n        [`profile-picture-padding--story--${this.size}`, `profile-picture-padding--${this.size}`], \n        [`viewed-story-gradient--${this.size}`]\n      ]\n    }\n    return [\n      ['profile-picture-padding', `profile-picture-padding--${this.size}`],\n      []\n    ]\n  } \n\n}\n",
             "styleUrl": "./profile-picture.component.sass",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "el",
-                        "type": "ElementRef",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 41,
-                "jsdoctags": [
-                    {
-                        "name": "el",
-                        "type": "ElementRef",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
             "extends": [],
             "accessors": {
                 "imageClasses": {
@@ -753,7 +845,7 @@
                         "name": "imageClasses",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 60
+                        "line": 48
                     }
                 },
                 "paddingClasses": {
@@ -762,11 +854,11 @@
                         "name": "paddingClasses",
                         "type": "[]",
                         "returnType": "[][]",
-                        "line": 66
+                        "line": 53
                     }
                 }
             },
-            "templateData": "<div [ngClass]=\"paddingClasses[1]\">\n  <div [ngClass]=\"paddingClasses[0]\">\n    <!-- <div [ngClass]=\"classes\"> -->\n    <img\n      [ngClass]=\"imageClasses\"\n      [src]=\"profilePictureUrl\"\n      (click)=\"onClick.emit($event)\"\n      alt=\"User profile picture\"\n    />\n    <div class=\"circle\"></div>\n  </div>\n</div>"
+            "templateData": "<div [ngClass]=\"paddingClasses[1]\">\n  <div [ngClass]=\"paddingClasses[0]\">\n    <!-- <div [ngClass]=\"classes\"> -->\n    <img\n      [ngClass]=\"imageClasses\"\n      [src]=\"profilePictureUrl\"\n      (click)=\"onClick.emit($event)\"\n      (load)=\"onImageLoad($event)\"\n      alt=\"User profile picture\"\n    />\n    <div class=\"circle\"></div>\n  </div>\n</div>"
         },
         {
             "name": "PublicationHeaderComponent",
@@ -922,7 +1014,335 @@
                 ]
             },
             "extends": [],
-            "templateData": "<div class=\"publication-header\">\n    <div class=\"info-bar\">\n\n        <div class=\"profile-picture-wrapper\" >\n            <div class=\"profile-picture-wrapper\">\n                <app-profile-picture \n                size=\"small\" \n                [hasStory]=\"this.user.hasStory\" \n                [profilePictureUrl]=\"this.user.profilePictureUrl\" \n                [viewedStory]='false'\n                />\n            </div>\n        </div>\n\n        <div class=\"title-wrapper\">\n            <div class=\"main-title-wrapper\" >\n                <span class=\"bold\">{{this.user.userName}}</span>\n                @if (this.user.isCertified) {\n                    <app-tag type=\"Certified\" size=\"medium\"/>\n                }\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                <span class=\"grey\">{{timeSincePublication}}</span>\n                @if (!this.user.isFollowed) {\n                    <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                    <app-text-buton [class.text-blue]=\"true\">Follow</app-text-buton>\n                }\n            </div>\n            @if (this.subTitleType === 'Audio') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    @if (this.artistName) {\n                        <span>{{this.artistName}}</span>\n                        <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n                    }\n                    <span>{{this.audioName}}</span>\n                </a>\n            }\n            @else if (this.subTitleType === 'Location') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    {{this.location}}\n                </a>\n            }\n\n\n        </div>\n\n        <app-text-buton class=\"menu-wrapper\">\n            <app-text-separator size=\"medium\" SeparatorType=\"meatballs\"/>\n        </app-text-buton>\n        \n    </div>\n</div>"
+            "templateData": "<div class=\"publication-header\">\n    <div class=\"info-bar\">\n\n        <div class=\"profile-picture-wrapper\" >\n            <div class=\"profile-picture-wrapper\">\n                <app-profile-picture \n                size=\"small\" \n                [hasStory]=\"this.user.hasStory\" \n                [profilePhotoUrl]=\"this.user.profilePictureUrl\" \n                [viewedStory]='false'\n                />\n            </div>\n        </div>\n\n        <div class=\"title-wrapper\">\n            <div class=\"main-title-wrapper\" >\n                <span class=\"bold\">{{this.user.userName}}</span>\n                @if (this.user.isCertified) {\n                    <app-tag type=\"Certified\" size=\"medium\"/>\n                }\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                <span class=\"grey\">{{timeSincePublication}}</span>\n                @if (!this.user.isFollowed) {\n                    <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                    <app-text-buton [class.text-blue]=\"true\">Follow</app-text-buton>\n                }\n            </div>\n            @if (this.subTitleType === 'Audio') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    @if (this.artistName) {\n                        <span>{{this.artistName}}</span>\n                        <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n                    }\n                    <span>{{this.audioName}}</span>\n                </a>\n            }\n            @else if (this.subTitleType === 'Location') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    {{this.location}}\n                </a>\n            }\n\n\n        </div>\n\n        <app-text-buton class=\"menu-wrapper\">\n            <app-text-separator size=\"medium\" SeparatorType=\"meatballs\"/>\n        </app-text-buton>\n        \n    </div>\n</div>"
+        },
+        {
+            "name": "SlideComponent",
+            "id": "component-SlideComponent-b8ecddcc0ba068b6679626008ab39b9b16a866c95f190e76450f3cfd06734ad673613111ac5560e9eee80ddd97a32c817ddef208a25ed21a6ae45fedee181ff4",
+            "file": "src/app/slide/slide.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-slide",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./slide.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "pictureUrl",
+                    "defaultValue": "'assets/profileImage2.jpeg'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat url to use for the image ?\n",
+                    "description": "<p>What url to use for the image ?</p>\n",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'story'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs it a slide of story or a picture in a post ?\n",
+                    "description": "<p>Is it a slide of story or a picture in a post ?</p>\n",
+                    "line": 17,
+                    "type": "\"story\" | \"picturePost\"",
+                    "decorators": []
+                },
+                {
+                    "name": "userName",
+                    "defaultValue": "'michael_jackson'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat is the username ?\n",
+                    "description": "<p>What is the username ?</p>\n",
+                    "line": 29,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "getAvatarUrl",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getPicturePostUrl",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ProfilePictureComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ProfilePictureComponent } from '../profile-picture/profile-picture.component';\n\n@Component({\n  selector: 'app-slide',\n  standalone: true,\n  imports: [CommonModule, ProfilePictureComponent],\n  templateUrl: './slide.component.html',\n  styleUrl: './slide.component.sass'\n})\nexport class SlideComponent {\n   /**\n   * Is it a slide of story or a picture in a post ?\n   */\n  @Input()\n  type: 'story' | 'picturePost' = 'story';\n\n  /**\n   * What url to use for the image ?\n   */\n  @Input()\n  pictureUrl: string = 'assets/profileImage2.jpeg';\n\n  /**\n   * What is the username ?\n   */\n  @Input()\n  userName: string = 'michael_jackson';\n\n  getPicturePostUrl(): string {\n    const path = '../../'+this.pictureUrl;\n    return `url(${path})`;\n  }\n\n  getAvatarUrl(): string {\n    return this.pictureUrl;\n  }\n}\n",
+            "styleUrl": "./slide.component.sass",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div *ngIf=\"type === 'story'\" class=\"user-story\">\n  <app-profile-picture\n    [hasStory]=\"true\"\n    [profilePictureUrl]=\"getAvatarUrl()\"\n    size=\"large\"\n  ></app-profile-picture>\n  <div class=\"username\">{{ userName }}</div>\n</div>\n\n<div\n  *ngIf=\"type === 'picturePost'\"\n  class=\"picturePost\"\n  [ngStyle]=\"{ 'background-image': getPicturePostUrl() }\"\n></div>\n"
+        },
+        {
+            "name": "SliderArrowComponent",
+            "id": "component-SliderArrowComponent-154b2fd88f4aaf746500cd305c62d85147692d877f497038f9db0c9d37921400205adb7110203d82080484feba59ef5d90b5550f52ad35a4a9682cf5bacac97d",
+            "file": "src/app/slider-arrow/slider-arrow.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-slider-arrow",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./slider-arrow.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "direction",
+                    "defaultValue": "'right'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "\"left\" | \"right\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-slider-arrow',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './slider-arrow.component.html',\n  styleUrl: './slider-arrow.component.sass'\n})\nexport class SliderArrowComponent {\n  @Input()\n  direction: 'left' | 'right' = 'right'\n\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get directionClass(): string[] {\n    return [`arrow-mask--${this.direction}`]\n  }\n}\n",
+            "styleUrl": "./slider-arrow.component.sass",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "directionClass": {
+                    "name": "directionClass",
+                    "getSignature": {
+                        "name": "directionClass",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 18
+                    }
+                }
+            },
+            "templateData": "<div \n    class=\"back-gradient\"\n    (click)=\"onClick.emit($event)\">\n  <div [ngClass]=\"directionClass\"></div>\n</div>\n"
+        },
+        {
+            "name": "SliderCarouselComponent",
+            "id": "component-SliderCarouselComponent-39224efeb736b7f7d659a8d30d8a01eac2eeb383408165973aaff65c2ed8b512c061b9f7186bcc74c32225fdfbb7a7f33b679897a995c288c416f465a60c65d5",
+            "file": "src/app/slider-carousel/slider-carousel.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-slider-carousel",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./slider-carousel.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "slides",
+                    "defaultValue": "[\n    {\n      pictureUrl: 'assets/profileImage.jpeg',\n      type: 'picturePost',\n      userName: 'michael_jackson',\n    },\n    {\n      pictureUrl: 'assets/profileImage2.jpeg',\n      type: 'picturePost',\n      userName: 'lauren90',\n    },\n    {\n      pictureUrl: 'assets/marvin_gaye.jpeg',\n      type: 'picturePost',\n      userName: 'marvin_gaye',\n    },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "Slide[]",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'picturePost'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "\"story\" | \"picturePost\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "currentIndex",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 41
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getCurrentSlide",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Slide",
+                    "typeParameters": [],
+                    "line": 66,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getVisibleLeftArrow",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 84,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getVisibleRightArrow",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 88,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getVisibleSlidesList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Slide[]",
+                    "typeParameters": [],
+                    "line": 70,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "goToNext",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "goToPrevious",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 55,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "SlideComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "SliderArrowComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { SliderArrowComponent } from '../slider-arrow/slider-arrow.component';\nimport { SlideComponent } from '../slide/slide.component';\nimport { Slide } from '../slide';\nimport { isFormRecord } from '@angular/forms';\n\n@Component({\n  selector: 'app-slider-carousel',\n  standalone: true,\n  imports: [CommonModule, SlideComponent, SliderArrowComponent],\n  templateUrl: './slider-carousel.component.html',\n  styleUrl: './slider-carousel.component.sass',\n})\nexport class SliderCarouselComponent {\n  @Input()\n  type: 'story' | 'picturePost' = 'picturePost';\n\n  @Input()\n  slides: Slide[] = [\n    {\n      pictureUrl: 'assets/profileImage.jpeg',\n      type: 'picturePost',\n      userName: 'michael_jackson',\n    },\n    {\n      pictureUrl: 'assets/profileImage2.jpeg',\n      type: 'picturePost',\n      userName: 'lauren90',\n    },\n    {\n      pictureUrl: 'assets/marvin_gaye.jpeg',\n      type: 'picturePost',\n      userName: 'marvin_gaye',\n    },\n  ];\n\n  // @Input()\n  // visibleSlides: 1 | 8 = 8;\n\n  currentIndex: number = 0;\n\n  goToNext(): void {\n    if (this.type === 'picturePost') {\n      const isLastSlide = this.currentIndex === this.slides.length - 1;\n      const newIndex = isLastSlide ? this.currentIndex : this.currentIndex + 1;\n      this.currentIndex = newIndex;\n    } else {\n      const isLastSlide = this.currentIndex + 8 > this.slides.length;\n      const newIndex = isLastSlide ? this.currentIndex : this.currentIndex + 4;\n      this.currentIndex = newIndex;\n    }\n  }\n\n  goToPrevious(): void {\n    const isFirstSlide = this.currentIndex === 0;\n    if (this.type === 'picturePost') {\n      const newIndex = isFirstSlide ? this.currentIndex : this.currentIndex - 1;\n      this.currentIndex = newIndex;\n    } else {\n      const newIndex = isFirstSlide ? this.currentIndex : this.currentIndex - 4;\n      this.currentIndex = newIndex;\n    }\n  }\n\n  getCurrentSlide(): Slide {\n    return this.slides[this.currentIndex];\n  }\n\n  getVisibleSlidesList(): Slide[] {\n    if (this.type === 'picturePost') {\n      return [this.slides[this.currentIndex]];\n    } else {\n      let newVisibleSlides = [];\n      for (let i = 0; i < 8; i++) {\n        if (this.currentIndex + i < this.slides.length) {\n          newVisibleSlides.push(this.slides[this.currentIndex + i]);\n        }\n      }\n      return newVisibleSlides;\n    }\n  }\n\n  getVisibleLeftArrow(): boolean {\n    return this.currentIndex > 0;\n  }\n\n  getVisibleRightArrow(): boolean {\n    if (this.type === 'picturePost') {\n      return this.currentIndex < this.slides.length - 1;\n    } else {\n      return this.currentIndex + 8 < this.slides.length;\n    }\n  }\n\n  get sliderClass(): string[] {\n    return [`slider--${this.type}`];\n  }\n}\n",
+            "styleUrl": "./slider-carousel.component.sass",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "sliderClass": {
+                    "name": "sliderClass",
+                    "getSignature": {
+                        "name": "sliderClass",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 96
+                    }
+                }
+            },
+            "templateData": "<div [ngClass]=\"sliderClass\">\n  <div\n    *ngIf=\"getVisibleLeftArrow()\"\n    class=\"left-arrow\"\n    (click)=\"goToPrevious()\"\n  >\n    <app-slider-arrow direction=\"left\"></app-slider-arrow>\n  </div>\n  <div *ngIf=\"getVisibleRightArrow()\" class=\"right-arrow\" (click)=\"goToNext()\">\n    <app-slider-arrow direction=\"right\"></app-slider-arrow>\n  </div>\n  <div class=\"slides\">\n    <div class=\"visible-slides\" *ngFor=\"let slide of getVisibleSlidesList()\">\n      <app-slide\n        [type]=\"slide.type\"\n        [pictureUrl]=\"slide.pictureUrl\"\n        [userName]=\"slide.userName\"\n      ></app-slide>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "TagComponent",
@@ -1191,6 +1611,16 @@
                 "defaultValue": "{\n    args: {\n        size: 'large',\n    }\n}"
             },
             {
+                "name": "Left",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/slider-arrow/slider-arrow.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        direction: 'left',\n    }\n}"
+            },
+            {
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1284,6 +1714,36 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/slide/slide.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SlideComponent>",
+                "defaultValue": "{\n    title: 'App/Slide',\n    component: SlideComponent,\n    tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/slider-arrow/slider-arrow.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SliderArrowComponent>",
+                "defaultValue": "{\n    title: 'App/Slider Arrow',\n    component: SliderArrowComponent,\n    tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/slider-carousel/slider-carousel.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SliderCarouselComponent>",
+                "defaultValue": "{\n  title: 'App/Slider Carousel',\n  component: SliderCarouselComponent,\n  parameters: {\n    layout: 'fullscreen',\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/general-components/tag/tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1331,6 +1791,26 @@
                 "defaultValue": "{\n}"
             },
             {
+                "name": "PicturePost",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/slide/slide.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        type: 'picturePost'\n    }\n}"
+            },
+            {
+                "name": "PostSlider",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/slider-carousel/slider-carousel.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    type: 'picturePost',\n    slides: [\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'picturePost',\n        userName: 'michael_jackson',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'picturePost',\n        userName: 'lauren90',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'picturePost',\n        userName: 'marvin_gaye',\n      },\n    ],\n  },\n}"
+            },
+            {
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1359,6 +1839,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    user: user1,\n    publicationDate: ((new Date(2024, 0, 1)).getTime()),\n    subTitleType: 'Audio',\n    audioName: 'Billie Jean',\n    artistName: 'Michael Jackson',\n    location: 'Heaven'\n  },\n}"
+            },
+            {
+                "name": "Right",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/slider-arrow/slider-arrow.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        direction: 'right',\n    }\n}"
             },
             {
                 "name": "Secondary",
@@ -1411,6 +1901,26 @@
                 "defaultValue": "{\n    args: {\n        hasStory: true,\n    }\n}"
             },
             {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/slide/slide.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        type: 'story'\n    }\n}"
+            },
+            {
+                "name": "StorySlider",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/slider-carousel/slider-carousel.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    type: 'story',\n    slides: [\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user1',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user2',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user3',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user4',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user5',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user6',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user7',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user8',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user9',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user10',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user11',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user12',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user13',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user14',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user15',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user16',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user17',\n      },\n    ],\n  },\n}"
+            },
+            {
                 "name": "user1",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1418,7 +1928,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "User",
-                "defaultValue": "{\n  id: 1,\n  userName: 'Michael_Jackson',\n  hasStory: false,\n  profilePictureUrl: '/assets/profileImage.jpeg',\n  isCertified: true,\n  isFollowed: false\n}"
+                "defaultValue": "{\n  id: 1,\n  userName: 'Michael_Jackson',\n  hasStory: false,\n  profilePhotoUrl: '/assets/profileImage.jpeg',\n  isCertified: true,\n  isFollowed: false\n}"
             },
             {
                 "name": "ViewedStory",
@@ -1547,6 +2057,39 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ProfilePictureComponent>",
                 "file": "src/app/profile-picture/profile-picture.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SlideComponent>",
+                "file": "src/app/slide/slide.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SliderArrowComponent>",
+                "file": "src/app/slider-arrow/slider-arrow.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SliderCarouselComponent>",
+                "file": "src/app/slider-carousel/slider-carousel.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1832,6 +2375,38 @@
                     "defaultValue": "{\n    args: {\n        size: 'xxs',\n    }\n}"
                 }
             ],
+            "src/app/slider-arrow/slider-arrow.stories.ts": [
+                {
+                    "name": "Left",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/slider-arrow/slider-arrow.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        direction: 'left',\n    }\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/slider-arrow/slider-arrow.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SliderArrowComponent>",
+                    "defaultValue": "{\n    title: 'App/Slider Arrow',\n    component: SliderArrowComponent,\n    tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "Right",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/slider-arrow/slider-arrow.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        direction: 'right',\n    }\n}"
+                }
+            ],
             "src/stories/header.stories.ts": [
                 {
                     "name": "LoggedIn",
@@ -1896,6 +2471,70 @@
                     "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
                 }
             ],
+            "src/app/slide/slide.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/slide/slide.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SlideComponent>",
+                    "defaultValue": "{\n    title: 'App/Slide',\n    component: SlideComponent,\n    tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "PicturePost",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/slide/slide.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        type: 'picturePost'\n    }\n}"
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/slide/slide.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        type: 'story'\n    }\n}"
+                }
+            ],
+            "src/app/slider-carousel/slider-carousel.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/slider-carousel/slider-carousel.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SliderCarouselComponent>",
+                    "defaultValue": "{\n  title: 'App/Slider Carousel',\n  component: SliderCarouselComponent,\n  parameters: {\n    layout: 'fullscreen',\n  },\n}"
+                },
+                {
+                    "name": "PostSlider",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/slider-carousel/slider-carousel.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    type: 'picturePost',\n    slides: [\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'picturePost',\n        userName: 'michael_jackson',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'picturePost',\n        userName: 'lauren90',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'picturePost',\n        userName: 'marvin_gaye',\n      },\n    ],\n  },\n}"
+                },
+                {
+                    "name": "StorySlider",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/slider-carousel/slider-carousel.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    type: 'story',\n    slides: [\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user1',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user2',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user3',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user4',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user5',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user6',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user7',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user8',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user9',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user10',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user11',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user12',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user13',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user14',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user15',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user16',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user17',\n      },\n    ],\n  },\n}"
+                }
+            ],
             "src/app/navigation/navigation-bar/navigation-bar.stories.ts": [
                 {
                     "name": "meta",
@@ -1947,7 +2586,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "User",
-                    "defaultValue": "{\n  id: 1,\n  userName: 'Michael_Jackson',\n  hasStory: false,\n  profilePictureUrl: '/assets/profileImage.jpeg',\n  isCertified: true,\n  isFollowed: false\n}"
+                    "defaultValue": "{\n  id: 1,\n  userName: 'Michael_Jackson',\n  hasStory: false,\n  profilePhotoUrl: '/assets/profileImage.jpeg',\n  isCertified: true,\n  isFollowed: false\n}"
                 }
             ],
             ".storybook/preview.ts": [
@@ -2092,6 +2731,45 @@
                     "kind": 183
                 }
             ],
+            "src/app/slide/slide.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SlideComponent>",
+                    "file": "src/app/slide/slide.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/slider-arrow/slider-arrow.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SliderArrowComponent>",
+                    "file": "src/app/slider-arrow/slider-arrow.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/slider-carousel/slider-carousel.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SliderCarouselComponent>",
+                    "file": "src/app/slider-carousel/slider-carousel.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "src/app/general-components/tag/tag.stories.ts": [
                 {
                     "name": "Story",
@@ -2174,7 +2852,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 2,
+        "count": 3,
         "status": "low",
         "files": [
             {
@@ -2193,7 +2871,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -2335,8 +3013,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ProfilePictureComponent",
-                "coveragePercent": 40,
-                "coverageCount": "4/10",
+                "coveragePercent": 50,
+                "coverageCount": "4/8",
                 "status": "medium"
             },
             {
@@ -2456,6 +3134,141 @@
                 "name": "user1",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/slide.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Slide",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/slide/slide.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SlideComponent",
+                "coveragePercent": 50,
+                "coverageCount": "3/6",
+                "status": "medium"
+            },
+            {
+                "filePath": "src/app/slide/slide.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/slide/slide.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PicturePost",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/slide/slide.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/slider-arrow/slider-arrow.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SliderArrowComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/slider-arrow/slider-arrow.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Left",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/slider-arrow/slider-arrow.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/slider-arrow/slider-arrow.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Right",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/slider-carousel/slider-carousel.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SliderCarouselComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/slider-carousel/slider-carousel.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/slider-carousel/slider-carousel.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PostSlider",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/slider-carousel/slider-carousel.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "StorySlider",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/users.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "UsersService",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
