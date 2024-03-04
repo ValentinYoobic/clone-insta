@@ -174,7 +174,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-88de7c81d23621bc4fe3eb54b546d8709e1ce3d9fe19e9884bf6bbc13f674729dd73ff9960096ca758c8ea6ff9bbe943fba2f57b8de38db2732a60706a82c97e",
+            "id": "component-AppComponent-055b9d0037663687b988c3627f75b201f10753c6006827b4f464b6b1d2f08969e963f9b82fe870e3cf77563432c6d4fd9474b33408ceff4b4a545177b81ce665",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -200,7 +200,7 @@
                     "type": "Slide[]",
                     "optional": false,
                     "description": "",
-                    "line": 26
+                    "line": 24
                 },
                 {
                     "name": "title",
@@ -210,7 +210,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 24
+                    "line": 22
                 }
             ],
             "methodsClass": [],
@@ -225,10 +225,6 @@
                 },
                 {
                     "name": "ProfilePictureComponent",
-                    "type": "component"
-                },
-                {
-                    "name": "StoryBannerComponent",
                     "type": "component"
                 },
                 {
@@ -247,13 +243,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\nimport { ProfilePictureComponent } from './profile-picture/profile-picture.component';\nimport { StoryBannerComponent } from './story-banner/story-banner.component';\nimport { SliderArrowComponent } from './slider-arrow/slider-arrow.component';\nimport { SlideComponent } from './slide/slide.component';\nimport { SliderCarouselComponent } from './slider-carousel/slider-carousel.component';\nimport { Slide } from './slide';\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [\n    RouterOutlet,\n    ProfilePictureComponent,\n    StoryBannerComponent,\n    SliderArrowComponent,\n    SlideComponent,\n    SliderCarouselComponent,\n  ],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.sass',\n})\nexport class AppComponent {\n  title = 'clone-insta';\n\n  slides: Slide[] = [\n    {\n      pictureUrl: 'assets/profileImage.jpeg',\n      type: 'picturePost',\n      userName: 'michael_jackson',\n    },\n    {\n      pictureUrl: 'assets/profileImage2.jpeg',\n      type: 'picturePost',\n      userName: 'lauren90',\n    },\n    {\n      pictureUrl: 'assets/marvin_gaye.jpeg',\n      type: 'picturePost',\n      userName: 'marvin_gaye',\n    },\n  ];\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\nimport { ProfilePictureComponent } from './general-components/profile-picture/profile-picture.component';\nimport { SliderArrowComponent } from './slider-arrow/slider-arrow.component';\nimport { SlideComponent } from './slide/slide.component';\nimport { SliderCarouselComponent } from './slider-carousel/slider-carousel.component';\nimport { Slide } from './slide';\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [\n    RouterOutlet,\n    ProfilePictureComponent,\n    SliderArrowComponent,\n    SlideComponent,\n    SliderCarouselComponent,\n  ],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.sass',\n})\nexport class AppComponent {\n  title = 'clone-insta';\n\n  slides: Slide[] = [\n    {\n      pictureUrl: 'assets/profileImage.jpeg',\n      type: 'picturePost',\n      userName: 'michael_jackson',\n    },\n    {\n      pictureUrl: 'assets/profileImage2.jpeg',\n      type: 'picturePost',\n      userName: 'lauren90',\n    },\n    {\n      pictureUrl: 'assets/marvin_gaye.jpeg',\n      type: 'picturePost',\n      userName: 'marvin_gaye',\n    },\n  ];\n}\n",
             "styleUrl": "./app.component.sass",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->\n<!-- * * * * * * * to get started with your project! * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n\n<style></style>\n\n<main class=\"main\">\n  <app-profile-picture\n    profilePictureUrl=\"assets/profileImage.jpeg\"\n  ></app-profile-picture>\n  <app-profile-picture\n    size=\"large\"\n    profilePictureUrl=\"assets/profileImage.jpeg\"\n    [hasStory]=\"true\"\n  ></app-profile-picture>\n  <app-profile-picture\n    profilePictureUrl=\"assets/profileImage2.jpeg\"\n  ></app-profile-picture>\n  <app-profile-picture\n    size=\"large\"\n    profilePictureUrl=\"assets/profileImage2.jpeg\"\n  ></app-profile-picture>\n\n  <app-story-banner></app-story-banner>\n  <!-- <div [style]=\"{ 'background-color': '#d0a741' }\"> -->\n  <div [style]=\"{ 'background-color': 'white' }\">\n    <app-slider-arrow></app-slider-arrow>\n  </div>\n  <app-slide></app-slide>\n\n  <app-slider-carousel type=\"picturePost\" [slides]=\"slides\"></app-slider-carousel>\n</main>\n\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n\n<router-outlet />\n"
+            "templateData": "<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->\n<!-- * * * * * * * to get started with your project! * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n\n<style></style>\n\n<main class=\"main\">\n  <app-profile-picture\n    profilePictureUrl=\"assets/profileImage.jpeg\"\n  ></app-profile-picture>\n  <app-profile-picture\n    size=\"large\"\n    profilePictureUrl=\"assets/profileImage.jpeg\"\n    [hasStory]=\"true\"\n  ></app-profile-picture>\n  <app-profile-picture\n    profilePictureUrl=\"assets/profileImage2.jpeg\"\n  ></app-profile-picture>\n  <app-profile-picture\n    size=\"large\"\n    profilePictureUrl=\"assets/profileImage2.jpeg\"\n  ></app-profile-picture>\n\n  <div [style]=\"{ 'background-color': 'white' }\">\n    <app-slider-arrow></app-slider-arrow>\n  </div>\n  <app-slide></app-slide>\n\n  <app-slider-carousel type=\"picturePost\" [slides]=\"slides\"></app-slider-carousel>\n</main>\n\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n\n<router-outlet />\n"
         },
         {
             "name": "ButtonComponent",
@@ -707,7 +703,7 @@
         {
             "name": "ProfilePictureComponent",
             "id": "component-ProfilePictureComponent-39fe82b88e717731aaab350e4f3968f1c1a1eb6e54c7468e86bec67941c031b62896b92e0d01e8b7e25255a2ed20f603f5e19822ae7f9c241d22b005616ca332",
-            "file": "src/app/profile-picture/profile-picture.component.ts",
+            "file": "src/app/general-components/profile-picture/profile-picture.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -866,7 +862,7 @@
         },
         {
             "name": "PublicationHeaderComponent",
-            "id": "component-PublicationHeaderComponent-9c3834d790fd44aa044c4cdd63a1c2c70b076003a74548c02d252d08f15da500f5a1dc20cb7da30096947e0999e7387e18232217b796be92a73aa4a33352da03",
+            "id": "component-PublicationHeaderComponent-c3cd20de34e4cb6992a7ed080e7181039626c23ad2f9e15e6283fe80e176a48458ca899549c1408e9de59155dafc721a0958fc419c76939f7250c5e66478db71",
             "file": "src/app/publication/publication-header/publication-header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -986,7 +982,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { User } from '../../user';\nimport { ProfilePictureComponent } from '../../profile-picture/profile-picture.component';\nimport { TextSeparatorComponent } from '../../general-components/text-separator/text-separator.component';\nimport { TagComponent } from '../../general-components/tag/tag.component';\nimport { DateService } from '../../general-services/date.service';\nimport { TextButonComponent } from '../../general-components/text-buton/text-buton.component';\n\ntype SubtitleType = 'Location' | 'Audio' | null\n\n@Component({\n  selector: 'app-publication-header',\n  standalone: true,\n  imports: [ProfilePictureComponent, TextSeparatorComponent, TagComponent, TextButonComponent],\n  templateUrl: './publication-header.component.html',\n  styleUrl: './publication-header.component.sass'\n})\nexport class PublicationHeaderComponent {\n  constructor(private dateService: DateService) {}\n  @Input() user!: User;\n  @Input() publicationDate!: number; // timestamp in s\n  @Input() subTitleType: SubtitleType = null;\n  @Input() audioName: string | null = null;\n  @Input() artistName: string | null = null;\n  @Input() location: string | null = null;\n  timeSincePublication: string = '';\n  \n  ngOnInit() {\n    this.timeSincePublication = this.dateService.timeSinceDate(this.publicationDate)\n}\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { User } from '../../user';\nimport { ProfilePictureComponent } from '../../general-components/profile-picture/profile-picture.component';\nimport { TextSeparatorComponent } from '../../general-components/text-separator/text-separator.component';\nimport { TagComponent } from '../../general-components/tag/tag.component';\nimport { DateService } from '../../general-services/date.service';\nimport { TextButonComponent } from '../../general-components/text-buton/text-buton.component';\n\ntype SubtitleType = 'Location' | 'Audio' | null\n\n@Component({\n  selector: 'app-publication-header',\n  standalone: true,\n  imports: [ProfilePictureComponent, TextSeparatorComponent, TagComponent, TextButonComponent],\n  templateUrl: './publication-header.component.html',\n  styleUrl: './publication-header.component.sass'\n})\nexport class PublicationHeaderComponent {\n  constructor(private dateService: DateService) {}\n  @Input() user!: User;\n  @Input() publicationDate!: number; // timestamp in s\n  @Input() subTitleType: SubtitleType = null;\n  @Input() audioName: string | null = null;\n  @Input() artistName: string | null = null;\n  @Input() location: string | null = null;\n  timeSincePublication: string = '';\n  \n  ngOnInit() {\n    this.timeSincePublication = this.dateService.timeSinceDate(this.publicationDate)\n}\n}\n",
             "styleUrl": "./publication-header.component.sass",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1022,7 +1018,7 @@
         },
         {
             "name": "SlideComponent",
-            "id": "component-SlideComponent-b8ecddcc0ba068b6679626008ab39b9b16a866c95f190e76450f3cfd06734ad673613111ac5560e9eee80ddd97a32c817ddef208a25ed21a6ae45fedee181ff4",
+            "id": "component-SlideComponent-45b8f5a65fdee079607d1f3f5afe9d0faa9ff8362159cdc1f84c3e3f078b3a6fd58e6ca377a02695306a7362491794daed20ac8762094a3d4bc80d92c4ff3ba3",
             "file": "src/app/slide/slide.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1114,7 +1110,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ProfilePictureComponent } from '../profile-picture/profile-picture.component';\n\n@Component({\n  selector: 'app-slide',\n  standalone: true,\n  imports: [CommonModule, ProfilePictureComponent],\n  templateUrl: './slide.component.html',\n  styleUrl: './slide.component.sass'\n})\nexport class SlideComponent {\n   /**\n   * Is it a slide of story or a picture in a post ?\n   */\n  @Input()\n  type: 'story' | 'picturePost' = 'story';\n\n  /**\n   * What url to use for the image ?\n   */\n  @Input()\n  pictureUrl: string = 'assets/profileImage2.jpeg';\n\n  /**\n   * What is the username ?\n   */\n  @Input()\n  userName: string = 'michael_jackson';\n\n  getPicturePostUrl(): string {\n    const path = '../../'+this.pictureUrl;\n    return `url(${path})`;\n  }\n\n  getAvatarUrl(): string {\n    return this.pictureUrl;\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ProfilePictureComponent } from '../general-components/profile-picture/profile-picture.component';\n\n@Component({\n  selector: 'app-slide',\n  standalone: true,\n  imports: [CommonModule, ProfilePictureComponent],\n  templateUrl: './slide.component.html',\n  styleUrl: './slide.component.sass'\n})\nexport class SlideComponent {\n   /**\n   * Is it a slide of story or a picture in a post ?\n   */\n  @Input()\n  type: 'story' | 'picturePost' = 'story';\n\n  /**\n   * What url to use for the image ?\n   */\n  @Input()\n  pictureUrl: string = 'assets/profileImage2.jpeg';\n\n  /**\n   * What is the username ?\n   */\n  @Input()\n  userName: string = 'michael_jackson';\n\n  getPicturePostUrl(): string {\n    const path = '../../'+this.pictureUrl;\n    return `url(${path})`;\n  }\n\n  getAvatarUrl(): string {\n    return this.pictureUrl;\n  }\n}\n",
             "styleUrl": "./slide.component.sass",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1347,82 +1343,6 @@
                 }
             },
             "templateData": "<div [ngClass]=\"sliderClass\">\n  <div\n    *ngIf=\"getVisibleLeftArrow()\"\n    class=\"left-arrow\"\n    (click)=\"goToPrevious()\"\n  >\n    <app-slider-arrow direction=\"left\"></app-slider-arrow>\n  </div>\n  <div *ngIf=\"getVisibleRightArrow()\" class=\"right-arrow\" (click)=\"goToNext()\">\n    <app-slider-arrow direction=\"right\"></app-slider-arrow>\n  </div>\n  <div class=\"slides\">\n    <div class=\"visible-slides\" *ngFor=\"let slide of getVisibleSlidesList()\">\n      <app-slide\n        [type]=\"slide.type\"\n        [pictureUrl]=\"slide.pictureUrl\"\n        [userName]=\"slide.userName\"\n      ></app-slide>\n    </div>\n  </div>\n</div>\n"
-        },
-        {
-            "name": "StoryBannerComponent",
-            "id": "component-StoryBannerComponent-1e0a9a4c05147a67ead3369c5c2df4726b82e666b7a50211208db2b6bedb4e0e779ad1cbdf91aee653885e35d21cacdaff6108abd946ac024c3306161e85cc6d",
-            "file": "src/app/story-banner/story-banner.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-story-banner",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./story-banner.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "usersService",
-                    "defaultValue": "inject(UsersService)",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "UsersService",
-                    "optional": false,
-                    "description": "",
-                    "line": 17
-                },
-                {
-                    "name": "usersWithStory",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "User[] | undefined",
-                    "optional": false,
-                    "description": "",
-                    "line": 16
-                }
-            ],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "CommonModule",
-                    "type": "module"
-                },
-                {
-                    "name": "ProfilePictureComponent",
-                    "type": "component"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, inject } from '@angular/core';\nimport { ProfilePictureComponent } from '../profile-picture/profile-picture.component';\nimport { User } from '../user';\nimport { UsersService } from '../users.service';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-story-banner',\n  standalone: true,\n  imports: [CommonModule, ProfilePictureComponent],\n  templateUrl: './story-banner.component.html',\n  styleUrl: './story-banner.component.sass'\n})\n\nexport class StoryBannerComponent {\n  usersWithStory: User[] | undefined = [];\n  usersService: UsersService = inject(UsersService);\n\n  constructor() {\n    this.usersWithStory = this.usersService.getUsersWithStory();\n  }\n\n}\n",
-            "styleUrl": "./story-banner.component.sass",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 17
-            },
-            "extends": [],
-            "templateData": "<div class=\"story-banner\">\n  <div class=\"user-story\" *ngFor=\"let user of usersWithStory\">\n    <app-profile-picture\n      [hasStory]=\"user.hasStory\"\n      [profilePictureUrl]=\"user.profilePhotoUrl\"\n      size=\"large\"\n    ></app-profile-picture>\n    <div class=\"username\">{{user.userName}}</div>\n  </div>\n</div>\n"
         },
         {
             "name": "TagComponent",
@@ -1684,7 +1604,7 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/profile-picture/profile-picture.stories.ts",
+                "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1744,7 +1664,7 @@
                 "name": "Medium",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/profile-picture/profile-picture.stories.ts",
+                "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1784,16 +1704,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/profile-picture/profile-picture.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ProfilePictureComponent>",
-                "defaultValue": "{\n    title: 'App/Profile Picture',\n    component: ProfilePictureComponent,\n    tags: ['autodocs'],\n    // argTypes: {\n    //     profilePictureUrl: {\n    //       control: 'assets/profileImage.jpeg',\n    //     },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/slide/slide.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1824,11 +1734,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/story-banner/story-banner.stories.ts",
+                "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<StoryBannerComponent>",
-                "defaultValue": "{\n  title: 'App/Story Banner',\n  component: StoryBannerComponent,\n  parameters: {\n    layout: 'fullscreen',\n  },\n}"
+                "type": "Meta<ProfilePictureComponent>",
+                "defaultValue": "{\n    title: 'App/Profile Picture',\n    component: ProfilePictureComponent,\n    tags: ['autodocs'],\n    // argTypes: {\n    //     profilePictureUrl: {\n    //       control: 'assets/profileImage.jpeg',\n    //     },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/tag/tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<TagComponent>",
+                "defaultValue": "{\n  title: 'Components/Tag',\n  component: TagComponent,\n}"
             },
             {
                 "name": "meta",
@@ -1849,16 +1769,6 @@
                 "deprecationMessage": "",
                 "type": "Meta<NavigationButtonComponent>",
                 "defaultValue": "{\n  title: 'Components/NavigationButton',\n  component: NavigationButtonComponent,\n  args: {\n    label: 'notifications',\n    icon: 'Heart',\n    active: true,\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/general-components/tag/tag.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<TagComponent>",
-                "defaultValue": "{\n  title: 'Components/Tag',\n  component: TagComponent,\n}"
             },
             {
                 "name": "meta",
@@ -1974,21 +1884,11 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/profile-picture/profile-picture.stories.ts",
+                "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n    args: {\n        size: 'small',\n    }\n}"
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/profile-picture/profile-picture.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n    args: {\n        hasStory: true,\n    }\n}"
             },
             {
                 "name": "Story",
@@ -2001,14 +1901,14 @@
                 "defaultValue": "{\n    args: {\n        type: 'story'\n    }\n}"
             },
             {
-                "name": "StoryBanner",
+                "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/story-banner/story-banner.stories.ts",
+                "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n}"
+                "defaultValue": "{\n    args: {\n        hasStory: true,\n    }\n}"
             },
             {
                 "name": "StorySlider",
@@ -2034,7 +1934,7 @@
                 "name": "ViewedStory",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/profile-picture/profile-picture.stories.ts",
+                "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -2044,7 +1944,7 @@
                 "name": "XS",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/profile-picture/profile-picture.stories.ts",
+                "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -2054,7 +1954,7 @@
                 "name": "XXS",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/profile-picture/profile-picture.stories.ts",
+                "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -2079,7 +1979,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"xxs\" | \"xs\" | \"small\" | \"medium\" | \"large\"",
-                "file": "src/app/profile-picture/profile-picture.component.ts",
+                "file": "src/app/general-components/profile-picture/profile-picture.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2155,17 +2055,6 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ProfilePictureComponent>",
-                "file": "src/app/profile-picture/profile-picture.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<SlideComponent>",
                 "file": "src/app/slide/slide.stories.ts",
                 "deprecated": false,
@@ -2199,8 +2088,19 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<StoryBannerComponent>",
-                "file": "src/app/story-banner/story-banner.stories.ts",
+                "rawtype": "StoryObj<ProfilePictureComponent>",
+                "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TagComponent>",
+                "file": "src/app/general-components/tag/tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2223,17 +2123,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<NavigationButtonComponent>",
                 "file": "src/app/navigation/navigation-button/navigation-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<TagComponent>",
-                "file": "src/app/general-components/tag/tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2404,12 +2293,12 @@
                     "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
                 }
             ],
-            "src/app/profile-picture/profile-picture.stories.ts": [
+            "src/app/general-components/profile-picture/profile-picture.stories.ts": [
                 {
                     "name": "Large",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/profile-picture/profile-picture.stories.ts",
+                    "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -2419,7 +2308,7 @@
                     "name": "Medium",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/profile-picture/profile-picture.stories.ts",
+                    "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -2429,7 +2318,7 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/profile-picture/profile-picture.stories.ts",
+                    "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ProfilePictureComponent>",
@@ -2439,7 +2328,7 @@
                     "name": "Small",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/profile-picture/profile-picture.stories.ts",
+                    "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -2449,7 +2338,7 @@
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/profile-picture/profile-picture.stories.ts",
+                    "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -2459,7 +2348,7 @@
                     "name": "ViewedStory",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/profile-picture/profile-picture.stories.ts",
+                    "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -2469,7 +2358,7 @@
                     "name": "XS",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/profile-picture/profile-picture.stories.ts",
+                    "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -2479,7 +2368,7 @@
                     "name": "XXS",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/profile-picture/profile-picture.stories.ts",
+                    "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -2646,28 +2535,6 @@
                     "defaultValue": "{\n  args: {\n    type: 'story',\n    slides: [\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user1',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user2',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user3',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user4',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user5',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user6',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user7',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user8',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user9',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user10',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user11',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user12',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user13',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user14',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user15',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user16',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user17',\n      },\n    ],\n  },\n}"
                 }
             ],
-            "src/app/story-banner/story-banner.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/story-banner/story-banner.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<StoryBannerComponent>",
-                    "defaultValue": "{\n  title: 'App/Story Banner',\n  component: StoryBannerComponent,\n  parameters: {\n    layout: 'fullscreen',\n  },\n}"
-                },
-                {
-                    "name": "StoryBanner",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/story-banner/story-banner.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n}"
-                }
-            ],
             "src/app/navigation/navigation-bar/navigation-bar.stories.ts": [
                 {
                     "name": "meta",
@@ -2751,13 +2618,13 @@
                     "kind": 192
                 }
             ],
-            "src/app/profile-picture/profile-picture.component.ts": [
+            "src/app/general-components/profile-picture/profile-picture.component.ts": [
                 {
                     "name": "ProfilePictureSizes",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"xxs\" | \"xs\" | \"small\" | \"medium\" | \"large\"",
-                    "file": "src/app/profile-picture/profile-picture.component.ts",
+                    "file": "src/app/general-components/profile-picture/profile-picture.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2851,19 +2718,6 @@
                     "kind": 183
                 }
             ],
-            "src/app/profile-picture/profile-picture.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ProfilePictureComponent>",
-                    "file": "src/app/profile-picture/profile-picture.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "src/app/slide/slide.stories.ts": [
                 {
                     "name": "Story",
@@ -2903,13 +2757,26 @@
                     "kind": 183
                 }
             ],
-            "src/app/story-banner/story-banner.stories.ts": [
+            "src/app/general-components/profile-picture/profile-picture.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<StoryBannerComponent>",
-                    "file": "src/app/story-banner/story-banner.stories.ts",
+                    "rawtype": "StoryObj<ProfilePictureComponent>",
+                    "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/general-components/tag/tag.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TagComponent>",
+                    "file": "src/app/general-components/tag/tag.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2936,19 +2803,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<NavigationButtonComponent>",
                     "file": "src/app/navigation/navigation-button/navigation-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "src/app/general-components/tag/tag.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<TagComponent>",
-                    "file": "src/app/general-components/tag/tag.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -3026,6 +2880,95 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/profile-picture/profile-picture.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProfilePictureComponent",
+                "coveragePercent": 50,
+                "coverageCount": "4/8",
+                "status": "medium"
+            },
+            {
+                "filePath": "src/app/general-components/profile-picture/profile-picture.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/profile-picture/profile-picture.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Medium",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/profile-picture/profile-picture.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/profile-picture/profile-picture.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/profile-picture/profile-picture.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/profile-picture/profile-picture.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ViewedStory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/profile-picture/profile-picture.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "XS",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/profile-picture/profile-picture.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "XXS",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3150,95 +3093,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "SendButton",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/profile-picture/profile-picture.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ProfilePictureComponent",
-                "coveragePercent": 50,
-                "coverageCount": "4/8",
-                "status": "medium"
-            },
-            {
-                "filePath": "src/app/profile-picture/profile-picture.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/profile-picture/profile-picture.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Medium",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/profile-picture/profile-picture.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/profile-picture/profile-picture.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/profile-picture/profile-picture.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Story",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/profile-picture/profile-picture.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "ViewedStory",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/profile-picture/profile-picture.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "XS",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/profile-picture/profile-picture.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "XXS",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3404,35 +3258,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "StorySlider",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/story-banner/story-banner.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "StoryBannerComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/story-banner/story-banner.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/story-banner/story-banner.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "StoryBanner",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

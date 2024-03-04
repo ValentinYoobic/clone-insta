@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { User } from '../../user';
-import { ProfilePictureComponent } from '../../profile-picture/profile-picture.component';
+import { ProfilePictureComponent } from '../../general-components/profile-picture/profile-picture.component';
 import { TextSeparatorComponent } from '../../general-components/text-separator/text-separator.component';
 import { TagComponent } from '../../general-components/tag/tag.component';
 import { DateService } from '../../general-services/date.service';

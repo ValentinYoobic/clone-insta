@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ProfilePictureComponent } from './profile-picture/profile-picture.component';
-import { StoryBannerComponent } from './story-banner/story-banner.component';
+import { ProfilePictureComponent } from './general-components/profile-picture/profile-picture.component';
 import { SliderArrowComponent } from './slider-arrow/slider-arrow.component';
 import { SlideComponent } from './slide/slide.component';
 import { SliderCarouselComponent } from './slider-carousel/slider-carousel.component';
@@ -12,7 +11,6 @@ import { Slide } from './slide';
   imports: [
     RouterOutlet,
     ProfilePictureComponent,
-    StoryBannerComponent,
     SliderArrowComponent,
     SlideComponent,
     SliderCarouselComponent,

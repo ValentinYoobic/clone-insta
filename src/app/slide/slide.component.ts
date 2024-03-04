@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProfilePictureComponent } from '../profile-picture/profile-picture.component';
+import { ProfilePictureComponent } from '../general-components/profile-picture/profile-picture.component';
 
 @Component({
   selector: 'app-slide',
