@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/angular';
 import { PublicationHeaderComponent } from './publication-header.component';
-import { User } from '../user';
+import { User } from '../../user';
 
 const user1: User = {
   id: 1,

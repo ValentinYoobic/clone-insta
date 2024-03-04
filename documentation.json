@@ -30,7 +30,7 @@
         {
             "name": "DateService",
             "id": "injectable-DateService-0ac5d4c6d1d7ad27f6751a72f4a0d43c45cb4b8fe1b30b2af869fe8f0ec6cda22dd9afba41f44c9a32a84ae2e011d2430b6e90d3abc21ac9f54d59c0b75865fb",
-            "file": "src/app/date.service.ts",
+            "file": "src/app/general-services/date.service.ts",
             "properties": [],
             "methods": [
                 {
@@ -770,8 +770,8 @@
         },
         {
             "name": "PublicationHeaderComponent",
-            "id": "component-PublicationHeaderComponent-4cde8eec8ae41a7b4295827b943163b9a5e91b55740267f0b15c452f15a0aaae481fcb16e73d6581bd0d28907e82d3a0757171f3207d7e8886002c8b3d4b188d",
-            "file": "src/app/publication-header/publication-header.component.ts",
+            "id": "component-PublicationHeaderComponent-9c3834d790fd44aa044c4cdd63a1c2c70b076003a74548c02d252d08f15da500f5a1dc20cb7da30096947e0999e7387e18232217b796be92a73aa4a33352da03",
+            "file": "src/app/publication/publication-header/publication-header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -843,7 +843,7 @@
             "propertiesClass": [
                 {
                     "name": "timeSincePublication",
-                    "defaultValue": "'Bizarre'",
+                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
@@ -890,7 +890,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { User } from '../user';\nimport { ProfilePictureComponent } from '../profile-picture/profile-picture.component';\nimport { TextSeparatorComponent } from '../text-separator/text-separator.component';\nimport { TagComponent } from '../tag/tag.component';\nimport { DateService } from '../date.service';\nimport { TextButonComponent } from '../text-buton/text-buton.component';\n\ntype SubtitleType = 'Location' | 'Audio' | null\n\n@Component({\n  selector: 'app-publication-header',\n  standalone: true,\n  imports: [ProfilePictureComponent, TextSeparatorComponent, TagComponent, TextButonComponent],\n  templateUrl: './publication-header.component.html',\n  styleUrl: './publication-header.component.sass'\n})\nexport class PublicationHeaderComponent {\n  constructor(private dateService: DateService) {}\n  @Input() user!: User;\n  @Input() publicationDate!: number; // timestamp in s\n  @Input() subTitleType: SubtitleType = null;\n  @Input() audioName: string | null = null;\n  @Input() artistName: string | null = null;\n  @Input() location: string | null = null;\n  timeSincePublication: string = 'Bizarre'\n  \n  ngOnInit() {\n    this.timeSincePublication = this.dateService.timeSinceDate(this.publicationDate)\n}\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { User } from '../../user';\nimport { ProfilePictureComponent } from '../../profile-picture/profile-picture.component';\nimport { TextSeparatorComponent } from '../../general-components/text-separator/text-separator.component';\nimport { TagComponent } from '../../general-components/tag/tag.component';\nimport { DateService } from '../../general-services/date.service';\nimport { TextButonComponent } from '../../general-components/text-buton/text-buton.component';\n\ntype SubtitleType = 'Location' | 'Audio' | null\n\n@Component({\n  selector: 'app-publication-header',\n  standalone: true,\n  imports: [ProfilePictureComponent, TextSeparatorComponent, TagComponent, TextButonComponent],\n  templateUrl: './publication-header.component.html',\n  styleUrl: './publication-header.component.sass'\n})\nexport class PublicationHeaderComponent {\n  constructor(private dateService: DateService) {}\n  @Input() user!: User;\n  @Input() publicationDate!: number; // timestamp in s\n  @Input() subTitleType: SubtitleType = null;\n  @Input() audioName: string | null = null;\n  @Input() artistName: string | null = null;\n  @Input() location: string | null = null;\n  timeSincePublication: string = '';\n  \n  ngOnInit() {\n    this.timeSincePublication = this.dateService.timeSinceDate(this.publicationDate)\n}\n}\n",
             "styleUrl": "./publication-header.component.sass",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -922,12 +922,12 @@
                 ]
             },
             "extends": [],
-            "templateData": "<div class=\"publication-header\">\n    <div class=\"info-bar\">\n\n        <div class=\"profile-picture-wrapper\" >\n            <div class=\"profile-picture-wrapper\">\n                <app-profile-picture \n                size=\"small\" \n                [hasStory]=\"this.user.hasStory\" \n                [profilePictureUrl]=\"this.user.profilePictureUrl\" \n                [viewedStory]='false'\n                />\n            </div>\n        </div>\n\n        <div class=\"title-wrapper\">\n            <div class=\"main-title-wrapper\" >\n                <span class=\"bold\">{{this.user.userName}}</span>\n                @if (this.user.isCertified) {\n                    <app-tag type=\"Certified\" size=\"medium\"/>\n                }\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                <span class=\"grey\">{{timeSincePublication}}</span>\n                @if (!this.user.isFollowed) {\n                    <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                    <app-text-buton [class.text-blue]=\"true\">Follow</app-text-buton>\n                }\n            </div>\n            @if (this.subTitleType === 'Audio') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    @if (this.artistName) {\n                        <span>{{this.artistName}}</span>\n                        <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n                    }\n                    <span>{{this.audioName}}</span>\n                </a>\n            }\n            @else if (this.subTitleType === 'Location') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    {{this.location}}\n                </a>\n            }\n\n\n        </div>\n\n        <div class=\"test\"></div>\n        <button class=\"menu-wrapper\">\n            <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n            <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n            <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n        </button>\n        <app-text-buton>\n            <div class=\"menu-wrapper\">\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n            </div>\n        </app-text-buton>\n        \n    </div>\n</div>"
+            "templateData": "<div class=\"publication-header\">\n    <div class=\"info-bar\">\n\n        <div class=\"profile-picture-wrapper\" >\n            <div class=\"profile-picture-wrapper\">\n                <app-profile-picture \n                size=\"small\" \n                [hasStory]=\"this.user.hasStory\" \n                [profilePictureUrl]=\"this.user.profilePictureUrl\" \n                [viewedStory]='false'\n                />\n            </div>\n        </div>\n\n        <div class=\"title-wrapper\">\n            <div class=\"main-title-wrapper\" >\n                <span class=\"bold\">{{this.user.userName}}</span>\n                @if (this.user.isCertified) {\n                    <app-tag type=\"Certified\" size=\"medium\"/>\n                }\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                <span class=\"grey\">{{timeSincePublication}}</span>\n                @if (!this.user.isFollowed) {\n                    <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                    <app-text-buton [class.text-blue]=\"true\">Follow</app-text-buton>\n                }\n            </div>\n            @if (this.subTitleType === 'Audio') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    @if (this.artistName) {\n                        <span>{{this.artistName}}</span>\n                        <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n                    }\n                    <span>{{this.audioName}}</span>\n                </a>\n            }\n            @else if (this.subTitleType === 'Location') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    {{this.location}}\n                </a>\n            }\n\n\n        </div>\n\n        <app-text-buton class=\"menu-wrapper\">\n            <app-text-separator size=\"medium\" SeparatorType=\"meatballs\"/>\n        </app-text-buton>\n        \n    </div>\n</div>"
         },
         {
             "name": "TagComponent",
             "id": "component-TagComponent-60ad7041c8532ed2d91a8f67c7a937b74214756018cf8191bf2bf0e8a24c060a281d89bfec5bde55844a3609510ff6045d46811683c265a560cb5de5bc1acada",
-            "file": "src/app/tag/tag.component.ts",
+            "file": "src/app/general-components/tag/tag.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1024,7 +1024,7 @@
         {
             "name": "TextButonComponent",
             "id": "component-TextButonComponent-5fd14829d7aa4d54909e675a1c56eba21671a8f50b50c942a87f1e53ee5bb27d0e76e6f6f55344547b7f669cadafe25d4f038f313e27607d492bdeaa58d7bfbf",
-            "file": "src/app/text-buton/text-buton.component.ts",
+            "file": "src/app/general-components/text-buton/text-buton.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1081,8 +1081,8 @@
         },
         {
             "name": "TextSeparatorComponent",
-            "id": "component-TextSeparatorComponent-31e4b3c9ec018823738c41c6ba8eaae392c4c00eba9872b063945a3921bb5101081af1f1565f607b908386ad5f10040f5364e46b158a1de8a6342c50ef3dfab3",
-            "file": "src/app/text-separator/text-separator.component.ts",
+            "id": "component-TextSeparatorComponent-2680d3f2888e3da605c8e402d416d583a1dcf79bf78b7b4dfcb35651ca7a10bd8660a9cafc509528d01df65ff74b3dd7998f248323459cf8e635e734cdf316e0",
+            "file": "src/app/general-components/text-separator/text-separator.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1128,13 +1128,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\ntype Size = 'medium'\ntype SeparatorType = 'middle-point'\n\n@Component({\n  selector: 'app-text-separator',\n  standalone: true,\n  imports: [],\n  templateUrl: './text-separator.component.html',\n  styleUrl: './text-separator.component.sass'\n})\nexport class TextSeparatorComponent {\n  @Input() SeparatorType = 'middle-point'\n  @Input() size: Size = 'medium'\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\ntype Size = 'medium'\ntype SeparatorType = 'middle-point' | 'meatballs'\n\n@Component({\n  selector: 'app-text-separator',\n  standalone: true,\n  imports: [],\n  templateUrl: './text-separator.component.html',\n  styleUrl: './text-separator.component.sass'\n})\nexport class TextSeparatorComponent {\n  @Input() SeparatorType = 'middle-point'\n  @Input() size: Size = 'medium'\n}\n",
             "styleUrl": "./text-separator.component.sass",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "@if (SeparatorType === \"middle-point\") {\n    <span class=\"medium\">●</span>\n}\n"
+            "templateData": "@if (SeparatorType === \"middle-point\") {\n    <span class=\"medium\">●</span>\n}\n@if (SeparatorType === \"meatballs\") {\n    <div class=\"meatballs\">\n        <span class=\"medium\">●</span>\n        <span class=\"medium\">●</span>\n        <span class=\"medium\">●</span>\n    </div>\n}"
         }
     ],
     "modules": [],
@@ -1154,7 +1154,7 @@
                 "name": "CertifiedTag",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/tag/tag.stories.ts",
+                "file": "src/app/general-components/tag/tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1284,21 +1284,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/tag/tag.stories.ts",
+                "file": "src/app/general-components/tag/tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<TagComponent>",
                 "defaultValue": "{\n  title: 'Components/Tag',\n  component: TagComponent,\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/publication-header/publication-header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<PublicationHeaderComponent>",
-                "defaultValue": "{\n  title: 'Components/PublicationHeader',\n  component: PublicationHeaderComponent,\n}"
             },
             {
                 "name": "meta",
@@ -1319,6 +1309,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<NavigationButtonComponent>",
                 "defaultValue": "{\n  title: 'Components/NavigationButton',\n  component: NavigationButtonComponent,\n  args: {\n    label: 'notifications',\n    icon: 'Heart',\n    active: true,\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/publication/publication-header/publication-header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<PublicationHeaderComponent>",
+                "defaultValue": "{\n  title: 'Components/PublicationHeader',\n  component: PublicationHeaderComponent,\n}"
             },
             {
                 "name": "NavigationBar",
@@ -1354,7 +1354,7 @@
                 "name": "PublicationHeader",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/publication-header/publication-header.stories.ts",
+                "file": "src/app/publication/publication-header/publication-header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1414,7 +1414,7 @@
                 "name": "user1",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/publication-header/publication-header.stories.ts",
+                "file": "src/app/publication/publication-header/publication-header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "User",
@@ -1479,8 +1479,19 @@
                 "name": "SeparatorType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "\"middle-point\" | \"meatballs\"",
+                "file": "src/app/general-components/text-separator/text-separator.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "Size",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "",
-                "file": "src/app/text-separator/text-separator.component.ts",
+                "file": "src/app/general-components/tag/tag.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1491,18 +1502,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "",
-                "file": "src/app/tag/tag.component.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 201
-            },
-            {
-                "name": "Size",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "",
-                "file": "src/app/text-separator/text-separator.component.ts",
+                "file": "src/app/general-components/text-separator/text-separator.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1557,18 +1557,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<TagComponent>",
-                "file": "src/app/tag/tag.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<PublicationHeaderComponent>",
-                "file": "src/app/publication-header/publication-header.stories.ts",
+                "file": "src/app/general-components/tag/tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1597,11 +1586,22 @@
                 "kind": 183
             },
             {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<PublicationHeaderComponent>",
+                "file": "src/app/publication/publication-header/publication-header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
                 "name": "SubtitleType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"Location\" | \"Audio\" | null",
-                "file": "src/app/publication-header/publication-header.component.ts",
+                "file": "src/app/publication/publication-header/publication-header.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1612,7 +1612,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "",
-                "file": "src/app/tag/tag.component.ts",
+                "file": "src/app/general-components/tag/tag.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1644,12 +1644,12 @@
                     "defaultValue": "{\n  providers: [provideRouter(routes)]\n}"
                 }
             ],
-            "src/app/tag/tag.stories.ts": [
+            "src/app/general-components/tag/tag.stories.ts": [
                 {
                     "name": "CertifiedTag",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/tag/tag.stories.ts",
+                    "file": "src/app/general-components/tag/tag.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1659,7 +1659,7 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/tag/tag.stories.ts",
+                    "file": "src/app/general-components/tag/tag.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<TagComponent>",
@@ -1896,38 +1896,6 @@
                     "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
                 }
             ],
-            "src/app/publication-header/publication-header.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/publication-header/publication-header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<PublicationHeaderComponent>",
-                    "defaultValue": "{\n  title: 'Components/PublicationHeader',\n  component: PublicationHeaderComponent,\n}"
-                },
-                {
-                    "name": "PublicationHeader",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/publication-header/publication-header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    user: user1,\n    publicationDate: ((new Date(2024, 0, 1)).getTime()),\n    subTitleType: 'Audio',\n    audioName: 'Billie Jean',\n    artistName: 'Michael Jackson',\n    location: 'Heaven'\n  },\n}"
-                },
-                {
-                    "name": "user1",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/publication-header/publication-header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "User",
-                    "defaultValue": "{\n  id: 1,\n  userName: 'Michael_Jackson',\n  hasStory: false,\n  profilePictureUrl: '/assets/profileImage.jpeg',\n  isCertified: true,\n  isFollowed: false\n}"
-                }
-            ],
             "src/app/navigation/navigation-bar/navigation-bar.stories.ts": [
                 {
                     "name": "meta",
@@ -1948,6 +1916,38 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n}"
+                }
+            ],
+            "src/app/publication/publication-header/publication-header.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/publication/publication-header/publication-header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<PublicationHeaderComponent>",
+                    "defaultValue": "{\n  title: 'Components/PublicationHeader',\n  component: PublicationHeaderComponent,\n}"
+                },
+                {
+                    "name": "PublicationHeader",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/publication/publication-header/publication-header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    user: user1,\n    publicationDate: ((new Date(2024, 0, 1)).getTime()),\n    subTitleType: 'Audio',\n    audioName: 'Billie Jean',\n    artistName: 'Michael Jackson',\n    location: 'Heaven'\n  },\n}"
+                },
+                {
+                    "name": "user1",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/publication/publication-header/publication-header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User",
+                    "defaultValue": "{\n  id: 1,\n  userName: 'Michael_Jackson',\n  hasStory: false,\n  profilePictureUrl: '/assets/profileImage.jpeg',\n  isCertified: true,\n  isFollowed: false\n}"
                 }
             ],
             ".storybook/preview.ts": [
@@ -1992,37 +1992,37 @@
                     "kind": 192
                 }
             ],
-            "src/app/text-separator/text-separator.component.ts": [
+            "src/app/general-components/text-separator/text-separator.component.ts": [
                 {
                     "name": "SeparatorType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "",
-                    "file": "src/app/text-separator/text-separator.component.ts",
+                    "rawtype": "\"middle-point\" | \"meatballs\"",
+                    "file": "src/app/general-components/text-separator/text-separator.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "kind": 201
+                    "kind": 192
                 },
                 {
                     "name": "Size",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "",
-                    "file": "src/app/text-separator/text-separator.component.ts",
+                    "file": "src/app/general-components/text-separator/text-separator.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 201
                 }
             ],
-            "src/app/tag/tag.component.ts": [
+            "src/app/general-components/tag/tag.component.ts": [
                 {
                     "name": "Size",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "",
-                    "file": "src/app/tag/tag.component.ts",
+                    "file": "src/app/general-components/tag/tag.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2033,7 +2033,7 @@
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "",
-                    "file": "src/app/tag/tag.component.ts",
+                    "file": "src/app/general-components/tag/tag.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2092,26 +2092,13 @@
                     "kind": 183
                 }
             ],
-            "src/app/tag/tag.stories.ts": [
+            "src/app/general-components/tag/tag.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<TagComponent>",
-                    "file": "src/app/tag/tag.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "src/app/publication-header/publication-header.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<PublicationHeaderComponent>",
-                    "file": "src/app/publication-header/publication-header.stories.ts",
+                    "file": "src/app/general-components/tag/tag.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2144,13 +2131,26 @@
                     "kind": 183
                 }
             ],
-            "src/app/publication-header/publication-header.component.ts": [
+            "src/app/publication/publication-header/publication-header.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<PublicationHeaderComponent>",
+                    "file": "src/app/publication/publication-header/publication-header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/publication/publication-header/publication-header.component.ts": [
                 {
                     "name": "SubtitleType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"Location\" | \"Audio\" | null",
-                    "file": "src/app/publication-header/publication-header.component.ts",
+                    "file": "src/app/publication/publication-header/publication-header.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2207,7 +2207,54 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/date.service.ts",
+                "filePath": "src/app/general-components/tag/tag.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TagComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/tag/tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CertifiedTag",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/tag/tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/text-buton/text-buton.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextButonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/text-separator/text-separator.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextSeparatorComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-services/date.service.ts",
                 "type": "injectable",
                 "linktype": "injectable",
                 "name": "DateService",
@@ -2373,7 +2420,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/publication-header/publication-header.component.ts",
+                "filePath": "src/app/publication/publication-header/publication-header.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "PublicationHeaderComponent",
@@ -2382,7 +2429,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/publication-header/publication-header.stories.ts",
+                "filePath": "src/app/publication/publication-header/publication-header.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2392,7 +2439,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/publication-header/publication-header.stories.ts",
+                "filePath": "src/app/publication/publication-header/publication-header.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2402,60 +2449,13 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/publication-header/publication-header.stories.ts",
+                "filePath": "src/app/publication/publication-header/publication-header.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "user1",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/tag/tag.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "TagComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/tag/tag.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "CertifiedTag",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/tag/tag.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/text-buton/text-buton.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "TextButonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/text-separator/text-separator.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "TextSeparatorComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
                 "status": "low"
             },
             {
