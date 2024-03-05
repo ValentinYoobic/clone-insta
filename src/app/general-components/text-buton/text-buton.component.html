@@ -1,1 +1,2 @@
-<button (click)="handleClick()"><ng-content></ng-content></button>
+<button (click)="handleClick()" [ngClass]="{'text-blue': this.textColor==='blue', 'text-black': this.textColor==='black'}"><ng-content></ng-content></button>
+

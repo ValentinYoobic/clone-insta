@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 type Size = 'medium'
-type SeparatorType = 'middle-point' | 'meatballs'
+type SeparatorType = 'middle-point'
 
 @Component({
   selector: 'app-text-separator',
