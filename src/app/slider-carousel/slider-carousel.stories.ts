@@ -5,6 +5,7 @@ import { SliderCarouselComponent } from './slider-carousel.component';
 const meta: Meta<SliderCarouselComponent> = {
   title: 'App/Slider Carousel',
   component: SliderCarouselComponent,
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
