@@ -471,14 +471,21 @@
             "extends": []
         },
         {
+<<<<<<< HEAD
             "name": "LikesPicturesComponent",
             "id": "component-LikesPicturesComponent-af8f0958c41403359a9db8c678ab1135da39eba577f61ab1a84ac3d181e13f054505d5b1be0d3831779239a613a37c0e9f2e2bcd019aad6f9792ab09d72b79fd",
             "file": "src/app/likes-pictures/likes-pictures.component.ts",
+=======
+            "name": "IconButtonComponent",
+            "id": "component-IconButtonComponent-a7103bbcb4eaf73e7bf63705aa122c2561f335411325851556bc60080f6b1d83c75cd6f1cfb4532748ac85ab7d2bc4c041fd69366dc55568b72f9020d4a24135",
+            "file": "src/app/general-components/icon-button/icon-button.component.ts",
+>>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
+<<<<<<< HEAD
             "selector": "app-likes-pictures",
             "styleUrls": [],
             "styles": [],
@@ -529,11 +536,26 @@
                     ]
                 }
             ],
+=======
+            "selector": "app-icon-button",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./icon-button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+>>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
+<<<<<<< HEAD
             "imports": [
                 {
                     "name": "CommonModule",
@@ -549,31 +571,57 @@
             "type": "component",
             "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { User } from '../user';\nimport { ProfilePictureComponent } from '../general-components/profile-picture/profile-picture.component';\n@Component({\n  selector: 'app-likes-pictures',\n  standalone: true,\n  imports: [CommonModule, ProfilePictureComponent],\n  templateUrl: './likes-pictures.component.html',\n  styleUrl: './likes-pictures.component.sass'\n})\nexport class LikesPicturesComponent {\n  @Input() whoLiked!: User[];\n\n  getClass(i:number): string {\n    return `picture--${i}`\n  } \n}\n",
             "styleUrl": "./likes-pictures.component.sass",
+=======
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-icon-button',\n  standalone: true,\n  imports: [],\n  templateUrl: './icon-button.component.html',\n  styleUrl: './icon-button.component.sass'\n})\nexport class IconButtonComponent {\n\n}\n",
+            "styleUrl": "./icon-button.component.sass",
+>>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
+<<<<<<< HEAD
             "templateData": "<div class=\"picture0\">\n    <app-profile-picture size=\"xxs\" [profilePictureUrl]=\"whoLiked[0].profilePhotoUrl\"></app-profile-picture>\n</div>\n<div class=\"picture1\">\n    <app-profile-picture size=\"xxs\" [profilePictureUrl]=\"whoLiked[1].profilePhotoUrl\"></app-profile-picture>\n</div>\n<div class=\"picture2\">\n    <app-profile-picture size=\"xxs\" [profilePictureUrl]=\"whoLiked[2].profilePhotoUrl\"></app-profile-picture>\n</div>\n\n<div *ngFor=\"let user of whoLiked; index as i\" [class]=\"getClass(i)\">\n    <app-profile-picture size=\"xxs\" [profilePictureUrl]=\"user.profilePhotoUrl\"></app-profile-picture>\n</div>"
         },
         {
             "name": "LikesStatisticsComponent",
             "id": "component-LikesStatisticsComponent-1a590cd5874a2e01feed0f8aab3ff96a8e572ea6d4d392af6d9f51947668b9ae8570d8ff4532b9dc19235d2c29c409edbd80fc00bf24511b356c03016bb555fb",
             "file": "src/app/likes-statistics/likes-statistics.component.ts",
+=======
+            "templateData": "<p>icon-button works!</p>\n"
+        },
+        {
+            "name": "IconComponent",
+            "id": "component-IconComponent-54351b231401778e79c70a2259e154c19608377ee4f4f25b4a9c913c27585caca9a07885dd665fe7970c6df3341b94311d61483740a5f35a47acf627d3ce5b56",
+            "file": "src/app/general-components/icon/icon.component.ts",
+>>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
+<<<<<<< HEAD
             "selector": "app-likes-statistics",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
                 "./likes-statistics.component.html"
+=======
+            "selector": "app-icon",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./icon.component.html"
+>>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
             ],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
+<<<<<<< HEAD
                     "name": "likes",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -588,11 +636,31 @@
                     "deprecationMessage": "",
                     "line": 15,
                     "type": "User[] | null",
+=======
+                    "required": true,
+                    "name": "inconType",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 30,
+                    "type": "IconType",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 31,
+                    "type": "Size",
+>>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
                     "decorators": []
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [],
+<<<<<<< HEAD
             "methodsClass": [
                 {
                     "name": "getUKNumber",
@@ -605,11 +673,15 @@
                     "deprecationMessage": ""
                 }
             ],
+=======
+            "methodsClass": [],
+>>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
+<<<<<<< HEAD
             "imports": [
                 {
                     "name": "CommonModule",
@@ -625,11 +697,23 @@
             "type": "component",
             "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { User } from '../user';\nimport { ProfilePictureComponent } from '../general-components/profile-picture/profile-picture.component';\n\n@Component({\n  selector: 'app-likes-statistics',\n  standalone: true,\n  imports: [CommonModule, ProfilePictureComponent],\n  templateUrl: './likes-statistics.component.html',\n  styleUrl: './likes-statistics.component.sass'\n})\nexport class LikesStatisticsComponent {\n  @Input() likes!: number;\n  @Input() whoLiked: User[] | null = null;\n\n  getUKNumber(): string {\n    return this.likes.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\");\n  }\n}\n",
             "styleUrl": "./likes-statistics.component.sass",
+=======
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\ntype IconType = 'Heart' |\n  'Add' |\n  'Compass' |\n  'Home' |\n  'Search' |\n  'Send' |\n  'Video' |\n  'User' |\n  'Threads' |\n  'Burger' |\n  'Meatballs' |\n  'ChatBubble' |\n  'Save' |\n  'Smile' |\n  'Close' |\n  'Instagram'\n\ntype Size = 'Medium'\n\n@Component({\n  selector: 'app-icon',\n  standalone: true,\n  imports: [],\n  templateUrl: './icon.component.html',\n  styleUrl: './icon.component.sass'\n})\nexport class IconComponent {\n  @Input({required: true}) inconType!: IconType;\n  @Input({required: true}) size!: Size;\n}",
+            "styleUrl": "./icon.component.sass",
+>>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
+<<<<<<< HEAD
             "templateData": "<div class=\"likes-container\">\n    <div class=\"who-liked\" >\n        <app-profile-picture *ngFor=\"let user of whoLiked\" size=\"xxs\" [profilePictureUrl]=\"user.profilePhotoUrl\"></app-profile-picture>\n    </div>\n    <span class=\"likes-stat\"> {{ getUKNumber() }} likes </span>\n<!-- \n    <app-profile-picture  size=\"xxs\" profilePhotoUrl=\"assets/profileImage.jpeg\"></app-profile-picture> -->\n</div>\n"
+=======
+            "templateData": "<p>icon works!</p>\n"
+>>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
         },
         {
             "name": "NavigationBarComponent",
@@ -672,7 +756,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"navigation-bar\">\n    <div class=\"top-section\">\n        <img src=\"assets/instagram-logo.svg.png\" alt=\"instagram-logo\" width=\"50%\" class=\"main-logo\">\n        <app-navigation-button icon=\"Home\" label=\"Home\"></app-navigation-button>\n        <app-navigation-button icon=\"Search\" label=\"Search\"></app-navigation-button>\n        <app-navigation-button icon=\"Compass\" label=\"Explore\"></app-navigation-button>\n        <app-navigation-button icon=\"Video\" label=\"Reels\"></app-navigation-button>\n        <app-navigation-button icon=\"Send\" label=\"Message\"></app-navigation-button>\n        <app-navigation-button icon=\"Heart\" label=\"Notifications\"></app-navigation-button>\n        <app-navigation-button icon=\"Add\" label=\"Create\"></app-navigation-button>\n    </div>\n\n    <div class=\"bottom-section\">\n        <app-navigation-button icon=\"Threads\" label=\"Threads\"></app-navigation-button>\n        <app-navigation-button icon=\"Menu\" label=\"More\"></app-navigation-button>\n    </div>\n    \n</div>"
+            "templateData": "<nav>\n    <div class=\"top-section\">\n        <img src=\"assets/instagram-logo.svg.png\" alt=\"instagram-logo\" width=\"50%\" class=\"main-logo\">\n        <app-navigation-button icon=\"Home\" label=\"Home\"></app-navigation-button>\n        <app-navigation-button icon=\"Search\" label=\"Search\"></app-navigation-button>\n        <app-navigation-button icon=\"Compass\" label=\"Explore\"></app-navigation-button>\n        <app-navigation-button icon=\"Video\" label=\"Reels\"></app-navigation-button>\n        <app-navigation-button icon=\"Send\" label=\"Message\"></app-navigation-button>\n        <app-navigation-button icon=\"Heart\" label=\"Notifications\"></app-navigation-button>\n        <app-navigation-button icon=\"Add\" label=\"Create\"></app-navigation-button>\n    </div>\n\n    <div class=\"bottom-section\">\n        <app-navigation-button icon=\"Threads\" label=\"Threads\"></app-navigation-button>\n        <app-navigation-button icon=\"Menu\" label=\"More\"></app-navigation-button>\n    </div>\n    \n</nav>"
         },
         {
             "name": "NavigationButtonComponent",
@@ -1175,6 +1259,7 @@
                 ]
             },
             "extends": [],
+<<<<<<< HEAD
             "templateData": "<div class=\"publication-header\">\n    <div class=\"info-bar\">\n\n        <div class=\"profile-picture-wrapper\" >\n            <div class=\"profile-picture-wrapper\">\n                <app-profile-picture \n                size=\"small\" \n                [hasStory]=\"this.user.hasStory\" \n                [profilePhotoUrl]=\"this.user.profilePictureUrl\" \n                [viewedStory]='false'\n                />\n            </div>\n        </div>\n\n        <div class=\"title-wrapper\">\n            <div class=\"main-title-wrapper\" >\n                <span class=\"bold\">{{this.user.userName}}</span>\n                @if (this.user.isCertified) {\n                    <app-tag type=\"Certified\" size=\"medium\"/>\n                }\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                <span class=\"grey\">{{timeSincePublication}}</span>\n                @if (!this.user.isFollowed) {\n                    <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                    <app-text-buton [class.text-blue]=\"true\">Follow</app-text-buton>\n                }\n            </div>\n            @if (this.subTitleType === 'Audio') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    @if (this.artistName) {\n                        <span>{{this.artistName}}</span>\n                        <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n                    }\n                    <span>{{this.audioName}}</span>\n                </a>\n            }\n            @else if (this.subTitleType === 'Location') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    {{this.location}}\n                </a>\n            }\n\n\n        </div>\n\n        <app-text-buton class=\"menu-wrapper\">\n            <app-text-separator size=\"medium\" SeparatorType=\"meatballs\"/>\n        </app-text-buton>\n        \n    </div>\n</div>"
         },
         {
@@ -1504,6 +1589,9 @@
                 }
             },
             "templateData": "<div [ngClass]=\"sliderClass\">\n  <div\n    *ngIf=\"getVisibleLeftArrow()\"\n    class=\"left-arrow\"\n    (click)=\"goToPrevious()\"\n  >\n    <app-slider-arrow direction=\"left\"></app-slider-arrow>\n  </div>\n  <div *ngIf=\"getVisibleRightArrow()\" class=\"right-arrow\" (click)=\"goToNext()\">\n    <app-slider-arrow direction=\"right\"></app-slider-arrow>\n  </div>\n  <div class=\"slides\">\n    <div class=\"visible-slides\" *ngFor=\"let slide of getVisibleSlidesList()\">\n      <app-slide\n        [type]=\"slide.type\"\n        [pictureUrl]=\"slide.pictureUrl\"\n        [userName]=\"slide.userName\"\n      ></app-slide>\n    </div>\n  </div>\n</div>\n"
+=======
+            "templateData": "<div class=\"publication-header\">\n    <svg aria-label=\"Save\" class=\"x1lliihq x1n2onr6 x5n08af\" fill=\"currentColor\" height=\"24\" role=\"img\" viewBox=\"0 0 24 24\" width=\"24\"><title>Save</title><polygon fill=\"none\" points=\"20 21 12 13.44 4 21 4 3 20 3 20 21\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"></polygon></svg>\n    </div>\n    <div class=\"info-bar\">\n    \n\n        <div class=\"profile-picture-wrapper\" >\n            <div class=\"profile-picture-wrapper\">\n                <app-profile-picture \n                size=\"small\" \n                [hasStory]=\"this.user.hasStory\" \n                [profilePictureUrl]=\"this.user.profilePictureUrl\" \n                [viewedStory]='false'\n                />\n            </div>\n        </div>\n\n        <div class=\"title-wrapper\">\n            <div class=\"main-title-wrapper\" >\n                <span class=\"bold\">{{this.user.userName}}</span>\n                @if (this.user.isCertified) {\n                    <app-tag type=\"Certified\" size=\"medium\"/>\n                }\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                <span class=\"grey\">{{timeSincePublication}}</span>\n                @if (!this.user.isFollowed) {\n                    <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                    <app-text-buton textColor=\"blue\">Follow</app-text-buton>\n                }\n            </div>\n            @if (this.subTitleType === 'Audio') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    @if (this.artistName) {\n                        <span>{{this.artistName}}</span>\n                        <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n                    }\n                    <span>{{this.audioName}}</span>\n                </a>\n            }\n            @else if (this.subTitleType === 'Location') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    {{this.location}}\n                </a>\n            }\n\n\n        </div>\n\n        <app-text-buton class=\"menu-wrapper\">\n            <app-text-separator size=\"medium\" SeparatorType=\"meatballs\"/>\n        </app-text-buton>\n        \n    </div>\n</div>"
+>>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
         },
         {
             "name": "TagComponent",
@@ -1604,7 +1692,7 @@
         },
         {
             "name": "TextButonComponent",
-            "id": "component-TextButonComponent-5fd14829d7aa4d54909e675a1c56eba21671a8f50b50c942a87f1e53ee5bb27d0e76e6f6f55344547b7f669cadafe25d4f038f313e27607d492bdeaa58d7bfbf",
+            "id": "component-TextButonComponent-a3388795b66c66c7561a61b070804076d0f294be52c3fdedd6c9484bc20d8eca6f5f7ab099cd1fa07a956ad6512ca2f5628795c8f07af5c9efee439269b053fd",
             "file": "src/app/general-components/text-buton/text-buton.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1625,18 +1713,17 @@
                     "defaultValue": "() => console.log(\"You clicked on the button\")",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 14,
                     "type": "function",
                     "decorators": []
                 },
                 {
-                    "required": true,
-                    "name": "text",
+                    "name": "textColor",
+                    "defaultValue": "'black'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "optional": false,
-                    "line": 12,
-                    "type": "string",
+                    "line": 15,
+                    "type": "TextColor",
                     "decorators": []
                 }
             ],
@@ -1648,17 +1735,21 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "NgClass"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-text-buton',\n  standalone: true,\n  imports: [],\n  templateUrl: './text-buton.component.html',\n  styleUrl: './text-buton.component.sass'\n})\nexport class TextButonComponent {\n  @Input() handleClick: () => void = () => console.log(\"You clicked on the button\")\n  @Input({required: true}) text!: string;\n}\n",
+            "sourceCode": "import { Component, Input} from '@angular/core';\nimport { NgClass } from '@angular/common';\n\ntype TextColor = 'blue' | 'black'\n\n@Component({\n  selector: 'app-text-buton',\n  standalone: true,\n  imports: [NgClass],\n  templateUrl: './text-buton.component.html',\n  styleUrl: './text-buton.component.sass'\n})\nexport class TextButonComponent {\n  @Input() handleClick: () => void = () => console.log(\"You clicked on the button\")\n  @Input() textColor: TextColor = 'black'\n}\n",
             "styleUrl": "./text-buton.component.sass",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<button (click)=\"handleClick()\"><ng-content></ng-content></button>\n"
+            "templateData": "<button (click)=\"handleClick()\" [ngClass]=\"{'text-blue': this.textColor==='blue', 'text-black': this.textColor==='black'}\"><ng-content></ng-content></button>\n\n"
         },
         {
             "name": "TextSeparatorComponent",
@@ -2245,6 +2336,17 @@
         "functions": [],
         "typealiases": [
             {
+                "name": "IconType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"Heart\" | \"Add\" | \"Compass\" | \"Home\" | \"Search\" | \"Send\" | \"Video\" | \"User\" | \"Threads\" | \"Burger\" | \"Meatballs\" | \"ChatBubble\" | \"Save\" | \"Smile\" | \"Close\" | \"Instagram\"",
+                "file": "src/app/general-components/icon/icon.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
                 "name": "NavigationIconType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -2276,6 +2378,17 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 192
+            },
+            {
+                "name": "Size",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/app/general-components/icon/icon.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 201
             },
             {
                 "name": "Size",
@@ -2463,6 +2576,17 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 201
+            },
+            {
+                "name": "TextColor",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"blue\" | \"black\"",
+                "file": "src/app/general-components/text-buton/text-buton.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
             },
             {
                 "name": "User",
@@ -3032,6 +3156,30 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "src/app/general-components/icon/icon.component.ts": [
+                {
+                    "name": "IconType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"Heart\" | \"Add\" | \"Compass\" | \"Home\" | \"Search\" | \"Send\" | \"Video\" | \"User\" | \"Threads\" | \"Burger\" | \"Meatballs\" | \"ChatBubble\" | \"Save\" | \"Smile\" | \"Close\" | \"Instagram\"",
+                    "file": "src/app/general-components/icon/icon.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                },
+                {
+                    "name": "Size",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/app/general-components/icon/icon.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 201
+                }
+            ],
             "src/app/navigation/navigation-button/navigation-button.component.ts": [
                 {
                     "name": "NavigationIconType",
@@ -3288,6 +3436,19 @@
                     "kind": 192
                 }
             ],
+            "src/app/general-components/text-buton/text-buton.component.ts": [
+                {
+                    "name": "TextColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"blue\" | \"black\"",
+                    "file": "src/app/general-components/text-buton/text-buton.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
             "src/app/user.ts": [
                 {
                     "name": "User",
@@ -3338,6 +3499,7 @@
                 "status": "low"
             },
             {
+<<<<<<< HEAD
                 "filePath": "src/app/general-components/profile-picture/profile-picture.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -3352,11 +3514,18 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Large",
+=======
+                "filePath": "src/app/general-components/icon-button/icon-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IconButtonComponent",
+>>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
+<<<<<<< HEAD
                 "filePath": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -3424,6 +3593,14 @@
                 "name": "XXS",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+=======
+                "filePath": "src/app/general-components/icon/icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IconComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+>>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
                 "status": "low"
             },
             {

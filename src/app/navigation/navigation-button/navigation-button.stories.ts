@@ -7,7 +7,7 @@ const meta: Meta<NavigationButtonComponent> = {
   component: NavigationButtonComponent,
   args: {
     label: 'notifications',
-    icon: 'Heart',
+    iconType: 'Heart',
     active: true,
   },
 };
@@ -19,7 +19,7 @@ type Story = StoryObj<NavigationButtonComponent>;
 export const HeartButton: Story = {
   args: {
     label: 'Notifications',
-    icon: 'Heart',
+    iconType: 'Heart',
     active: true,
   },
 };
@@ -27,7 +27,7 @@ export const HeartButton: Story = {
 export const SendButton: Story = {
   args: {
     label: 'Messages',
-    icon: 'Send',
+    iconType: 'Send',
     active: true,
   },
 };

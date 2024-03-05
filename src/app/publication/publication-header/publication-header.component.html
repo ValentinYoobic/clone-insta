@@ -1,6 +1,5 @@
 <div class="publication-header">
-    <div class="info-bar">
-
+        <div class="info-bar">
         <div class="profile-picture-wrapper" >
             <div class="profile-picture-wrapper">
                 <app-profile-picture 
@@ -22,7 +21,7 @@
                 <span class="grey">{{timeSincePublication}}</span>
                 @if (!this.user.isFollowed) {
                     <app-text-separator size="medium" SeparatorType="middle-point" class="grey"/>
-                    <app-text-buton [class.text-blue]="true">Follow</app-text-buton>
+                    <app-text-buton textColor="blue">Follow</app-text-buton>
                 }
             </div>
             @if (this.subTitleType === 'Audio') {
