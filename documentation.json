@@ -471,6 +471,167 @@
             "extends": []
         },
         {
+            "name": "LikesPicturesComponent",
+            "id": "component-LikesPicturesComponent-af8f0958c41403359a9db8c678ab1135da39eba577f61ab1a84ac3d181e13f054505d5b1be0d3831779239a613a37c0e9f2e2bcd019aad6f9792ab09d72b79fd",
+            "file": "src/app/likes-pictures/likes-pictures.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-likes-pictures",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./likes-pictures.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "whoLiked",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "User[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "getClass",
+                    "args": [
+                        {
+                            "name": "i",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "i",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ProfilePictureComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { User } from '../user';\nimport { ProfilePictureComponent } from '../general-components/profile-picture/profile-picture.component';\n@Component({\n  selector: 'app-likes-pictures',\n  standalone: true,\n  imports: [CommonModule, ProfilePictureComponent],\n  templateUrl: './likes-pictures.component.html',\n  styleUrl: './likes-pictures.component.sass'\n})\nexport class LikesPicturesComponent {\n  @Input() whoLiked!: User[];\n\n  getClass(i:number): string {\n    return `picture--${i}`\n  } \n}\n",
+            "styleUrl": "./likes-pictures.component.sass",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"picture0\">\n    <app-profile-picture size=\"xxs\" [profilePictureUrl]=\"whoLiked[0].profilePhotoUrl\"></app-profile-picture>\n</div>\n<div class=\"picture1\">\n    <app-profile-picture size=\"xxs\" [profilePictureUrl]=\"whoLiked[1].profilePhotoUrl\"></app-profile-picture>\n</div>\n<div class=\"picture2\">\n    <app-profile-picture size=\"xxs\" [profilePictureUrl]=\"whoLiked[2].profilePhotoUrl\"></app-profile-picture>\n</div>\n\n<div *ngFor=\"let user of whoLiked; index as i\" [class]=\"getClass(i)\">\n    <app-profile-picture size=\"xxs\" [profilePictureUrl]=\"user.profilePhotoUrl\"></app-profile-picture>\n</div>"
+        },
+        {
+            "name": "LikesStatisticsComponent",
+            "id": "component-LikesStatisticsComponent-1a590cd5874a2e01feed0f8aab3ff96a8e572ea6d4d392af6d9f51947668b9ae8570d8ff4532b9dc19235d2c29c409edbd80fc00bf24511b356c03016bb555fb",
+            "file": "src/app/likes-statistics/likes-statistics.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-likes-statistics",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./likes-statistics.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "likes",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "whoLiked",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "User[] | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "getUKNumber",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ProfilePictureComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { User } from '../user';\nimport { ProfilePictureComponent } from '../general-components/profile-picture/profile-picture.component';\n\n@Component({\n  selector: 'app-likes-statistics',\n  standalone: true,\n  imports: [CommonModule, ProfilePictureComponent],\n  templateUrl: './likes-statistics.component.html',\n  styleUrl: './likes-statistics.component.sass'\n})\nexport class LikesStatisticsComponent {\n  @Input() likes!: number;\n  @Input() whoLiked: User[] | null = null;\n\n  getUKNumber(): string {\n    return this.likes.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\");\n  }\n}\n",
+            "styleUrl": "./likes-statistics.component.sass",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"likes-container\">\n    <div class=\"who-liked\" >\n        <app-profile-picture *ngFor=\"let user of whoLiked\" size=\"xxs\" [profilePictureUrl]=\"user.profilePhotoUrl\"></app-profile-picture>\n    </div>\n    <span class=\"likes-stat\"> {{ getUKNumber() }} likes </span>\n<!-- \n    <app-profile-picture  size=\"xxs\" profilePhotoUrl=\"assets/profileImage.jpeg\"></app-profile-picture> -->\n</div>\n"
+        },
+        {
             "name": "NavigationBarComponent",
             "id": "component-NavigationBarComponent-1bba907a4362995ab2a75a533042177fdac74767527dd3b91456ab7c65b890b57682abdd29c273f8f9176fa16c928743580a57fe7d608afe2fa58479085446d0",
             "file": "src/app/navigation/navigation-bar/navigation-bar.component.ts",
@@ -1621,6 +1782,16 @@
                 "defaultValue": "{\n    args: {\n        direction: 'left',\n    }\n}"
             },
             {
+                "name": "LikesStatistics",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/likes-statistics/likes-statistics.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        likes: 18000,\n        whoLiked: [user1, user2, user2],\n    }\n}"
+            },
+            {
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1704,6 +1875,26 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<LikesPicturesComponent>",
+                "defaultValue": "{\n    title: 'Components/Likes Pictures',\n    component: LikesPicturesComponent,\n    tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/likes-statistics/likes-statistics.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<LikesStatisticsComponent>",
+                "defaultValue": "{\n    title: 'Components/Likes Statistics',\n    component: LikesStatisticsComponent,\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/slide/slide.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1728,27 +1919,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<SliderCarouselComponent>",
-                "defaultValue": "{\n  title: 'App/Slider Carousel',\n  component: SliderCarouselComponent,\n  parameters: {\n    layout: 'fullscreen',\n  },\n}"
+                "defaultValue": "{\n  title: 'App/Slider Carousel',\n  component: SliderCarouselComponent,\n  tags: ['autodocs'],\n  parameters: {\n    layout: 'fullscreen',\n  },\n}"
             },
             {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
+                "file": "src/app/publication/publication-header/publication-header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<ProfilePictureComponent>",
-                "defaultValue": "{\n    title: 'App/Profile Picture',\n    component: ProfilePictureComponent,\n    tags: ['autodocs'],\n    // argTypes: {\n    //     profilePictureUrl: {\n    //       control: 'assets/profileImage.jpeg',\n    //     },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/general-components/tag/tag.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<TagComponent>",
-                "defaultValue": "{\n  title: 'Components/Tag',\n  component: TagComponent,\n}"
+                "type": "Meta<PublicationHeaderComponent>",
+                "defaultValue": "{\n  title: 'Components/PublicationHeader',\n  component: PublicationHeaderComponent,\n}"
             },
             {
                 "name": "meta",
@@ -1774,11 +1955,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/publication/publication-header/publication-header.stories.ts",
+                "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<PublicationHeaderComponent>",
-                "defaultValue": "{\n  title: 'Components/PublicationHeader',\n  component: PublicationHeaderComponent,\n}"
+                "type": "Meta<ProfilePictureComponent>",
+                "defaultValue": "{\n    title: 'App/Profile Picture',\n    component: ProfilePictureComponent,\n    tags: ['autodocs'],\n    // argTypes: {\n    //     profilePictureUrl: {\n    //       control: 'assets/profileImage.jpeg',\n    //     },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/tag/tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<TagComponent>",
+                "defaultValue": "{\n  title: 'Components/Tag',\n  component: TagComponent,\n}"
             },
             {
                 "name": "NavigationBar",
@@ -1789,6 +1980,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n}"
+            },
+            {
+                "name": "oneUser",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        whoLiked: [user1],\n    }\n}"
             },
             {
                 "name": "PicturePost",
@@ -1921,6 +2122,46 @@
                 "defaultValue": "{\n  args: {\n    type: 'story',\n    slides: [\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user1',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user2',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user3',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user4',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user5',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user6',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user7',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user8',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user9',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user10',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user11',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user12',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user13',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user14',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user15',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user16',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user17',\n      },\n    ],\n  },\n}"
             },
             {
+                "name": "threeUsers",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        whoLiked: [user1, user2, user3],\n    }\n}"
+            },
+            {
+                "name": "twoUsers",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        whoLiked: [user1, user2],\n    }\n}"
+            },
+            {
+                "name": "user1",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "User",
+                "defaultValue": "{\n    id: 1,\n    userName: 'Michael_Jackson',\n    hasStory: false,\n    profilePhotoUrl: '/assets/profileImage.jpeg',\n    isCertified: true,\n    isFollowed: false\n  }"
+            },
+            {
+                "name": "user1",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/likes-statistics/likes-statistics.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "User",
+                "defaultValue": "{\n    id: 1,\n    userName: 'Michael_Jackson',\n    hasStory: false,\n    profilePhotoUrl: '/assets/profileImage.jpeg',\n    isCertified: true,\n    isFollowed: false\n  }"
+            },
+            {
                 "name": "user1",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1929,6 +2170,46 @@
                 "deprecationMessage": "",
                 "type": "User",
                 "defaultValue": "{\n  id: 1,\n  userName: 'Michael_Jackson',\n  hasStory: false,\n  profilePhotoUrl: '/assets/profileImage.jpeg',\n  isCertified: true,\n  isFollowed: false\n}"
+            },
+            {
+                "name": "user2",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "User",
+                "defaultValue": "{\n    id: 2,\n    userName: 'Marvin_Gaye',\n    hasStory: false,\n    profilePhotoUrl: '/assets/marvin_gaye.jpeg',\n    isCertified: true,\n    isFollowed: false\n  }"
+            },
+            {
+                "name": "user2",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/likes-statistics/likes-statistics.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "User",
+                "defaultValue": "{\n    id: 2,\n    userName: 'Marvin_Gaye',\n    hasStory: false,\n    profilePhotoUrl: '/assets/marvin_gaye.jpeg',\n    isCertified: true,\n    isFollowed: false\n  }"
+            },
+            {
+                "name": "user3",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "User",
+                "defaultValue": "{\n    id: 3,\n    userName: 'Lauren90',\n    hasStory: false,\n    profilePhotoUrl: '/assets/profileImage2.jpeg',\n    isCertified: true,\n    isFollowed: false\n  }"
+            },
+            {
+                "name": "user3",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/likes-statistics/likes-statistics.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "User",
+                "defaultValue": "{\n    id: 3,\n    userName: 'Lauren90',\n    hasStory: false,\n    profilePhotoUrl: '/assets/profileImage2.jpeg',\n    isCertified: true,\n    isFollowed: false\n  }"
             },
             {
                 "name": "ViewedStory",
@@ -2055,6 +2336,28 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<LikesPicturesComponent>",
+                "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<LikesStatisticsComponent>",
+                "file": "src/app/likes-statistics/likes-statistics.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<SlideComponent>",
                 "file": "src/app/slide/slide.stories.ts",
                 "deprecated": false,
@@ -2088,19 +2391,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ProfilePictureComponent>",
-                "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<TagComponent>",
-                "file": "src/app/general-components/tag/tag.stories.ts",
+                "rawtype": "StoryObj<PublicationHeaderComponent>",
+                "file": "src/app/publication/publication-header/publication-header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2132,8 +2424,19 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<PublicationHeaderComponent>",
-                "file": "src/app/publication/publication-header/publication-header.stories.ts",
+                "rawtype": "StoryObj<ProfilePictureComponent>",
+                "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TagComponent>",
+                "file": "src/app/general-components/tag/tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2407,6 +2710,58 @@
                     "defaultValue": "{\n    args: {\n        direction: 'right',\n    }\n}"
                 }
             ],
+            "src/app/likes-statistics/likes-statistics.stories.ts": [
+                {
+                    "name": "LikesStatistics",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/likes-statistics/likes-statistics.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        likes: 18000,\n        whoLiked: [user1, user2, user2],\n    }\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/likes-statistics/likes-statistics.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<LikesStatisticsComponent>",
+                    "defaultValue": "{\n    title: 'Components/Likes Statistics',\n    component: LikesStatisticsComponent,\n}"
+                },
+                {
+                    "name": "user1",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/likes-statistics/likes-statistics.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User",
+                    "defaultValue": "{\n    id: 1,\n    userName: 'Michael_Jackson',\n    hasStory: false,\n    profilePhotoUrl: '/assets/profileImage.jpeg',\n    isCertified: true,\n    isFollowed: false\n  }"
+                },
+                {
+                    "name": "user2",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/likes-statistics/likes-statistics.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User",
+                    "defaultValue": "{\n    id: 2,\n    userName: 'Marvin_Gaye',\n    hasStory: false,\n    profilePhotoUrl: '/assets/marvin_gaye.jpeg',\n    isCertified: true,\n    isFollowed: false\n  }"
+                },
+                {
+                    "name": "user3",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/likes-statistics/likes-statistics.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User",
+                    "defaultValue": "{\n    id: 3,\n    userName: 'Lauren90',\n    hasStory: false,\n    profilePhotoUrl: '/assets/profileImage2.jpeg',\n    isCertified: true,\n    isFollowed: false\n  }"
+                }
+            ],
             "src/stories/header.stories.ts": [
                 {
                     "name": "LoggedIn",
@@ -2471,6 +2826,78 @@
                     "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
                 }
             ],
+            "src/app/likes-pictures/likes-pictures.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<LikesPicturesComponent>",
+                    "defaultValue": "{\n    title: 'Components/Likes Pictures',\n    component: LikesPicturesComponent,\n    tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "oneUser",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        whoLiked: [user1],\n    }\n}"
+                },
+                {
+                    "name": "threeUsers",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        whoLiked: [user1, user2, user3],\n    }\n}"
+                },
+                {
+                    "name": "twoUsers",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        whoLiked: [user1, user2],\n    }\n}"
+                },
+                {
+                    "name": "user1",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User",
+                    "defaultValue": "{\n    id: 1,\n    userName: 'Michael_Jackson',\n    hasStory: false,\n    profilePhotoUrl: '/assets/profileImage.jpeg',\n    isCertified: true,\n    isFollowed: false\n  }"
+                },
+                {
+                    "name": "user2",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User",
+                    "defaultValue": "{\n    id: 2,\n    userName: 'Marvin_Gaye',\n    hasStory: false,\n    profilePhotoUrl: '/assets/marvin_gaye.jpeg',\n    isCertified: true,\n    isFollowed: false\n  }"
+                },
+                {
+                    "name": "user3",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User",
+                    "defaultValue": "{\n    id: 3,\n    userName: 'Lauren90',\n    hasStory: false,\n    profilePhotoUrl: '/assets/profileImage2.jpeg',\n    isCertified: true,\n    isFollowed: false\n  }"
+                }
+            ],
             "src/app/slide/slide.stories.ts": [
                 {
                     "name": "meta",
@@ -2512,7 +2939,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<SliderCarouselComponent>",
-                    "defaultValue": "{\n  title: 'App/Slider Carousel',\n  component: SliderCarouselComponent,\n  parameters: {\n    layout: 'fullscreen',\n  },\n}"
+                    "defaultValue": "{\n  title: 'App/Slider Carousel',\n  component: SliderCarouselComponent,\n  tags: ['autodocs'],\n  parameters: {\n    layout: 'fullscreen',\n  },\n}"
                 },
                 {
                     "name": "PostSlider",
@@ -2533,28 +2960,6 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    type: 'story',\n    slides: [\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user1',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user2',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user3',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user4',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user5',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user6',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user7',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user8',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user9',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user10',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user11',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user12',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user13',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user14',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user15',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user16',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user17',\n      },\n    ],\n  },\n}"
-                }
-            ],
-            "src/app/navigation/navigation-bar/navigation-bar.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<NavigationBarComponent>",
-                    "defaultValue": "{\n  title: 'Components/Navigation Bar',\n  component: NavigationBarComponent,\n}"
-                },
-                {
-                    "name": "NavigationBar",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n}"
                 }
             ],
             "src/app/publication/publication-header/publication-header.stories.ts": [
@@ -2587,6 +2992,28 @@
                     "deprecationMessage": "",
                     "type": "User",
                     "defaultValue": "{\n  id: 1,\n  userName: 'Michael_Jackson',\n  hasStory: false,\n  profilePhotoUrl: '/assets/profileImage.jpeg',\n  isCertified: true,\n  isFollowed: false\n}"
+                }
+            ],
+            "src/app/navigation/navigation-bar/navigation-bar.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<NavigationBarComponent>",
+                    "defaultValue": "{\n  title: 'Components/Navigation Bar',\n  component: NavigationBarComponent,\n}"
+                },
+                {
+                    "name": "NavigationBar",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n}"
                 }
             ],
             ".storybook/preview.ts": [
@@ -2718,6 +3145,32 @@
                     "kind": 183
                 }
             ],
+            "src/app/likes-pictures/likes-pictures.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<LikesPicturesComponent>",
+                    "file": "src/app/likes-pictures/likes-pictures.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/likes-statistics/likes-statistics.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<LikesStatisticsComponent>",
+                    "file": "src/app/likes-statistics/likes-statistics.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "src/app/slide/slide.stories.ts": [
                 {
                     "name": "Story",
@@ -2757,26 +3210,13 @@
                     "kind": 183
                 }
             ],
-            "src/app/general-components/profile-picture/profile-picture.stories.ts": [
+            "src/app/publication/publication-header/publication-header.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<ProfilePictureComponent>",
-                    "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "src/app/general-components/tag/tag.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<TagComponent>",
-                    "file": "src/app/general-components/tag/tag.stories.ts",
+                    "rawtype": "StoryObj<PublicationHeaderComponent>",
+                    "file": "src/app/publication/publication-header/publication-header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2809,13 +3249,26 @@
                     "kind": 183
                 }
             ],
-            "src/app/publication/publication-header/publication-header.stories.ts": [
+            "src/app/general-components/profile-picture/profile-picture.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<PublicationHeaderComponent>",
-                    "file": "src/app/publication/publication-header/publication-header.stories.ts",
+                    "rawtype": "StoryObj<ProfilePictureComponent>",
+                    "file": "src/app/general-components/profile-picture/profile-picture.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/general-components/tag/tag.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TagComponent>",
+                    "file": "src/app/general-components/tag/tag.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2852,7 +3305,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 3,
+        "count": 2,
         "status": "low",
         "files": [
             {
@@ -3027,6 +3480,144 @@
                 "name": "DateService",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/likes-pictures/likes-pictures.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LikesPicturesComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/likes-pictures/likes-pictures.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/likes-pictures/likes-pictures.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "oneUser",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/likes-pictures/likes-pictures.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "threeUsers",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/likes-pictures/likes-pictures.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "twoUsers",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/likes-pictures/likes-pictures.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "user1",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/likes-pictures/likes-pictures.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "user2",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/likes-pictures/likes-pictures.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "user3",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/likes-statistics/likes-statistics.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LikesStatisticsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/likes-statistics/likes-statistics.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LikesStatistics",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/likes-statistics/likes-statistics.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/likes-statistics/likes-statistics.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "user1",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/likes-statistics/likes-statistics.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "user2",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/likes-statistics/likes-statistics.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "user3",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
