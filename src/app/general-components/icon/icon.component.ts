@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 export type IconType = 'Heart' |
   'Add' |
@@ -21,15 +22,16 @@ export type IconType = 'Heart' |
   'Compass-Filled' |
   'Video-Filled' |
   'Send-Filled' |
-  'Save-Filled'
+  'Save-Filled' |
+  'Bouncing-Heart'
 
 
-type Size = 'medium' | 'small'
+export type Size = 'medium' | 'small'
 
 @Component({
   selector: 'app-icon',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   templateUrl: './icon.component.html',
   styleUrl: './icon.component.sass'
 })
@@ -37,7 +39,9 @@ export class IconComponent {
   @Input({required: true}) iconType!: IconType;
   @Input({required: true}) size!: Size;
   @Input() color: string = 'black';
+  @Input() bounce: boolean = false;
   width!: number;
+
 
   ngOnInit () {
     this.width = this.computeSize(this.size)
