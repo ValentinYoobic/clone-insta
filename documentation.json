@@ -471,21 +471,665 @@
             "extends": []
         },
         {
-<<<<<<< HEAD
-            "name": "LikesPicturesComponent",
-            "id": "component-LikesPicturesComponent-af8f0958c41403359a9db8c678ab1135da39eba577f61ab1a84ac3d181e13f054505d5b1be0d3831779239a613a37c0e9f2e2bcd019aad6f9792ab09d72b79fd",
-            "file": "src/app/likes-pictures/likes-pictures.component.ts",
-=======
             "name": "IconButtonComponent",
-            "id": "component-IconButtonComponent-a7103bbcb4eaf73e7bf63705aa122c2561f335411325851556bc60080f6b1d83c75cd6f1cfb4532748ac85ab7d2bc4c041fd69366dc55568b72f9020d4a24135",
+            "id": "component-IconButtonComponent-f961d92d1cd7d3a546b058d4c3c31c85bbac0c144d7cc1185774f703f6e5b2445120f730cd82b97d8ac2bf05df36c8b70c30f702b82c20a25019c5c1cff9f7ea",
             "file": "src/app/general-components/icon-button/icon-button.component.ts",
->>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-<<<<<<< HEAD
+            "selector": "app-icon-button",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./icon-button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "bounce",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "buttonHeight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 18,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "buttonWidth",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 17,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "defaultIconColor",
+                    "defaultValue": "'black'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "handleClick",
+                    "defaultValue": "() => console.log('You clicked on the button')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "function",
+                    "decorators": []
+                },
+                {
+                    "name": "iconSize",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "Size",
+                    "decorators": []
+                },
+                {
+                    "name": "iconType",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "IconType",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "currentIconColor",
+                    "defaultValue": "'black'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "handleMouseEnter",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "function",
+                    "optional": false,
+                    "description": "",
+                    "line": 26,
+                    "modifierKind": [
+                        128
+                    ]
+                },
+                {
+                    "name": "handleMouseLeave",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "function",
+                    "optional": false,
+                    "description": "",
+                    "line": 28,
+                    "modifierKind": [
+                        128
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "IconComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NgClass"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { NgClass } from '@angular/common';\nimport { IconType, Size, IconComponent } from '../icon/icon.component';\n\n@Component({\n  selector: 'app-icon-button',\n  standalone: true,\n  imports: [IconComponent, NgClass],\n  templateUrl: './icon-button.component.html',\n  styleUrl: './icon-button.component.sass'\n})\nexport abstract class IconButtonComponent {\n  @Input() iconType!: IconType;\n  @Input() defaultIconColor: string = 'black';\n  @Input() handleClick: () => void = () => console.log('You clicked on the button')\n  @Input() iconSize: Size = 'medium'\n  @Input({required: true}) buttonWidth!: number;\n  @Input({required: true}) buttonHeight!: number;\n  @Input() bounce: boolean = false;\n  currentIconColor: string = 'black'\n\n  ngOnInit() {\n    this.currentIconColor = this.defaultIconColor\n  }\n  \n  abstract handleMouseEnter: () => void\n\n  abstract handleMouseLeave: () => void\n}\n",
+            "styleUrl": "./icon-button.component.sass",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<button [ngClass]=\"\" (click)=\"handleClick()\" (mouseenter)=\"this.handleMouseEnter()\" (mouseleave)=\"this.handleMouseLeave()\">\n    <app-icon [iconType]=\"iconType\" [size]=\"iconSize\" [color]=\"currentIconColor\" [bounce]=\"bounce\"/>\n</button>"
+        },
+        {
+            "name": "IconComponent",
+            "id": "component-IconComponent-2e1285771a0ce7f854a8d43fd3aca658ea5e9c24f6542344e289efb518fd733335ede7f5beba4021c6dcaa2755a28833053173f898133fb87ead8f636b1baa28",
+            "file": "src/app/general-components/icon/icon.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-icon",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./icon.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "bounce",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 42,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'black'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 41,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "iconType",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 39,
+                    "type": "IconType",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 40,
+                    "type": "Size",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "width",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 43
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "computeSize",
+                    "args": [
+                        {
+                            "name": "size",
+                            "type": "Size",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 50,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "size",
+                            "type": "Size",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 46,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgClass"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { NgClass } from '@angular/common';\n\nexport type IconType = 'Heart' |\n  'Add' |\n  'Compass' |\n  'Home' |\n  'Search' |\n  'Send' |\n  'Video' |\n  'User' |\n  'Threads' |\n  'Burger' |\n  'Meatballs' |\n  'ChatBubble' |\n  'Save' |\n  'Emoji' |\n  'Close' |\n  'Instagram' |\n  'Heart-Filled' |\n  'Home-Filled' |\n  'Compass-Filled' |\n  'Video-Filled' |\n  'Send-Filled' |\n  'Save-Filled' |\n  'Bouncing-Heart'\n\n\nexport type Size = 'medium' | 'small'\n\n@Component({\n  selector: 'app-icon',\n  standalone: true,\n  imports: [NgClass],\n  templateUrl: './icon.component.html',\n  styleUrl: './icon.component.sass'\n})\nexport class IconComponent {\n  @Input({required: true}) iconType!: IconType;\n  @Input({required: true}) size!: Size;\n  @Input() color: string = 'black';\n  @Input() bounce: boolean = false;\n  width!: number;\n\n\n  ngOnInit () {\n    this.width = this.computeSize(this.size)\n  }\n\n  computeSize (size: Size): number {\n    switch (size) {\n      case ('medium'):\n        return 24\n      case ('small'):\n        return 13\n      default:\n        return 24\n    }\n  }\n}\n",
+            "styleUrl": "./icon.component.sass",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "@switch (iconType) {\n    @case ('Heart') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <path d=\"M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z\"></path>\n        </svg>\n    }\n    @case ('Add') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <path   d=\"M2 12v3.45c0 2.849.698 4.005 1.606 4.944.94.909 2.098 1.608 4.946 1.608h6.896c2.848 0 4.006-.7 4.946-1.608C21.302 19.455 22 18.3 22 15.45V8.552c0-2.849-.698-4.006-1.606-4.945C19.454 2.7 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.547 2 5.703 2 8.552Z\" \n                    fill=\"none\" [attr.stroke]=\"color\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"></path>\n            <line [attr.stroke]=\"color\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" x1=\"6.545\" x2=\"17.455\" y1=\"12.001\" y2=\"12.001\"></line>\n            <line [attr.stroke]=\"color\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" x1=\"12.003\" x2=\"12.003\" y1=\"6.545\" y2=\"17.455\"></line>\n        </svg>\n    }\n    @case ('Compass') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <polygon fill=\"white\" points=\"13.941 13.953 7.581 16.424 10.06 10.056 16.42 7.585 13.941 13.953\" \n                    [attr.stroke]=\"color\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"></polygon>\n            <polygon fill-rule=\"evenodd\" points=\"10.06 10.056 13.949 13.945 7.581 16.424 10.06 10.056\"></polygon>\n            <circle cx=\"12.001\" cy=\"12.005\" fill=\"none\" r=\"10.5\" [attr.stroke]=\"color\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"></circle>\n        </svg>\n    }\n    @case ('Home') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <path d=\"M9.005 16.545a2.997 2.997 0 0 1 2.997-2.997A2.997 2.997 0 0 1 15 16.545V22h7V11.543L12 2 2 11.543V22h7.005Z\" \n            fill=\"none\" [attr.stroke]=\"color\" stroke-linejoin=\"round\" stroke-width=\"2\"></path>\n        </svg>\n    }\n    @case ('Search') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <title>Search</title>\n            <path d=\"M19 10.5A8.5 8.5 0 1 1 10.5 2a8.5 8.5 0 0 1 8.5 8.5Z\" \n            fill=\"none\" [attr.stroke]=\"color\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"></path>\n            <line fill=\"none\" [attr.stroke]=\"color\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" x1=\"16.511\" x2=\"22\" y1=\"16.511\" y2=\"22\"></line>\n        </svg>\n    }\n    @case ('Send') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <title>Direct</title>\n            <line fill=\"none\" [attr.stroke]=\"color\" stroke-linejoin=\"round\" stroke-width=\"2\" x1=\"22\" x2=\"9.218\" y1=\"3\" y2=\"10.083\"></line>\n            <polygon fill=\"none\" points=\"11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334\" [attr.stroke]=\"color\" stroke-linejoin=\"round\" stroke-width=\"2\"></polygon>\n        </svg>\n    }\n    @case ('Video') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <line fill=\"none\" [attr.stroke]=\"color\" stroke-linejoin=\"round\" stroke-width=\"2\" x1=\"2.049\" x2=\"21.95\" y1=\"7.002\"\n                y2=\"7.002\"></line>\n            <line fill=\"none\" [attr.stroke]=\"color\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" x1=\"13.504\"\n                x2=\"16.362\" y1=\"2.001\" y2=\"7.002\"></line>\n            <line fill=\"none\" [attr.stroke]=\"color\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" x1=\"7.207\"\n                x2=\"10.002\" y1=\"2.11\" y2=\"7.002\"></line>\n            <path\n                d=\"M2 12.001v3.449c0 2.849.698 4.006 1.606 4.945.94.908 2.098 1.607 4.946 1.607h6.896c2.848 0 4.006-.699 4.946-1.607.908-.939 1.606-2.096 1.606-4.945V8.552c0-2.848-.698-4.006-1.606-4.945C19.454 2.699 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.546 2 5.704 2 8.552Z\"\n                fill=\"none\" [attr.stroke]=\"color\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"></path>\n            <path\n                d=\"M9.763 17.664a.908.908 0 0 1-.454-.787V11.63a.909.909 0 0 1 1.364-.788l4.545 2.624a.909.909 0 0 1 0 1.575l-4.545 2.624a.91.91 0 0 1-.91 0Z\"\n                fill-rule=\"evenodd\"></path>\n        </svg>\n    }\n    @case ('Threads') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 192 192\" [attr.width]=\"width\">\n            <title></title>\n            <path\n                d=\"M141.537 88.9883C140.71 88.5919 139.87 88.2104 139.019 87.8451C137.537 60.5382 122.616 44.905 97.5619 44.745C97.4484 44.7443 97.3355 44.7443 97.222 44.7443C82.2364 44.7443 69.7731 51.1409 62.102 62.7807L75.881 72.2328C81.6116 63.5383 90.6052 61.6848 97.2286 61.6848C97.3051 61.6848 97.3819 61.6848 97.4576 61.6855C105.707 61.7381 111.932 64.1366 115.961 68.814C118.893 72.2193 120.854 76.925 121.825 82.8638C114.511 81.6207 106.601 81.2385 98.145 81.7233C74.3247 83.0954 59.0111 96.9879 60.0396 116.292C60.5615 126.084 65.4397 134.508 73.775 140.011C80.8224 144.663 89.899 146.938 99.3323 146.423C111.79 145.74 121.563 140.987 128.381 132.296C133.559 125.696 136.834 117.143 138.28 106.366C144.217 109.949 148.617 114.664 151.047 120.332C155.179 129.967 155.42 145.8 142.501 158.708C131.182 170.016 117.576 174.908 97.0135 175.059C74.2042 174.89 56.9538 167.575 45.7381 153.317C35.2355 139.966 29.8077 120.682 29.6052 96C29.8077 71.3178 35.2355 52.0336 45.7381 38.6827C56.9538 24.4249 74.2039 17.11 97.0132 16.9405C119.988 17.1113 137.539 24.4614 149.184 38.788C154.894 45.8136 159.199 54.6488 162.037 64.9503L178.184 60.6422C174.744 47.9622 169.331 37.0357 161.965 27.974C147.036 9.60668 125.202 0.195148 97.0695 0H96.9569C68.8816 0.19447 47.2921 9.6418 32.7883 28.0793C19.8819 44.4864 13.2244 67.3157 13.0007 95.9325L13 96L13.0007 96.0675C13.2244 124.684 19.8819 147.514 32.7883 163.921C47.2921 182.358 68.8816 191.806 96.9569 192H97.0695C122.03 191.827 139.624 185.292 154.118 170.811C173.081 151.866 172.51 128.119 166.26 113.541C161.776 103.087 153.227 94.5962 141.537 88.9883ZM98.4405 129.507C88.0005 130.095 77.1544 125.409 76.6196 115.372C76.2232 107.93 81.9158 99.626 99.0812 98.6368C101.047 98.5234 102.976 98.468 104.871 98.468C111.106 98.468 116.939 99.0737 122.242 100.233C120.264 124.935 108.662 128.946 98.4405 129.507Z\">\n            </path>\n        </svg>\n    }\n    @case ('Burger') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <line fill=\"none\" [attr.stroke]=\"color\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" x1=\"3\"\n                x2=\"21\" y1=\"4\" y2=\"4\"></line>\n            <line fill=\"none\" [attr.stroke]=\"color\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" x1=\"3\"\n                x2=\"21\" y1=\"12\" y2=\"12\"></line>\n            <line fill=\"none\" [attr.stroke]=\"color\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" x1=\"3\"\n                x2=\"21\" y1=\"20\" y2=\"20\"></line>\n        </svg>\n    }\n    @case ('Meatballs') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <circle cx=\"12\" cy=\"12\" r=\"1.5\"></circle>\n            <circle cx=\"6\" cy=\"12\" r=\"1.5\"></circle>\n            <circle cx=\"18\" cy=\"12\" r=\"1.5\"></circle>\n        </svg>\n    }\n    @case ('ChatBubble') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <path d=\"M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z\" fill=\"none\" [attr.stroke]=\"color\"\n                stroke-linejoin=\"round\" stroke-width=\"2\"></path>\n        </svg>\n    }\n    @case ('Save') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <polygon fill=\"none\" points=\"20 21 12 13.44 4 21 4 3 20 3 20 21\" [attr.stroke]=\"color\" stroke-linecap=\"round\"\n                stroke-linejoin=\"round\" stroke-width=\"2\"></polygon>\n        </svg>\n    }\n    @case ('Emoji') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <path\n                d=\"M15.83 10.997a1.167 1.167 0 1 0 1.167 1.167 1.167 1.167 0 0 0-1.167-1.167Zm-6.5 1.167a1.167 1.167 0 1 0-1.166 1.167 1.167 1.167 0 0 0 1.166-1.167Zm5.163 3.24a3.406 3.406 0 0 1-4.982.007 1 1 0 1 0-1.557 1.256 5.397 5.397 0 0 0 8.09 0 1 1 0 0 0-1.55-1.263ZM12 .503a11.5 11.5 0 1 0 11.5 11.5A11.513 11.513 0 0 0 12 .503Zm0 21a9.5 9.5 0 1 1 9.5-9.5 9.51 9.51 0 0 1-9.5 9.5Z\">\n            </path>\n        </svg>\n    }\n    @case ('Close') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <polyline fill=\"none\" points=\"20.643 3.357 12 12 3.353 20.647\" [attr.stroke]=\"color\" stroke-linecap=\"round\"\n                stroke-linejoin=\"round\" stroke-width=\"3\"></polyline>\n            <line fill=\"none\" [attr.stroke]=\"color\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"3\" x1=\"20.649\"\n                x2=\"3.354\" y1=\"20.649\" y2=\"3.354\"></line>\n        </svg>\n    }\n    @case ('Instagram') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <path\n                d=\"M12 2.982c2.937 0 3.285.011 4.445.064a6.087 6.087 0 0 1 2.042.379 3.408 3.408 0 0 1 1.265.823 3.408 3.408 0 0 1 .823 1.265 6.087 6.087 0 0 1 .379 2.042c.053 1.16.064 1.508.064 4.445s-.011 3.285-.064 4.445a6.087 6.087 0 0 1-.379 2.042 3.643 3.643 0 0 1-2.088 2.088 6.087 6.087 0 0 1-2.042.379c-1.16.053-1.508.064-4.445.064s-3.285-.011-4.445-.064a6.087 6.087 0 0 1-2.043-.379 3.408 3.408 0 0 1-1.264-.823 3.408 3.408 0 0 1-.823-1.265 6.087 6.087 0 0 1-.379-2.042c-.053-1.16-.064-1.508-.064-4.445s.011-3.285.064-4.445a6.087 6.087 0 0 1 .379-2.042 3.408 3.408 0 0 1 .823-1.265 3.408 3.408 0 0 1 1.265-.823 6.087 6.087 0 0 1 2.042-.379c1.16-.053 1.508-.064 4.445-.064M12 1c-2.987 0-3.362.013-4.535.066a8.074 8.074 0 0 0-2.67.511 5.392 5.392 0 0 0-1.949 1.27 5.392 5.392 0 0 0-1.269 1.948 8.074 8.074 0 0 0-.51 2.67C1.012 8.638 1 9.013 1 12s.013 3.362.066 4.535a8.074 8.074 0 0 0 .511 2.67 5.392 5.392 0 0 0 1.27 1.949 5.392 5.392 0 0 0 1.948 1.269 8.074 8.074 0 0 0 2.67.51C8.638 22.988 9.013 23 12 23s3.362-.013 4.535-.066a8.074 8.074 0 0 0 2.67-.511 5.625 5.625 0 0 0 3.218-3.218 8.074 8.074 0 0 0 .51-2.67C22.988 15.362 23 14.987 23 12s-.013-3.362-.066-4.535a8.074 8.074 0 0 0-.511-2.67 5.392 5.392 0 0 0-1.27-1.949 5.392 5.392 0 0 0-1.948-1.269 8.074 8.074 0 0 0-2.67-.51C15.362 1.012 14.987 1 12 1Zm0 5.351A5.649 5.649 0 1 0 17.649 12 5.649 5.649 0 0 0 12 6.351Zm0 9.316A3.667 3.667 0 1 1 15.667 12 3.667 3.667 0 0 1 12 15.667Zm5.872-10.859a1.32 1.32 0 1 0 1.32 1.32 1.32 1.32 0 0 0-1.32-1.32Z\">\n            </path>\n        </svg>\n    }\n    @case ('Heart-Filled') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 48 48\" [attr.width]=\"width\">\n            <path\n                d=\"M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z\">\n            </path>\n        </svg>\n    }\n    @case ('Home-Filled') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <path\n                d=\"M22 23h-6.001a1 1 0 0 1-1-1v-5.455a2.997 2.997 0 1 0-5.993 0V22a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11.543a1.002 1.002 0 0 1 .31-.724l10-9.543a1.001 1.001 0 0 1 1.38 0l10 9.543a1.002 1.002 0 0 1 .31.724V22a1 1 0 0 1-1 1Z\">\n            </path>\n        </svg>\n    }\n    @case ('Compass-Filled') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <path\n                d=\"m13.173 13.164 1.491-3.829-3.83 1.49ZM12.001.5a11.5 11.5 0 1 0 11.5 11.5A11.513 11.513 0 0 0 12.001.5Zm5.35 7.443-2.478 6.369a1 1 0 0 1-.57.569l-6.36 2.47a1 1 0 0 1-1.294-1.294l2.48-6.369a1 1 0 0 1 .57-.569l6.359-2.47a1 1 0 0 1 1.294 1.294Z\">\n            </path>\n        </svg>\n    }\n    @case ('Video-Filled') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <path\n                d=\"m12.823 1 2.974 5.002h-5.58l-2.65-4.971c.206-.013.419-.022.642-.027L8.55 1Zm2.327 0h.298c3.06 0 4.468.754 5.64 1.887a6.007 6.007 0 0 1 1.596 2.82l.07.295h-4.629L15.15 1Zm-9.667.377L7.95 6.002H1.244a6.01 6.01 0 0 1 3.942-4.53Zm9.735 12.834-4.545-2.624a.909.909 0 0 0-1.356.668l-.008.12v5.248a.91.91 0 0 0 1.255.84l.109-.053 4.545-2.624a.909.909 0 0 0 .1-1.507l-.1-.068-4.545-2.624Zm-14.2-6.209h21.964l.015.36.003.189v6.899c0 3.061-.755 4.469-1.888 5.64-1.151 1.114-2.5 1.856-5.33 1.909l-.334.003H8.551c-3.06 0-4.467-.755-5.64-1.889-1.114-1.15-1.854-2.498-1.908-5.33L1 15.45V8.551l.003-.189Z\"\n                fill-rule=\"evenodd\"></path>\n        </svg>\n    }\n    @case ('Send-Filled') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <path\n                d=\"M22.91 2.388a.69.69 0 0 0-.597-.347l-20.625.002a.687.687 0 0 0-.482 1.178L7.26 9.16a.686.686 0 0 0 .778.128l7.612-3.657a.723.723 0 0 1 .937.248.688.688 0 0 1-.225.932l-7.144 4.52a.69.69 0 0 0-.3.743l2.102 8.692a.687.687 0 0 0 .566.518.655.655 0 0 0 .103.008.686.686 0 0 0 .59-.337L22.903 3.08a.688.688 0 0 0 .007-.692\"\n                fill-rule=\"evenodd\"></path>\n        </svg>\n    }\n    @case ('Save-Filled') {\n        <svg [ngClass]=\"{'bouncing': bounce}\" [attr.fill]=\"color\" [attr.height]=\"width\" role=\"img\" viewBox=\"0 0 24 24\" [attr.width]=\"width\">\n            <path\n                d=\"M20 22a.999.999 0 0 1-.687-.273L12 14.815l-7.313 6.912A1 1 0 0 1 3 21V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1Z\">\n            </path>\n        </svg>\n    }\n}"
+        },
+        {
+            "name": "InteractionBarComponent",
+            "id": "component-InteractionBarComponent-4a27335776e6e5b1f0a841675efb8399f2ec2b4e2fb3a446872f849984ffa8657963b4c63133bbbb957f7734fc0dd342e1d83a496e4a8a8ece8706907e07cef2",
+            "file": "src/app/interaction-bar/interaction-bar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-interaction-bar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./interaction-bar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "LightenHoverIconButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "LikeButtonComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { LightenHoverIconButtonComponent } from '../general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.component';\nimport { LikeButtonComponent } from '../publication/like-button/like-button.component';\n\n@Component({\n  selector: 'app-interaction-bar',\n  standalone: true,\n  imports: [LightenHoverIconButtonComponent, LikeButtonComponent],\n  templateUrl: './interaction-bar.component.html',\n  styleUrl: './interaction-bar.component.sass'\n})\nexport class InteractionBarComponent {\n\n}\n",
+            "styleUrl": "./interaction-bar.component.sass",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"interaction-bar\">\n    <div class=\"left-section\">\n        <app-like-button [buttonWidth]=\"24\" [buttonHeight]=\"24\"/>\n        <app-lighten-hover-icon-button iconType=\"ChatBubble\" iconSize=\"medium\" [buttonWidth]=\"24\" [buttonHeight]=\"24\"/>\n        <app-lighten-hover-icon-button iconType=\"Send\" iconSize=\"medium\" [buttonWidth]=\"24\" [buttonHeight]=\"24\" />\n    </div>\n    <div class=\"right-section\">\n        <app-lighten-hover-icon-button iconType=\"Save\" iconSize=\"medium\" [buttonWidth]=\"24\" [buttonHeight]=\"24\" />\n    </div>\n</div>"
+        },
+        {
+            "name": "LightenHoverIconButtonComponent",
+            "id": "component-LightenHoverIconButtonComponent-a7c912c02d24e9ecc7cbad6ec2be0c194222ef02bafdff20310635281177e24b0cef9c15b9e5aaf0eb34a37586f0dfe36b57ed858be6c9833ad7e768929bccbd",
+            "file": "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-lighten-hover-icon-button",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "../icon-button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "bounce",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "required": true,
+                    "name": "buttonHeight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 18,
+                    "type": "number",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "required": true,
+                    "name": "buttonWidth",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 17,
+                    "type": "number",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "name": "defaultIconColor",
+                    "defaultValue": "'black'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "name": "handleClick",
+                    "defaultValue": "() => console.log('You clicked on the button')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "function",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "name": "iconSize",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "Size",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "name": "iconType",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "IconType",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "handleMouseEnter",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "name": "handleMouseLeave",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "name": "currentIconColor",
+                    "defaultValue": "'black'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "IconComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NgClass"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from \"@angular/core\"\nimport { IconComponent } from \"../../icon/icon.component\"\nimport { NgClass } from \"@angular/common\"\nimport { IconButtonComponent } from \"../icon-button.component\"\n\n@Component({\n  selector: 'app-lighten-hover-icon-button',\n  standalone: true,\n  imports: [IconComponent, NgClass],\n  templateUrl: '../icon-button.component.html',\n  styleUrl: '../icon-button.component.sass'\n})\nexport class LightenHoverIconButtonComponent extends IconButtonComponent {\n  handleMouseEnter = () => {\n    this.currentIconColor = '#8E8E8E'\n  }\n  handleMouseLeave = () => {\n    this.currentIconColor = this.defaultIconColor\n  }\n}",
+            "styleUrl": "../icon-button.component.sass",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [
+                "IconButtonComponent"
+            ],
+            "templateData": "<button [ngClass]=\"\" (click)=\"handleClick()\" (mouseenter)=\"this.handleMouseEnter()\" (mouseleave)=\"this.handleMouseLeave()\">\n    <app-icon [iconType]=\"iconType\" [size]=\"iconSize\" [color]=\"currentIconColor\" [bounce]=\"bounce\"/>\n</button>"
+        },
+        {
+            "name": "LikeButtonComponent",
+            "id": "component-LikeButtonComponent-203eb77a0297a37896a05f2dc6d84ac8d5d9c9a6d986651d096e9e3c7ea6ef668753a63b386eb111faa7c189c3c704aca923f968d0e417e09cce5accc37d55b5",
+            "file": "src/app/publication/like-button/like-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-like-button",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./like-button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "required": true,
+                    "name": "buttonHeight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 19,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "buttonWidth",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 18,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "handleLike",
+                    "defaultValue": "() => console.log('You clicked on like')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "function",
+                    "decorators": []
+                },
+                {
+                    "name": "handleUnlike",
+                    "defaultValue": "() => console.log('You clicked on unlike')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "function",
+                    "decorators": []
+                },
+                {
+                    "name": "iconSize",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "Size",
+                    "decorators": []
+                },
+                {
+                    "name": "isLiked",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "makeLikeAnimation",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "handleClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgClass"
+                },
+                {
+                    "name": "NoHoverIconButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "LightenHoverIconButtonComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { NoHoverIconButtonComponent } from '../../general-components/icon-button/no-hover-icon-button/no-hover-icon-button.component';\nimport { LightenHoverIconButtonComponent } from '../../general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.component';\nimport { Size } from '../../general-components/icon/icon.component';\nimport { NgClass } from '@angular/common';\n\n@Component({\n  selector: 'app-like-button',\n  standalone: true,\n  imports: [NgClass, NoHoverIconButtonComponent, LightenHoverIconButtonComponent],\n  templateUrl: './like-button.component.html',\n  styleUrl: './like-button.component.sass'\n})\nexport class LikeButtonComponent {\n  @Input() handleLike: () => void = () => console.log('You clicked on like')\n  @Input() handleUnlike: () => void = () => console.log('You clicked on unlike')\n  @Input() iconSize: Size = 'medium'\n  @Input({required: true}) buttonWidth!: number;\n  @Input({required: true}) buttonHeight!: number;\n  @Input() isLiked: boolean = false;\n  makeLikeAnimation: boolean = false;\n\n  handleClick() {\n    this.isLiked = !this.isLiked\n    if (this.isLiked) {\n      this.makeLikeAnimation = true\n    }\n  }\n\n}\n",
+            "styleUrl": "./like-button.component.sass",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "@if (!isLiked) {\n    <app-lighten-hover-icon-button iconType=\"Heart\" iconSize=\"medium\" [buttonHeight]=\"buttonHeight\" [buttonWidth]=\"buttonWidth\" defaultIconColor=\"black\" [handleClick]=\"handleLike\" (click)=\"handleClick()\"/>\n}\n@else {\n    <app-no-hover-icon-button [bounce]=\"makeLikeAnimation\" [ngClass]=\"{'like-animation': makeLikeAnimation}\" iconType=\"Heart-Filled\" iconSize=\"medium\" [buttonHeight]=\"buttonHeight\" [buttonWidth]=\"buttonWidth\" defaultIconColor=\"#FF3040\" [handleClick]=\"handleUnlike\" (click)=\"handleClick()\"/>\n}"
+        },
+        {
+            "name": "LikesPicturesComponent",
+            "id": "component-LikesPicturesComponent-a83364028fe501d306867af7212ce1601879e1626bb02260351fc147599a360ce5ee01fbf129d914dd40018e890a4a21987ca6eb549a1c84f13191e9b3cd8f43",
+            "file": "src/app/likes-pictures/likes-pictures.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
             "selector": "app-likes-pictures",
             "styleUrls": [],
             "styles": [],
@@ -518,7 +1162,7 @@
                         }
                     ],
                     "optional": false,
-                    "returnType": "string",
+                    "returnType": "string[]",
                     "typeParameters": [],
                     "line": 15,
                     "deprecated": false,
@@ -536,26 +1180,11 @@
                     ]
                 }
             ],
-=======
-            "selector": "app-icon-button",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./icon-button.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
->>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-<<<<<<< HEAD
             "imports": [
                 {
                     "name": "CommonModule",
@@ -569,59 +1198,33 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { User } from '../user';\nimport { ProfilePictureComponent } from '../general-components/profile-picture/profile-picture.component';\n@Component({\n  selector: 'app-likes-pictures',\n  standalone: true,\n  imports: [CommonModule, ProfilePictureComponent],\n  templateUrl: './likes-pictures.component.html',\n  styleUrl: './likes-pictures.component.sass'\n})\nexport class LikesPicturesComponent {\n  @Input() whoLiked!: User[];\n\n  getClass(i:number): string {\n    return `picture--${i}`\n  } \n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { User } from '../user';\nimport { ProfilePictureComponent } from '../general-components/profile-picture/profile-picture.component';\n@Component({\n  selector: 'app-likes-pictures',\n  standalone: true,\n  imports: [CommonModule, ProfilePictureComponent],\n  templateUrl: './likes-pictures.component.html',\n  styleUrl: './likes-pictures.component.sass'\n})\nexport class LikesPicturesComponent {\n  @Input() whoLiked!: User[];\n\n  getClass(i:number): string[] {\n    console.log(i);\n    return [`picture--${i}`];\n  } \n}\n",
             "styleUrl": "./likes-pictures.component.sass",
-=======
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-icon-button',\n  standalone: true,\n  imports: [],\n  templateUrl: './icon-button.component.html',\n  styleUrl: './icon-button.component.sass'\n})\nexport class IconButtonComponent {\n\n}\n",
-            "styleUrl": "./icon-button.component.sass",
->>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-<<<<<<< HEAD
-            "templateData": "<div class=\"picture0\">\n    <app-profile-picture size=\"xxs\" [profilePictureUrl]=\"whoLiked[0].profilePhotoUrl\"></app-profile-picture>\n</div>\n<div class=\"picture1\">\n    <app-profile-picture size=\"xxs\" [profilePictureUrl]=\"whoLiked[1].profilePhotoUrl\"></app-profile-picture>\n</div>\n<div class=\"picture2\">\n    <app-profile-picture size=\"xxs\" [profilePictureUrl]=\"whoLiked[2].profilePhotoUrl\"></app-profile-picture>\n</div>\n\n<div *ngFor=\"let user of whoLiked; index as i\" [class]=\"getClass(i)\">\n    <app-profile-picture size=\"xxs\" [profilePictureUrl]=\"user.profilePhotoUrl\"></app-profile-picture>\n</div>"
+            "templateData": "<div class=\"wrapper\">\n  <div *ngFor=\"let user of whoLiked; index as i\" [class]=\"getClass(i)\">\n    <app-profile-picture\n      size=\"xxs\"\n      [profilePictureUrl]=\"user.profilePhotoUrl\"\n    ></app-profile-picture>\n  </div>\n</div>"
         },
         {
             "name": "LikesStatisticsComponent",
-            "id": "component-LikesStatisticsComponent-1a590cd5874a2e01feed0f8aab3ff96a8e572ea6d4d392af6d9f51947668b9ae8570d8ff4532b9dc19235d2c29c409edbd80fc00bf24511b356c03016bb555fb",
+            "id": "component-LikesStatisticsComponent-a9db1655611fc8f4da20e7c71a0d862e57867024f21b6c4ebe724b61983e39ba54e401df04b661fb8f03b38b14befc1be30a18a9b52249198a0a29324541b20b",
             "file": "src/app/likes-statistics/likes-statistics.component.ts",
-=======
-            "templateData": "<p>icon-button works!</p>\n"
-        },
-        {
-            "name": "IconComponent",
-            "id": "component-IconComponent-54351b231401778e79c70a2259e154c19608377ee4f4f25b4a9c913c27585caca9a07885dd665fe7970c6df3341b94311d61483740a5f35a47acf627d3ce5b56",
-            "file": "src/app/general-components/icon/icon.component.ts",
->>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-<<<<<<< HEAD
             "selector": "app-likes-statistics",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
                 "./likes-statistics.component.html"
-=======
-            "selector": "app-icon",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./icon.component.html"
->>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
             ],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
-<<<<<<< HEAD
                     "name": "likes",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -636,31 +1239,11 @@
                     "deprecationMessage": "",
                     "line": 15,
                     "type": "User[] | null",
-=======
-                    "required": true,
-                    "name": "inconType",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "optional": false,
-                    "line": 30,
-                    "type": "IconType",
-                    "decorators": []
-                },
-                {
-                    "required": true,
-                    "name": "size",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "optional": false,
-                    "line": 31,
-                    "type": "Size",
->>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
                     "decorators": []
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [],
-<<<<<<< HEAD
             "methodsClass": [
                 {
                     "name": "getUKNumber",
@@ -673,47 +1256,31 @@
                     "deprecationMessage": ""
                 }
             ],
-=======
-            "methodsClass": [],
->>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-<<<<<<< HEAD
             "imports": [
                 {
                     "name": "CommonModule",
                     "type": "module"
                 },
                 {
-                    "name": "ProfilePictureComponent",
+                    "name": "LikesPicturesComponent",
                     "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { User } from '../user';\nimport { ProfilePictureComponent } from '../general-components/profile-picture/profile-picture.component';\n\n@Component({\n  selector: 'app-likes-statistics',\n  standalone: true,\n  imports: [CommonModule, ProfilePictureComponent],\n  templateUrl: './likes-statistics.component.html',\n  styleUrl: './likes-statistics.component.sass'\n})\nexport class LikesStatisticsComponent {\n  @Input() likes!: number;\n  @Input() whoLiked: User[] | null = null;\n\n  getUKNumber(): string {\n    return this.likes.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\");\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { User } from '../user';\nimport { LikesPicturesComponent } from '../likes-pictures/likes-pictures.component';\n\n@Component({\n  selector: 'app-likes-statistics',\n  standalone: true,\n  imports: [CommonModule, LikesPicturesComponent],\n  templateUrl: './likes-statistics.component.html',\n  styleUrl: './likes-statistics.component.sass'\n})\nexport class LikesStatisticsComponent {\n  @Input() likes!: number;\n  @Input() whoLiked: User[] | null = null;\n\n  getUKNumber(): string {\n    return this.likes.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\");\n  }\n}\n",
             "styleUrl": "./likes-statistics.component.sass",
-=======
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\ntype IconType = 'Heart' |\n  'Add' |\n  'Compass' |\n  'Home' |\n  'Search' |\n  'Send' |\n  'Video' |\n  'User' |\n  'Threads' |\n  'Burger' |\n  'Meatballs' |\n  'ChatBubble' |\n  'Save' |\n  'Smile' |\n  'Close' |\n  'Instagram'\n\ntype Size = 'Medium'\n\n@Component({\n  selector: 'app-icon',\n  standalone: true,\n  imports: [],\n  templateUrl: './icon.component.html',\n  styleUrl: './icon.component.sass'\n})\nexport class IconComponent {\n  @Input({required: true}) inconType!: IconType;\n  @Input({required: true}) size!: Size;\n}",
-            "styleUrl": "./icon.component.sass",
->>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-<<<<<<< HEAD
-            "templateData": "<div class=\"likes-container\">\n    <div class=\"who-liked\" >\n        <app-profile-picture *ngFor=\"let user of whoLiked\" size=\"xxs\" [profilePictureUrl]=\"user.profilePhotoUrl\"></app-profile-picture>\n    </div>\n    <span class=\"likes-stat\"> {{ getUKNumber() }} likes </span>\n<!-- \n    <app-profile-picture  size=\"xxs\" profilePhotoUrl=\"assets/profileImage.jpeg\"></app-profile-picture> -->\n</div>\n"
-=======
-            "templateData": "<p>icon works!</p>\n"
->>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
+            "templateData": "<div class=\"likes-container\">\n  <app-likes-pictures [whoLiked]=\"whoLiked\"></app-likes-pictures>\n\n  <a class=\"likes-stat\">\n    {{ getUKNumber() }} likes\n  </a>\n</div>\n"
         },
         {
             "name": "NavigationBarComponent",
@@ -756,11 +1323,11 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<nav>\n    <div class=\"top-section\">\n        <img src=\"assets/instagram-logo.svg.png\" alt=\"instagram-logo\" width=\"50%\" class=\"main-logo\">\n        <app-navigation-button icon=\"Home\" label=\"Home\"></app-navigation-button>\n        <app-navigation-button icon=\"Search\" label=\"Search\"></app-navigation-button>\n        <app-navigation-button icon=\"Compass\" label=\"Explore\"></app-navigation-button>\n        <app-navigation-button icon=\"Video\" label=\"Reels\"></app-navigation-button>\n        <app-navigation-button icon=\"Send\" label=\"Message\"></app-navigation-button>\n        <app-navigation-button icon=\"Heart\" label=\"Notifications\"></app-navigation-button>\n        <app-navigation-button icon=\"Add\" label=\"Create\"></app-navigation-button>\n    </div>\n\n    <div class=\"bottom-section\">\n        <app-navigation-button icon=\"Threads\" label=\"Threads\"></app-navigation-button>\n        <app-navigation-button icon=\"Menu\" label=\"More\"></app-navigation-button>\n    </div>\n    \n</nav>"
+            "templateData": "<nav>\n    <div class=\"top-section\">\n        <img src=\"assets/instagram-logo.svg.png\" alt=\"instagram-logo\" width=\"50%\" class=\"main-logo\">\n        <app-navigation-button iconType=\"Home\" label=\"Home\"></app-navigation-button>\n        <app-navigation-button iconType=\"Search\" label=\"Search\"></app-navigation-button>\n        <app-navigation-button iconType=\"Compass\" label=\"Explore\"></app-navigation-button>\n        <app-navigation-button iconType=\"Video\" label=\"Reels\"></app-navigation-button>\n        <app-navigation-button iconType=\"Send\" label=\"Message\"></app-navigation-button>\n        <app-navigation-button iconType=\"Heart\" label=\"Notifications\"></app-navigation-button>\n        <app-navigation-button iconType=\"Add\" label=\"Create\"></app-navigation-button>\n    </div>\n\n    <div class=\"bottom-section\">\n        <app-navigation-button iconType=\"Threads\" label=\"Threads\"></app-navigation-button>\n        <app-navigation-button iconType=\"Burger\" label=\"More\"></app-navigation-button>\n    </div>\n    \n</nav>"
         },
         {
             "name": "NavigationButtonComponent",
-            "id": "component-NavigationButtonComponent-ed30bcdb8aaaa05049a56d19042289f876c537cc4b427c985be176b3936eae6d553822d92f347abcb6daae3503e6f0b094ff3ae9d6791bbd260b94de782227df",
+            "id": "component-NavigationButtonComponent-9cfb53c4eaef6cae4d1993758801f2c44b26f99ec9b0d762ec9b84dd83e5e29637e98f6e1763663b99465dd1ffcface84c002f0ef573be98646adabd6a0a23fc",
             "file": "src/app/navigation/navigation-button/navigation-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -781,16 +1348,16 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 14,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
-                    "name": "icon",
+                    "name": "iconType",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
-                    "type": "NavigationIconType | undefined",
+                    "line": 13,
+                    "type": "IconType",
                     "decorators": []
                 },
                 {
@@ -798,41 +1365,195 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 12,
                     "type": "string",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
                 {
-                    "name": "getIconLink",
-                    "args": [
-                        {
-                            "name": "iconName",
-                            "type": "NavigationIconType | undefined",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "string",
-                    "typeParameters": [],
-                    "line": 27,
+                    "name": "IconComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { IconComponent, IconType } from '../../general-components/icon/icon.component';\n\n@Component({\n  selector: 'app-navigation-button',\n  standalone: true,\n  imports: [IconComponent],\n  templateUrl: './navigation-button.component.html',\n  styleUrl: './navigation-button.component.sass'\n})\nexport class NavigationButtonComponent {\n  @Input() label: string = ''\n  @Input() iconType!: IconType;\n  @Input() active: boolean = false;\n\n}\n",
+            "styleUrl": "./navigation-button.component.sass",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<a href=\"\" class=\"container\">\n    <app-icon [iconType]=\"iconType\" size=\"medium\"></app-icon>\n    {{label}}\n</a>\n"
+        },
+        {
+            "name": "NoHoverIconButtonComponent",
+            "id": "component-NoHoverIconButtonComponent-fde77cb5364fb01a65649f42f3dbeac241f9752788eef1d9b70a5c85e2ae55aade49f7f677ae64c4146a63adf52a568c481656fd613423bffea99bc87ffc6048",
+            "file": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-no-hover-icon-button",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "../icon-button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "bounce",
+                    "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "iconName",
-                            "type": "NavigationIconType | undefined",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "required": true,
+                    "name": "buttonHeight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 18,
+                    "type": "number",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "required": true,
+                    "name": "buttonWidth",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 17,
+                    "type": "number",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "name": "defaultIconColor",
+                    "defaultValue": "'black'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "name": "handleClick",
+                    "defaultValue": "() => console.log('You clicked on the button')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "function",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "name": "iconSize",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "Size",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "name": "iconType",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "IconType",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "handleMouseEnter",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "name": "handleMouseLeave",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                },
+                {
+                    "name": "currentIconColor",
+                    "defaultValue": "'black'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "inheritance": {
+                        "file": "IconButtonComponent"
+                    }
                 }
             ],
             "deprecated": false,
@@ -840,17 +1561,27 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "IconComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NgClass"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\ntype NavigationIconType =\n  'Heart' |\n  'Add' |\n  'Compass' |\n  'Home' |\n  'Search' |\n  'Send' |\n  'Video' |\n  'User' |\n  'Threads' |\n  'Menu'\n\n@Component({\n  selector: 'app-navigation-button',\n  standalone: true,\n  imports: [],\n  templateUrl: './navigation-button.component.html',\n  styleUrl: './navigation-button.component.sass'\n})\nexport class NavigationButtonComponent {\n  @Input() label: string = ''\n  @Input() icon: NavigationIconType | undefined;\n  @Input() active: boolean = false;\n\n  getIconLink(iconName: NavigationIconType | undefined) {\n    if (iconName === 'User' || iconName === undefined) {\n      return '' //TODO\n    } else {\n      return 'assets/' + iconName.toLowerCase() + '-icon.png'\n    }\n  }\n}\n",
-            "styleUrl": "./navigation-button.component.sass",
+            "sourceCode": "import { Component } from \"@angular/core\"\nimport { IconComponent } from \"../../icon/icon.component\"\nimport { NgClass } from \"@angular/common\"\nimport { IconButtonComponent } from \"../icon-button.component\"\n\n@Component({\n  selector: 'app-no-hover-icon-button',\n  standalone: true,\n  imports: [IconComponent, NgClass],\n  templateUrl: '../icon-button.component.html',\n  styleUrl: '../icon-button.component.sass'\n})\nexport class NoHoverIconButtonComponent extends IconButtonComponent {\n  handleMouseEnter = () => {}\n  handleMouseLeave = () => {}\n}",
+            "styleUrl": "../icon-button.component.sass",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": "<a href=\"\" class=\"container\">\n    <img [src]=\"getIconLink(this.icon)\" alt=\"{{this.icon}}-icon\">\n    {{label}}\n</a>\n"
+            "extends": [
+                "IconButtonComponent"
+            ],
+            "templateData": "<button [ngClass]=\"\" (click)=\"handleClick()\" (mouseenter)=\"this.handleMouseEnter()\" (mouseleave)=\"this.handleMouseLeave()\">\n    <app-icon [iconType]=\"iconType\" [size]=\"iconSize\" [color]=\"currentIconColor\" [bounce]=\"bounce\"/>\n</button>"
         },
         {
             "name": "PageComponent",
@@ -1259,8 +1990,7 @@
                 ]
             },
             "extends": [],
-<<<<<<< HEAD
-            "templateData": "<div class=\"publication-header\">\n    <div class=\"info-bar\">\n\n        <div class=\"profile-picture-wrapper\" >\n            <div class=\"profile-picture-wrapper\">\n                <app-profile-picture \n                size=\"small\" \n                [hasStory]=\"this.user.hasStory\" \n                [profilePhotoUrl]=\"this.user.profilePictureUrl\" \n                [viewedStory]='false'\n                />\n            </div>\n        </div>\n\n        <div class=\"title-wrapper\">\n            <div class=\"main-title-wrapper\" >\n                <span class=\"bold\">{{this.user.userName}}</span>\n                @if (this.user.isCertified) {\n                    <app-tag type=\"Certified\" size=\"medium\"/>\n                }\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                <span class=\"grey\">{{timeSincePublication}}</span>\n                @if (!this.user.isFollowed) {\n                    <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                    <app-text-buton [class.text-blue]=\"true\">Follow</app-text-buton>\n                }\n            </div>\n            @if (this.subTitleType === 'Audio') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    @if (this.artistName) {\n                        <span>{{this.artistName}}</span>\n                        <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n                    }\n                    <span>{{this.audioName}}</span>\n                </a>\n            }\n            @else if (this.subTitleType === 'Location') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    {{this.location}}\n                </a>\n            }\n\n\n        </div>\n\n        <app-text-buton class=\"menu-wrapper\">\n            <app-text-separator size=\"medium\" SeparatorType=\"meatballs\"/>\n        </app-text-buton>\n        \n    </div>\n</div>"
+            "templateData": "<div class=\"publication-header\">\n        <div class=\"info-bar\">\n        <div class=\"profile-picture-wrapper\" >\n            <div class=\"profile-picture-wrapper\">\n                <app-profile-picture \n                size=\"small\" \n                [hasStory]=\"this.user.hasStory\" \n                [profilePictureUrl]=\"this.user.profilePhotoUrl\" \n                [viewedStory]='false'\n                />\n            </div>\n        </div>\n\n        <div class=\"title-wrapper\">\n            <div class=\"main-title-wrapper\" >\n                <span class=\"bold\">{{this.user.userName}}</span>\n                @if (this.user.isCertified) {\n                    <app-tag type=\"Certified\" size=\"medium\"/>\n                }\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                <span class=\"grey\">{{timeSincePublication}}</span>\n                @if (!this.user.isFollowed) {\n                    <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                    <app-text-buton textColor=\"blue\">Follow</app-text-buton>\n                }\n            </div>\n            @if (this.subTitleType === 'Audio') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    @if (this.artistName) {\n                        <span>{{this.artistName}}</span>\n                        <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n                    }\n                    <span>{{this.audioName}}</span>\n                </a>\n            }\n            @else if (this.subTitleType === 'Location') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    {{this.location}}\n                </a>\n            }\n\n\n        </div>\n\n        <app-text-buton class=\"menu-wrapper\">\n            <app-text-separator size=\"medium\" SeparatorType=\"meatballs\"/>\n        </app-text-buton>\n        \n    </div>\n</div>"
         },
         {
             "name": "SlideComponent",
@@ -1589,9 +2319,6 @@
                 }
             },
             "templateData": "<div [ngClass]=\"sliderClass\">\n  <div\n    *ngIf=\"getVisibleLeftArrow()\"\n    class=\"left-arrow\"\n    (click)=\"goToPrevious()\"\n  >\n    <app-slider-arrow direction=\"left\"></app-slider-arrow>\n  </div>\n  <div *ngIf=\"getVisibleRightArrow()\" class=\"right-arrow\" (click)=\"goToNext()\">\n    <app-slider-arrow direction=\"right\"></app-slider-arrow>\n  </div>\n  <div class=\"slides\">\n    <div class=\"visible-slides\" *ngFor=\"let slide of getVisibleSlidesList()\">\n      <app-slide\n        [type]=\"slide.type\"\n        [pictureUrl]=\"slide.pictureUrl\"\n        [userName]=\"slide.userName\"\n      ></app-slide>\n    </div>\n  </div>\n</div>\n"
-=======
-            "templateData": "<div class=\"publication-header\">\n    <svg aria-label=\"Save\" class=\"x1lliihq x1n2onr6 x5n08af\" fill=\"currentColor\" height=\"24\" role=\"img\" viewBox=\"0 0 24 24\" width=\"24\"><title>Save</title><polygon fill=\"none\" points=\"20 21 12 13.44 4 21 4 3 20 3 20 21\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"></polygon></svg>\n    </div>\n    <div class=\"info-bar\">\n    \n\n        <div class=\"profile-picture-wrapper\" >\n            <div class=\"profile-picture-wrapper\">\n                <app-profile-picture \n                size=\"small\" \n                [hasStory]=\"this.user.hasStory\" \n                [profilePictureUrl]=\"this.user.profilePictureUrl\" \n                [viewedStory]='false'\n                />\n            </div>\n        </div>\n\n        <div class=\"title-wrapper\">\n            <div class=\"main-title-wrapper\" >\n                <span class=\"bold\">{{this.user.userName}}</span>\n                @if (this.user.isCertified) {\n                    <app-tag type=\"Certified\" size=\"medium\"/>\n                }\n                <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                <span class=\"grey\">{{timeSincePublication}}</span>\n                @if (!this.user.isFollowed) {\n                    <app-text-separator size=\"medium\" SeparatorType=\"middle-point\" class=\"grey\"/>\n                    <app-text-buton textColor=\"blue\">Follow</app-text-buton>\n                }\n            </div>\n            @if (this.subTitleType === 'Audio') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    @if (this.artistName) {\n                        <span>{{this.artistName}}</span>\n                        <app-text-separator size=\"medium\" SeparatorType=\"middle-point\"/>\n                    }\n                    <span>{{this.audioName}}</span>\n                </a>\n            }\n            @else if (this.subTitleType === 'Location') {\n                <a class=\"sub-title-wrapper\" href=\"\">\n                    {{this.location}}\n                </a>\n            }\n\n\n        </div>\n\n        <app-text-buton class=\"menu-wrapper\">\n            <app-text-separator size=\"medium\" SeparatorType=\"meatballs\"/>\n        </app-text-buton>\n        \n    </div>\n</div>"
->>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
         },
         {
             "name": "TagComponent",
@@ -1753,7 +2480,7 @@
         },
         {
             "name": "TextSeparatorComponent",
-            "id": "component-TextSeparatorComponent-2680d3f2888e3da605c8e402d416d583a1dcf79bf78b7b4dfcb35651ca7a10bd8660a9cafc509528d01df65ff74b3dd7998f248323459cf8e635e734cdf316e0",
+            "id": "component-TextSeparatorComponent-31e4b3c9ec018823738c41c6ba8eaae392c4c00eba9872b063945a3921bb5101081af1f1565f607b908386ad5f10040f5364e46b158a1de8a6342c50ef3dfab3",
             "file": "src/app/general-components/text-separator/text-separator.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1800,18 +2527,28 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\ntype Size = 'medium'\ntype SeparatorType = 'middle-point' | 'meatballs'\n\n@Component({\n  selector: 'app-text-separator',\n  standalone: true,\n  imports: [],\n  templateUrl: './text-separator.component.html',\n  styleUrl: './text-separator.component.sass'\n})\nexport class TextSeparatorComponent {\n  @Input() SeparatorType = 'middle-point'\n  @Input() size: Size = 'medium'\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\ntype Size = 'medium'\ntype SeparatorType = 'middle-point'\n\n@Component({\n  selector: 'app-text-separator',\n  standalone: true,\n  imports: [],\n  templateUrl: './text-separator.component.html',\n  styleUrl: './text-separator.component.sass'\n})\nexport class TextSeparatorComponent {\n  @Input() SeparatorType = 'middle-point'\n  @Input() size: Size = 'medium'\n}\n",
             "styleUrl": "./text-separator.component.sass",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "@if (SeparatorType === \"middle-point\") {\n    <span class=\"medium\">●</span>\n}\n@if (SeparatorType === \"meatballs\") {\n    <div class=\"meatballs\">\n        <span class=\"medium\">●</span>\n        <span class=\"medium\">●</span>\n        <span class=\"medium\">●</span>\n    </div>\n}"
+            "templateData": "@if (SeparatorType === \"middle-point\") {\n    <span class=\"medium\">●</span>\n}\n"
         }
     ],
     "modules": [],
     "miscellaneous": {
         "variables": [
+            {
+                "name": "AddIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n      iconType: 'Add',\n      size: 'medium',\n      color: 'black',\n    },\n  }"
+            },
             {
                 "name": "appConfig",
                 "ctype": "miscellaneous",
@@ -1821,6 +2558,16 @@
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
                 "defaultValue": "{\n  providers: [provideRouter(routes)]\n}"
+            },
+            {
+                "name": "BurgerIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'Burger',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
             },
             {
                 "name": "CertifiedTag",
@@ -1833,6 +2580,96 @@
                 "defaultValue": "{\n  args: {\n    type: 'Certified',\n    size: 'medium',\n  },\n}"
             },
             {
+                "name": "ChatBubbleIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'ChatBubble',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+            },
+            {
+                "name": "CloseIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'Close',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+            },
+            {
+                "name": "CompassIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\nargs: {\n    iconType: 'Compass',\n    size: 'medium',\n    color: 'blue',\n},\n}"
+            },
+            {
+                "name": "EmojiIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'Emoji',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+            },
+            {
+                "name": "FiledHeartIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'Heart-Filled',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+            },
+            {
+                "name": "FilledCompassIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'Compass-Filled',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+            },
+            {
+                "name": "FilledHeartButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: () => ({\n    props: {\n        iconType: 'Heart-Filled',\n        defaultIconColor: '#FF3040',\n        iconSize: 'medium',\n        buttonWidth: 24,\n        buttonHeight: 24\n    },\n  }),\n}"
+            },
+            {
+                "name": "FilledHomeIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'Home-Filled',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+            },
+            {
+                "name": "FilledVideoIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'Video-Filled',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+            },
+            {
                 "name": "HeartButton",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1840,7 +2677,57 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Notifications',\n    icon: 'Heart',\n    active: true,\n  },\n}"
+                "defaultValue": "{\n  args: {\n    label: 'Notifications',\n    iconType: 'Heart',\n    active: true,\n  },\n}"
+            },
+            {
+                "name": "HeartIconMedium",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    iconType: 'Heart',\n    size: 'medium',\n    color: 'black',\n  },\n}"
+            },
+            {
+                "name": "HeartIconSmall",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n      iconType: 'Heart',\n      size: 'small',\n      color: 'black',\n    },\n  }"
+            },
+            {
+                "name": "HomeIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\nargs: {\n    iconType: 'Home',\n    size: 'medium',\n    color: 'blue',\n},\n}"
+            },
+            {
+                "name": "InstagramIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'Instagram',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+            },
+            {
+                "name": "InteractionBar",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: () => ({\n    props: {\n    },\n  }),\n}"
             },
             {
                 "name": "Large",
@@ -1871,6 +2758,26 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n    args: {\n        direction: 'left',\n    }\n}"
+            },
+            {
+                "name": "LightenHoverHeartButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: () => ({\n    props: {\n        iconType: 'Heart',\n        defaultIconColor: 'black',\n        iconSize: 'medium',\n        buttonWidth: 24,\n        buttonHeight: 24\n    },\n  }),\n}"
+            },
+            {
+                "name": "LikeButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/publication/like-button/like-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: () => ({\n    props: {\n        buttonWidth: 24,\n        buttonHeight: 24,\n        isLiked: false\n    },\n  }),\n}"
             },
             {
                 "name": "LikesStatistics",
@@ -1923,6 +2830,26 @@
                 "defaultValue": "{}"
             },
             {
+                "name": "MeatballsButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: () => ({\n    props: {\n        iconType: 'Meatballs',\n        defaultIconColor: 'black',\n        iconSize: 'medium',\n        buttonWidth: 24,\n        buttonHeight: 24\n    },\n  }),\n}"
+            },
+            {
+                "name": "MeatballsIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'Meatballs',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+            },
+            {
                 "name": "Medium",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1961,6 +2888,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<PageComponent>",
                 "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<InteractionBarComponent>",
+                "defaultValue": "{\n  title: 'Components/Interaction Bar',\n  component: InteractionBarComponent,\n}"
             },
             {
                 "name": "meta",
@@ -2016,31 +2953,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/publication/publication-header/publication-header.stories.ts",
+                "file": "src/app/general-components/icon/icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<PublicationHeaderComponent>",
-                "defaultValue": "{\n  title: 'Components/PublicationHeader',\n  component: PublicationHeaderComponent,\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<NavigationBarComponent>",
-                "defaultValue": "{\n  title: 'Components/Navigation Bar',\n  component: NavigationBarComponent,\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/navigation/navigation-button/navigation-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<NavigationButtonComponent>",
-                "defaultValue": "{\n  title: 'Components/NavigationButton',\n  component: NavigationButtonComponent,\n  args: {\n    label: 'notifications',\n    icon: 'Heart',\n    active: true,\n  },\n}"
+                "type": "Meta<IconComponent>",
+                "defaultValue": "{\n  title: 'Components/Icon',\n  component: IconComponent,\n  args: {\n    iconType: 'Heart',\n    size: 'medium',\n    color: 'black',\n  },\n}"
             },
             {
                 "name": "meta",
@@ -2061,6 +2978,66 @@
                 "deprecationMessage": "",
                 "type": "Meta<TagComponent>",
                 "defaultValue": "{\n  title: 'Components/Tag',\n  component: TagComponent,\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/navigation/navigation-button/navigation-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<NavigationButtonComponent>",
+                "defaultValue": "{\n  title: 'Components/NavigationButton',\n  component: NavigationButtonComponent,\n  args: {\n    label: 'notifications',\n    iconType: 'Heart',\n    active: true,\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<NavigationBarComponent>",
+                "defaultValue": "{\n  title: 'Components/Navigation Bar',\n  component: NavigationBarComponent,\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/publication/like-button/like-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<LikeButtonComponent>",
+                "defaultValue": "{\n  title: 'Components/Icon Button',\n  component: LikeButtonComponent,\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/publication/publication-header/publication-header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<PublicationHeaderComponent>",
+                "defaultValue": "{\n  title: 'Components/PublicationHeader',\n  component: PublicationHeaderComponent,\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<NoHoverIconButtonComponent>",
+                "defaultValue": "{\n  title: 'Components/Icon Button',\n  component: NoHoverIconButtonComponent,\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<LightenHoverIconButtonComponent>",
+                "defaultValue": "{\n  title: 'Components/Icon Button',\n  component: LightenHoverIconButtonComponent,\n}"
             },
             {
                 "name": "NavigationBar",
@@ -2143,6 +3120,36 @@
                 "defaultValue": "{\n    args: {\n        direction: 'right',\n    }\n}"
             },
             {
+                "name": "SaveFilledIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'Save-Filled',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+            },
+            {
+                "name": "SaveIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'Save',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+            },
+            {
+                "name": "SearchIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\nargs: {\n    iconType: 'Search',\n    size: 'medium',\n    color: 'blue',\n    },\n}"
+            },
+            {
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2160,7 +3167,27 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Messages',\n    icon: 'Send',\n    active: true,\n  },\n}"
+                "defaultValue": "{\n  args: {\n    label: 'Messages',\n    iconType: 'Send',\n    active: true,\n  },\n}"
+            },
+            {
+                "name": "SendFilledIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'Send-Filled',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+            },
+            {
+                "name": "SendIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'Send',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
             },
             {
                 "name": "Small",
@@ -2211,6 +3238,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    type: 'story',\n    slides: [\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user1',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user2',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user3',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user4',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user5',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user6',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user7',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user8',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user9',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user10',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user11',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user12',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user13',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user14',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user15',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user16',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user17',\n      },\n    ],\n  },\n}"
+            },
+            {
+                "name": "ThreadsIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'Threads',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
             },
             {
                 "name": "threeUsers",
@@ -2303,6 +3340,16 @@
                 "defaultValue": "{\n    id: 3,\n    userName: 'Lauren90',\n    hasStory: false,\n    profilePhotoUrl: '/assets/profileImage2.jpeg',\n    isCertified: true,\n    isFollowed: false\n  }"
             },
             {
+                "name": "VideoIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        iconType: 'Video',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+            },
+            {
                 "name": "ViewedStory",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2339,19 +3386,8 @@
                 "name": "IconType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"Heart\" | \"Add\" | \"Compass\" | \"Home\" | \"Search\" | \"Send\" | \"Video\" | \"User\" | \"Threads\" | \"Burger\" | \"Meatballs\" | \"ChatBubble\" | \"Save\" | \"Smile\" | \"Close\" | \"Instagram\"",
+                "rawtype": "\"Heart\" | \"Add\" | \"Compass\" | \"Home\" | \"Search\" | \"Send\" | \"Video\" | \"User\" | \"Threads\" | \"Burger\" | \"Meatballs\" | \"ChatBubble\" | \"Save\" | \"Emoji\" | \"Close\" | \"Instagram\" | \"Heart-Filled\" | \"Home-Filled\" | \"Compass-Filled\" | \"Video-Filled\" | \"Send-Filled\" | \"Save-Filled\" | \"Bouncing-Heart\"",
                 "file": "src/app/general-components/icon/icon.component.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 192
-            },
-            {
-                "name": "NavigationIconType",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "\"Heart\" | \"Add\" | \"Compass\" | \"Home\" | \"Search\" | \"Send\" | \"Video\" | \"User\" | \"Threads\" | \"Menu\"",
-                "file": "src/app/navigation/navigation-button/navigation-button.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2372,23 +3408,23 @@
                 "name": "SeparatorType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"middle-point\" | \"meatballs\"",
+                "rawtype": "",
                 "file": "src/app/general-components/text-separator/text-separator.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "kind": 192
+                "kind": 201
             },
             {
                 "name": "Size",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "",
+                "rawtype": "\"medium\" | \"small\"",
                 "file": "src/app/general-components/icon/icon.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "kind": 201
+                "kind": 192
             },
             {
                 "name": "Size",
@@ -2440,6 +3476,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<PageComponent>",
                 "file": "src/stories/page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<InteractionBarComponent>",
+                "file": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2504,30 +3551,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<PublicationHeaderComponent>",
-                "file": "src/app/publication/publication-header/publication-header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<NavigationBarComponent>",
-                "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<NavigationButtonComponent>",
-                "file": "src/app/navigation/navigation-button/navigation-button.stories.ts",
+                "rawtype": "StoryObj<IconComponent>",
+                "file": "src/app/general-components/icon/icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2550,6 +3575,72 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<TagComponent>",
                 "file": "src/app/general-components/tag/tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<NavigationButtonComponent>",
+                "file": "src/app/navigation/navigation-button/navigation-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<NavigationBarComponent>",
+                "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<LikeButtonComponent>",
+                "file": "src/app/publication/like-button/like-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<PublicationHeaderComponent>",
+                "file": "src/app/publication/publication-header/publication-header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<NoHoverIconButtonComponent>",
+                "file": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<LightenHoverIconButtonComponent>",
+                "file": "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2602,6 +3693,238 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/general-components/icon/icon.stories.ts": [
+                {
+                    "name": "AddIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n      iconType: 'Add',\n      size: 'medium',\n      color: 'black',\n    },\n  }"
+                },
+                {
+                    "name": "BurgerIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'Burger',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "ChatBubbleIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'ChatBubble',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "CloseIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'Close',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "CompassIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\nargs: {\n    iconType: 'Compass',\n    size: 'medium',\n    color: 'blue',\n},\n}"
+                },
+                {
+                    "name": "EmojiIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'Emoji',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "FiledHeartIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'Heart-Filled',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "FilledCompassIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'Compass-Filled',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "FilledHomeIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'Home-Filled',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "FilledVideoIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'Video-Filled',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "HeartIconMedium",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    iconType: 'Heart',\n    size: 'medium',\n    color: 'black',\n  },\n}"
+                },
+                {
+                    "name": "HeartIconSmall",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n      iconType: 'Heart',\n      size: 'small',\n      color: 'black',\n    },\n  }"
+                },
+                {
+                    "name": "HomeIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\nargs: {\n    iconType: 'Home',\n    size: 'medium',\n    color: 'blue',\n},\n}"
+                },
+                {
+                    "name": "InstagramIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'Instagram',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "MeatballsIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'Meatballs',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<IconComponent>",
+                    "defaultValue": "{\n  title: 'Components/Icon',\n  component: IconComponent,\n  args: {\n    iconType: 'Heart',\n    size: 'medium',\n    color: 'black',\n  },\n}"
+                },
+                {
+                    "name": "SaveFilledIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'Save-Filled',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "SaveIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'Save',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "SearchIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\nargs: {\n    iconType: 'Search',\n    size: 'medium',\n    color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "SendFilledIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'Send-Filled',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "SendIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'Send',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "ThreadsIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'Threads',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                },
+                {
+                    "name": "VideoIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        iconType: 'Video',\n        size: 'medium',\n        color: 'blue',\n    },\n}"
+                }
+            ],
             "src/app/app.config.ts": [
                 {
                     "name": "appConfig",
@@ -2636,6 +3959,38 @@
                     "defaultValue": "{\n  title: 'Components/Tag',\n  component: TagComponent,\n}"
                 }
             ],
+            "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts": [
+                {
+                    "name": "FilledHeartButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: () => ({\n    props: {\n        iconType: 'Heart-Filled',\n        defaultIconColor: '#FF3040',\n        iconSize: 'medium',\n        buttonWidth: 24,\n        buttonHeight: 24\n    },\n  }),\n}"
+                },
+                {
+                    "name": "MeatballsButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: () => ({\n    props: {\n        iconType: 'Meatballs',\n        defaultIconColor: 'black',\n        iconSize: 'medium',\n        buttonWidth: 24,\n        buttonHeight: 24\n    },\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<NoHoverIconButtonComponent>",
+                    "defaultValue": "{\n  title: 'Components/Icon Button',\n  component: NoHoverIconButtonComponent,\n}"
+                }
+            ],
             "src/app/navigation/navigation-button/navigation-button.stories.ts": [
                 {
                     "name": "HeartButton",
@@ -2645,7 +4000,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Notifications',\n    icon: 'Heart',\n    active: true,\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    label: 'Notifications',\n    iconType: 'Heart',\n    active: true,\n  },\n}"
                 },
                 {
                     "name": "meta",
@@ -2655,7 +4010,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<NavigationButtonComponent>",
-                    "defaultValue": "{\n  title: 'Components/NavigationButton',\n  component: NavigationButtonComponent,\n  args: {\n    label: 'notifications',\n    icon: 'Heart',\n    active: true,\n  },\n}"
+                    "defaultValue": "{\n  title: 'Components/NavigationButton',\n  component: NavigationButtonComponent,\n  args: {\n    label: 'notifications',\n    iconType: 'Heart',\n    active: true,\n  },\n}"
                 },
                 {
                     "name": "SendButton",
@@ -2665,7 +4020,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Messages',\n    icon: 'Send',\n    active: true,\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    label: 'Messages',\n    iconType: 'Send',\n    active: true,\n  },\n}"
+                }
+            ],
+            "src/app/interaction-bar/no-hover-icon-button.stories.ts": [
+                {
+                    "name": "InteractionBar",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: () => ({\n    props: {\n    },\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<InteractionBarComponent>",
+                    "defaultValue": "{\n  title: 'Components/Interaction Bar',\n  component: InteractionBarComponent,\n}"
                 }
             ],
             "src/stories/button.stories.ts": [
@@ -2832,6 +4209,50 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n    args: {\n        direction: 'right',\n    }\n}"
+                }
+            ],
+            "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.stories.ts": [
+                {
+                    "name": "LightenHoverHeartButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: () => ({\n    props: {\n        iconType: 'Heart',\n        defaultIconColor: 'black',\n        iconSize: 'medium',\n        buttonWidth: 24,\n        buttonHeight: 24\n    },\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<LightenHoverIconButtonComponent>",
+                    "defaultValue": "{\n  title: 'Components/Icon Button',\n  component: LightenHoverIconButtonComponent,\n}"
+                }
+            ],
+            "src/app/publication/like-button/like-button.stories.ts": [
+                {
+                    "name": "LikeButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/publication/like-button/like-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: () => ({\n    props: {\n        buttonWidth: 24,\n        buttonHeight: 24,\n        isLiked: false\n    },\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/publication/like-button/like-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<LikeButtonComponent>",
+                    "defaultValue": "{\n  title: 'Components/Icon Button',\n  component: LikeButtonComponent,\n}"
                 }
             ],
             "src/app/likes-statistics/likes-statistics.stories.ts": [
@@ -3086,6 +4507,28 @@
                     "defaultValue": "{\n  args: {\n    type: 'story',\n    slides: [\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user1',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user2',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user3',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user4',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user5',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user6',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user7',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user8',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user9',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user10',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user11',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user12',\n      },\n      {\n        pictureUrl: 'assets/profileImage.jpeg',\n        type: 'story',\n        userName: 'user13',\n      },\n      {\n        pictureUrl: 'assets/profileImage2.jpeg',\n        type: 'story',\n        userName: 'user14',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user15',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user16',\n      },\n      {\n        pictureUrl: 'assets/marvin_gaye.jpeg',\n        type: 'story',\n        userName: 'user17',\n      },\n    ],\n  },\n}"
                 }
             ],
+            "src/app/navigation/navigation-bar/navigation-bar.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<NavigationBarComponent>",
+                    "defaultValue": "{\n  title: 'Components/Navigation Bar',\n  component: NavigationBarComponent,\n}"
+                },
+                {
+                    "name": "NavigationBar",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n}"
+                }
+            ],
             "src/app/publication/publication-header/publication-header.stories.ts": [
                 {
                     "name": "meta",
@@ -3118,28 +4561,6 @@
                     "defaultValue": "{\n  id: 1,\n  userName: 'Michael_Jackson',\n  hasStory: false,\n  profilePhotoUrl: '/assets/profileImage.jpeg',\n  isCertified: true,\n  isFollowed: false\n}"
                 }
             ],
-            "src/app/navigation/navigation-bar/navigation-bar.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<NavigationBarComponent>",
-                    "defaultValue": "{\n  title: 'Components/Navigation Bar',\n  component: NavigationBarComponent,\n}"
-                },
-                {
-                    "name": "NavigationBar",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n}"
-                }
-            ],
             ".storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -3161,7 +4582,7 @@
                     "name": "IconType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"Heart\" | \"Add\" | \"Compass\" | \"Home\" | \"Search\" | \"Send\" | \"Video\" | \"User\" | \"Threads\" | \"Burger\" | \"Meatballs\" | \"ChatBubble\" | \"Save\" | \"Smile\" | \"Close\" | \"Instagram\"",
+                    "rawtype": "\"Heart\" | \"Add\" | \"Compass\" | \"Home\" | \"Search\" | \"Send\" | \"Video\" | \"User\" | \"Threads\" | \"Burger\" | \"Meatballs\" | \"ChatBubble\" | \"Save\" | \"Emoji\" | \"Close\" | \"Instagram\" | \"Heart-Filled\" | \"Home-Filled\" | \"Compass-Filled\" | \"Video-Filled\" | \"Send-Filled\" | \"Save-Filled\" | \"Bouncing-Heart\"",
                     "file": "src/app/general-components/icon/icon.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -3172,21 +4593,8 @@
                     "name": "Size",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "",
+                    "rawtype": "\"medium\" | \"small\"",
                     "file": "src/app/general-components/icon/icon.component.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 201
-                }
-            ],
-            "src/app/navigation/navigation-button/navigation-button.component.ts": [
-                {
-                    "name": "NavigationIconType",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "\"Heart\" | \"Add\" | \"Compass\" | \"Home\" | \"Search\" | \"Send\" | \"Video\" | \"User\" | \"Threads\" | \"Menu\"",
-                    "file": "src/app/navigation/navigation-button/navigation-button.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -3211,12 +4619,12 @@
                     "name": "SeparatorType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"middle-point\" | \"meatballs\"",
+                    "rawtype": "",
                     "file": "src/app/general-components/text-separator/text-separator.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "kind": 192
+                    "kind": 201
                 },
                 {
                     "name": "Size",
@@ -3293,6 +4701,19 @@
                     "kind": 183
                 }
             ],
+            "src/app/interaction-bar/no-hover-icon-button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InteractionBarComponent>",
+                    "file": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "src/app/likes-pictures/likes-pictures.stories.ts": [
                 {
                     "name": "Story",
@@ -3358,39 +4779,13 @@
                     "kind": 183
                 }
             ],
-            "src/app/publication/publication-header/publication-header.stories.ts": [
+            "src/app/general-components/icon/icon.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<PublicationHeaderComponent>",
-                    "file": "src/app/publication/publication-header/publication-header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "src/app/navigation/navigation-bar/navigation-bar.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<NavigationBarComponent>",
-                    "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "src/app/navigation/navigation-button/navigation-button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<NavigationButtonComponent>",
-                    "file": "src/app/navigation/navigation-button/navigation-button.stories.ts",
+                    "rawtype": "StoryObj<IconComponent>",
+                    "file": "src/app/general-components/icon/icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -3417,6 +4812,84 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<TagComponent>",
                     "file": "src/app/general-components/tag/tag.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/navigation/navigation-button/navigation-button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<NavigationButtonComponent>",
+                    "file": "src/app/navigation/navigation-button/navigation-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/navigation/navigation-bar/navigation-bar.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<NavigationBarComponent>",
+                    "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/publication/like-button/like-button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<LikeButtonComponent>",
+                    "file": "src/app/publication/like-button/like-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/publication/publication-header/publication-header.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<PublicationHeaderComponent>",
+                    "file": "src/app/publication/publication-header/publication-header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<NoHoverIconButtonComponent>",
+                    "file": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<LightenHoverIconButtonComponent>",
+                    "file": "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -3466,7 +4939,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 2,
+        "count": 1,
         "status": "low",
         "files": [
             {
@@ -3499,7 +4972,322 @@
                 "status": "low"
             },
             {
-<<<<<<< HEAD
+                "filePath": "src/app/general-components/icon-button/icon-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IconButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LightenHoverIconButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LightenHoverHeartButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NoHoverIconButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FilledHeartButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MeatballsButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IconComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AddIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BurgerIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ChatBubbleIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CloseIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CompassIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "EmojiIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FiledHeartIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FilledCompassIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FilledHomeIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FilledVideoIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HeartIconMedium",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HeartIconSmall",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HomeIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "InstagramIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MeatballsIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SaveFilledIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SaveIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SearchIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SendFilledIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SendIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ThreadsIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/general-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "VideoIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/general-components/profile-picture/profile-picture.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -3514,18 +5302,11 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Large",
-=======
-                "filePath": "src/app/general-components/icon-button/icon-button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "IconButtonComponent",
->>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-<<<<<<< HEAD
                 "filePath": "src/app/general-components/profile-picture/profile-picture.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -3593,14 +5374,6 @@
                 "name": "XXS",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
-=======
-                "filePath": "src/app/general-components/icon/icon.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "IconComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
->>>>>>> 6192727 (Refonte des icones pour que ce soit un peu plus swaggy)
                 "status": "low"
             },
             {
@@ -3657,6 +5430,35 @@
                 "name": "DateService",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/interaction-bar/interaction-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InteractionBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "InteractionBar",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -3832,7 +5634,7 @@
                 "linktype": "component",
                 "name": "NavigationButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -3861,6 +5663,35 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "SendButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/publication/like-button/like-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LikeButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/publication/like-button/like-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LikeButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/publication/like-button/like-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

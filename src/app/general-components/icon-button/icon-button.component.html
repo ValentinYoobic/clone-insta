@@ -1,1 +1,3 @@
-<p>icon-button works!</p>
+<button [ngClass]="" (click)="handleClick()" (mouseenter)="this.handleMouseEnter()" (mouseleave)="this.handleMouseLeave()">
+    <app-icon [iconType]="iconType" [size]="iconSize" [color]="currentIconColor" [bounce]="bounce"/>
+</button>
