@@ -56,4 +56,10 @@ export class PublicationCaptionComponent implements AfterViewInit {
       console.log('not truncated');
     }
   }
+
+  isTranslated = false;
+
+  handleTranslation() : void {
+    this.isTranslated= !this.isTranslated;
+  }
 }
