@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { LightenHoverIconButtonComponent } from '../general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.component';
-import { LikeButtonComponent } from '../publication/like-button/like-button.component';
+import { LightenHoverIconButtonComponent } from '../../general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.component';
+import { LikeButtonComponent } from '../like-button/like-button.component';
 
 @Component({
   selector: 'app-interaction-bar',

@@ -759,8 +759,8 @@
         },
         {
             "name": "InteractionBarComponent",
-            "id": "component-InteractionBarComponent-4a27335776e6e5b1f0a841675efb8399f2ec2b4e2fb3a446872f849984ffa8657963b4c63133bbbb957f7734fc0dd342e1d83a496e4a8a8ece8706907e07cef2",
-            "file": "src/app/interaction-bar/interaction-bar.component.ts",
+            "id": "component-InteractionBarComponent-81701cd05059d847efff537148ca0649a1091ab4f2dd58d0a4dff6ebae0ad6601108b4269a3e9c546e824f10c0b84a578c9e1649c0f05245bbc9edef1d639996",
+            "file": "src/app/publication/interaction-bar/interaction-bar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -796,13 +796,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { LightenHoverIconButtonComponent } from '../general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.component';\nimport { LikeButtonComponent } from '../publication/like-button/like-button.component';\n\n@Component({\n  selector: 'app-interaction-bar',\n  standalone: true,\n  imports: [LightenHoverIconButtonComponent, LikeButtonComponent],\n  templateUrl: './interaction-bar.component.html',\n  styleUrl: './interaction-bar.component.sass'\n})\nexport class InteractionBarComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { LightenHoverIconButtonComponent } from '../../general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.component';\nimport { LikeButtonComponent } from '../like-button/like-button.component';\n\n@Component({\n  selector: 'app-interaction-bar',\n  standalone: true,\n  imports: [LightenHoverIconButtonComponent, LikeButtonComponent],\n  templateUrl: './interaction-bar.component.html',\n  styleUrl: './interaction-bar.component.sass'\n})\nexport class InteractionBarComponent {\n\n}\n",
             "styleUrl": "./interaction-bar.component.sass",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"interaction-bar\">\n    <div class=\"left-section\">\n        <app-like-button [buttonWidth]=\"24\" [buttonHeight]=\"24\"/>\n        <app-lighten-hover-icon-button iconType=\"ChatBubble\" iconSize=\"medium\" [buttonWidth]=\"24\" [buttonHeight]=\"24\"/>\n        <app-lighten-hover-icon-button iconType=\"Send\" iconSize=\"medium\" [buttonWidth]=\"24\" [buttonHeight]=\"24\" />\n    </div>\n    <div class=\"right-section\">\n        <app-lighten-hover-icon-button iconType=\"Save\" iconSize=\"medium\" [buttonWidth]=\"24\" [buttonHeight]=\"24\" />\n    </div>\n</div>"
+            "templateData": "<div class=\"interaction-bar\">\n    <div class=\"left-section\">\n        <app-like-button [buttonWidth]=\"40\" [buttonHeight]=\"40\"/>\n        <app-lighten-hover-icon-button iconType=\"ChatBubble\" iconSize=\"medium\" [buttonWidth]=\"40\" [buttonHeight]=\"40\"/>\n        <app-lighten-hover-icon-button iconType=\"Send\" iconSize=\"medium\" [buttonWidth]=\"40\" [buttonHeight]=\"40\" />\n    </div>\n    <div class=\"right-section\">\n        <app-lighten-hover-icon-button iconType=\"Save\" iconSize=\"medium\" [buttonWidth]=\"40\" [buttonHeight]=\"40\" />\n    </div>\n</div>"
         },
         {
             "name": "LightenHoverIconButtonComponent",
@@ -2723,7 +2723,7 @@
                 "name": "InteractionBar",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
+                "file": "src/app/publication/interaction-bar/no-hover-icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -2893,16 +2893,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<InteractionBarComponent>",
-                "defaultValue": "{\n  title: 'Components/Interaction Bar',\n  component: InteractionBarComponent,\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/likes-pictures/likes-pictures.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2983,6 +2973,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<NavigationBarComponent>",
+                "defaultValue": "{\n  title: 'Components/Navigation Bar',\n  component: NavigationBarComponent,\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/navigation/navigation-button/navigation-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2993,11 +2993,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
+                "file": "src/app/publication/interaction-bar/no-hover-icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<NavigationBarComponent>",
-                "defaultValue": "{\n  title: 'Components/Navigation Bar',\n  component: NavigationBarComponent,\n}"
+                "type": "Meta<InteractionBarComponent>",
+                "defaultValue": "{\n  title: 'Components/Interaction Bar',\n  component: InteractionBarComponent,\n}"
             },
             {
                 "name": "meta",
@@ -3023,21 +3023,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<NoHoverIconButtonComponent>",
-                "defaultValue": "{\n  title: 'Components/Icon Button',\n  component: NoHoverIconButtonComponent,\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<LightenHoverIconButtonComponent>",
                 "defaultValue": "{\n  title: 'Components/Icon Button',\n  component: LightenHoverIconButtonComponent,\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<NoHoverIconButtonComponent>",
+                "defaultValue": "{\n  title: 'Components/Icon Button',\n  component: NoHoverIconButtonComponent,\n}"
             },
             {
                 "name": "NavigationBar",
@@ -3485,17 +3485,6 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<InteractionBarComponent>",
-                "file": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<LikesPicturesComponent>",
                 "file": "src/app/likes-pictures/likes-pictures.stories.ts",
                 "deprecated": false,
@@ -3584,6 +3573,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<NavigationBarComponent>",
+                "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<NavigationButtonComponent>",
                 "file": "src/app/navigation/navigation-button/navigation-button.stories.ts",
                 "deprecated": false,
@@ -3595,8 +3595,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<NavigationBarComponent>",
-                "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
+                "rawtype": "StoryObj<InteractionBarComponent>",
+                "file": "src/app/publication/interaction-bar/no-hover-icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3628,8 +3628,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<NoHoverIconButtonComponent>",
-                "file": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
+                "rawtype": "StoryObj<LightenHoverIconButtonComponent>",
+                "file": "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3639,8 +3639,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<LightenHoverIconButtonComponent>",
-                "file": "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.stories.ts",
+                "rawtype": "StoryObj<NoHoverIconButtonComponent>",
+                "file": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4023,12 +4023,12 @@
                     "defaultValue": "{\n  args: {\n    label: 'Messages',\n    iconType: 'Send',\n    active: true,\n  },\n}"
                 }
             ],
-            "src/app/interaction-bar/no-hover-icon-button.stories.ts": [
+            "src/app/publication/interaction-bar/no-hover-icon-button.stories.ts": [
                 {
                     "name": "InteractionBar",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
+                    "file": "src/app/publication/interaction-bar/no-hover-icon-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -4038,7 +4038,7 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
+                    "file": "src/app/publication/interaction-bar/no-hover-icon-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<InteractionBarComponent>",
@@ -4701,19 +4701,6 @@
                     "kind": 183
                 }
             ],
-            "src/app/interaction-bar/no-hover-icon-button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<InteractionBarComponent>",
-                    "file": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "src/app/likes-pictures/likes-pictures.stories.ts": [
                 {
                     "name": "Story",
@@ -4818,6 +4805,19 @@
                     "kind": 183
                 }
             ],
+            "src/app/navigation/navigation-bar/navigation-bar.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<NavigationBarComponent>",
+                    "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "src/app/navigation/navigation-button/navigation-button.stories.ts": [
                 {
                     "name": "Story",
@@ -4831,13 +4831,13 @@
                     "kind": 183
                 }
             ],
-            "src/app/navigation/navigation-bar/navigation-bar.stories.ts": [
+            "src/app/publication/interaction-bar/no-hover-icon-button.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<NavigationBarComponent>",
-                    "file": "src/app/navigation/navigation-bar/navigation-bar.stories.ts",
+                    "rawtype": "StoryObj<InteractionBarComponent>",
+                    "file": "src/app/publication/interaction-bar/no-hover-icon-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -4870,19 +4870,6 @@
                     "kind": 183
                 }
             ],
-            "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<NoHoverIconButtonComponent>",
-                    "file": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.stories.ts": [
                 {
                     "name": "Story",
@@ -4890,6 +4877,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<LightenHoverIconButtonComponent>",
                     "file": "src/app/general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<NoHoverIconButtonComponent>",
+                    "file": "src/app/general-components/icon-button/no-hover-icon-button/no-hover-icon-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5433,35 +5433,6 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/interaction-bar/interaction-bar.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "InteractionBarComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "InteractionBar",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/interaction-bar/no-hover-icon-button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/likes-pictures/likes-pictures.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5663,6 +5634,35 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "SendButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/publication/interaction-bar/interaction-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InteractionBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/publication/interaction-bar/no-hover-icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "InteractionBar",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/publication/interaction-bar/no-hover-icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
