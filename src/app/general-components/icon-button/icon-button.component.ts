@@ -12,7 +12,7 @@ import { IconType, Size, IconComponent } from '../icon/icon.component';
 export abstract class IconButtonComponent {
   @Input() iconType!: IconType;
   @Input() defaultIconColor: string = 'black';
-  @Input() handleClick: () => void = () => console.log('You clicked on the button')
+  @Input() handleClick: (event: MouseEvent) => void = (event: MouseEvent) => console.log('You clicked on the button')
   @Input() iconSize: Size = 'medium'
   @Input({required: true}) buttonWidth!: number;
   @Input({required: true}) buttonHeight!: number;
