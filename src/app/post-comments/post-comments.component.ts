@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewChecked, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import { TextButonComponent } from '../general-components/text-buton/text-buton.component';
@@ -11,10 +11,11 @@ import { LightenHoverIconButtonComponent } from '../general-components/icon-butt
   templateUrl: './post-comments.component.html',
   styleUrl: './post-comments.component.sass'
 })
-export class PostCommentsComponent implements AfterViewInit{
+export class PostCommentsComponent implements AfterViewInit {
   applyForm = new FormGroup({
     comment: new FormControl(''),
   });
+
   submitComment() {
     console.log(
       `You commented: ${this.applyForm.value.comment ?? ''}`);
@@ -25,11 +26,19 @@ export class PostCommentsComponent implements AfterViewInit{
     } return false
   }
   handlePostButton(): void {
+    if (this.applyForm) {
+      const commentControl = this.applyForm.get('comment');
+      if (commentControl) {
+        commentControl.setValue('');
+      }
+    }
   }
   handleEmojiButtonClick(event: Event) {
     event.preventDefault();
     console.log('You clicked on the Emoji panel!')
   }
+  
+
 
   @ViewChild('commentArea') commentArea!: ElementRef;
   areaResize(): void {

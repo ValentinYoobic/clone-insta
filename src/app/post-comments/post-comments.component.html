@@ -1,4 +1,4 @@
-<form class="input-comment" [formGroup]="applyForm" (submit)="submitComment()">
+<form class="input-comment" [formGroup]="applyForm" (submit)="submitComment(); handlePostButton()">
   <textarea
     #commentArea
     class="comment-area"
