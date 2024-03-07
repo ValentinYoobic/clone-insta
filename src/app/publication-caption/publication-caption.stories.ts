@@ -32,3 +32,11 @@ export const LongCaption: Story = {
       language: 'en'
     }
   }
+
+  export const LineJump: Story= {
+    args: {
+      userName: 'christal_queen',
+      caption: "🎁GAME CONTEST 🎁 \n \n Try to win a meal for 2 at @lecafedepaula and gifts from @cccod_tours \n ✅ 1 CCC OD LEPASS subscription (valid for 1 year) duet with the person of your choice \n ✅ 2 limited edition CCC OD totebags \n ✅ Posters of the current exhibitions \n ✅ A salty waffle + a dessert for 2 people at @lecafedepaula \n \n ➡️ To participate: \n ➡️ Like this post and follow @lecafedepaula @cccod_tours and @petitfutetoursvaldeloire \n ➡️ Tag in the comments the person you want to share this beautiful gift with. \n ➡️ Bonus share this post in story \n \n ⚠️ Contest ends on Friday, March 8 at 7h59 \n  \n 🍀 Good luck 🍀 \n #jeuconcours #cafe #game #toursvaldeloiretourisme #touraineloirevalley #game #toursetmoi #petitfute #toursmaville #culture #expo #artcontemporain #contemporaryart #cccod #pass #gauffre #yum #miam #chance #futélepetitfuté",
+      language: 'en',
+    },
+  }
