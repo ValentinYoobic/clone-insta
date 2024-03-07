@@ -1,0 +1,13 @@
+<div #captionText [ngClass]="truncation">
+  <a class="username">{{ userName }}</a>
+  <div class="content">{{ caption }}</div>
+</div>
+@if(needsTruncation()){
+<div class="more-button" (click)="handleTruncation()">more</div>
+<br />} @if(!(language==='en' || language===null)){
+<button *ngIf="!isTranslated" class="translation" (click)="handleTranslation()">
+  See translation
+</button>
+<button *ngIf="isTranslated" class="translation" (click)="handleTranslation()">
+  See original</button
+>}

@@ -5,6 +5,7 @@ import { SliderArrowComponent } from './slider-arrow/slider-arrow.component';
 import { SlideComponent } from './slide/slide.component';
 import { SliderCarouselComponent } from './slider-carousel/slider-carousel.component';
 import { Slide } from './slide';
+import { PublicationCaptionComponent } from './publication-caption/publication-caption.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -14,6 +15,7 @@ import { Slide } from './slide';
     SliderArrowComponent,
     SlideComponent,
     SliderCarouselComponent,
+    PublicationCaptionComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
