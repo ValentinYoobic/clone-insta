@@ -4,6 +4,7 @@ import { PublicationCaptionComponent } from './publication-caption.component';
 const meta: Meta<PublicationCaptionComponent> = {
   title: 'Components/Publication Caption',
   component: PublicationCaptionComponent,
+  tags: ['autodocs'],
 };
 
 export default meta;
