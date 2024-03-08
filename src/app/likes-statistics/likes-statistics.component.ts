@@ -12,7 +12,7 @@ import { LikesPicturesComponent } from '../likes-pictures/likes-pictures.compone
 })
 export class LikesStatisticsComponent {
   @Input() likes!: number;
-  @Input() whoLiked: User[] | null = null;
+  @Input() whoLiked!: User[];
 
   getUKNumber(): string {
     return this.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

@@ -6,7 +6,7 @@ import { TagComponent } from '../../general-components/tag/tag.component';
 import { DateService } from '../../general-services/date.service';
 import { TextButonComponent } from '../../general-components/text-buton/text-buton.component';
 
-type SubtitleType = 'Location' | 'Audio' | null
+export type SubtitleType = 'Location' | 'Audio' | null
 
 @Component({
   selector: 'app-publication-header',
@@ -17,12 +17,12 @@ type SubtitleType = 'Location' | 'Audio' | null
 })
 export class PublicationHeaderComponent {
   constructor(private dateService: DateService) {}
-  @Input() user!: User;
-  @Input() publicationDate!: number; // timestamp in s
-  @Input() subTitleType: SubtitleType = null;
-  @Input() audioName: string | null = null;
-  @Input() artistName: string | null = null;
-  @Input() location: string | null = null;
+  @Input({required: true}) user!: User;
+  @Input({required: true}) publicationDate!: number; // timestamp in s
+  @Input({required: true}) subTitleType: SubtitleType = null;
+  @Input({required: true}) audioName: string | null = null;
+  @Input({required: true}) artistName: string | null = null;
+  @Input({required: true}) location: string | null = null;
   timeSincePublication: string = '';
   
   ngOnInit() {

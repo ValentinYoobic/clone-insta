@@ -1,9 +1,11 @@
 <div class="publication-info">
+  <app-interaction-bar/>
   <app-likes-statistics
     [likes]="likes"
     [whoLiked]="whoLiked"
   ></app-likes-statistics>
   <app-publication-caption
+    [isCertified]="isCertified"
     [userName]="userName"
     [caption]="caption"
     [language]="language"

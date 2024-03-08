@@ -7,12 +7,10 @@ export interface Publication {
     caption: string
     language: 'en' | 'fr' | null
     publicationDate: number
-    subtitle: {
-        text: string
-        subtitleType: 'Location' | 'Audio' | null
-    } | null
+    subtitleType: 'Location' | 'Audio' | null
     audioName: string | null
+    artistName: string | null
     location: string | null
-    comments: []
+    comments: string[]
     likers: User[]
 }

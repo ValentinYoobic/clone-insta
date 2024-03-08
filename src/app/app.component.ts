@@ -6,6 +6,8 @@ import { User } from './user';
 import { SliderCarouselComponent } from './slider-carousel/slider-carousel.component';
 import { Slide } from './slide';
 import { FeedSelectorComponent } from './feed-selector/feed-selector.component';
+import { Publication } from './publication';
+import { PublicationComponent } from './publication/publication.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +17,8 @@ import { FeedSelectorComponent } from './feed-selector/feed-selector.component';
     NavigationBarComponent,
     ProfileSectionComponent,
     SliderCarouselComponent,
-    FeedSelectorComponent
+    FeedSelectorComponent,
+    PublicationComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
@@ -77,7 +80,7 @@ export class AppComponent {
       {
         pictureUrl: 'assets/profileImage.jpeg',
         type: 'story',
-        userName: 'user1',
+        userName: 'MJ',
       },
       {
         pictureUrl: 'assets/profileImage2.jpeg',
@@ -122,42 +125,86 @@ export class AppComponent {
       {
         pictureUrl: 'assets/profileImage.jpeg',
         type: 'story',
-        userName: 'user10',
+        userName: 'this.activeUser0',
       },
       {
         pictureUrl: 'assets/profileImage2.jpeg',
         type: 'story',
-        userName: 'user11',
+        userName: 'this.activeUser1',
       },
       {
         pictureUrl: 'assets/marvin_gaye.jpeg',
         type: 'story',
-        userName: 'user12',
+        userName: 'this.activeUser2',
       },
       {
         pictureUrl: 'assets/profileImage.jpeg',
         type: 'story',
-        userName: 'user13',
+        userName: 'this.activeUser3',
       },
       {
         pictureUrl: 'assets/profileImage2.jpeg',
         type: 'story',
-        userName: 'user14',
+        userName: 'this.activeUser4',
       },
       {
         pictureUrl: 'assets/marvin_gaye.jpeg',
         type: 'story',
-        userName: 'user15',
+        userName: 'this.activeUser5',
       },
       {
         pictureUrl: 'assets/marvin_gaye.jpeg',
         type: 'story',
-        userName: 'user16',
+        userName: 'this.activeUser6',
       },
       {
         pictureUrl: 'assets/marvin_gaye.jpeg',
         type: 'story',
-        userName: 'user17',
+        userName: 'this.activeUser7',
       },
 ]
+  feedContent: Publication[] = [
+    {
+        id: 1,
+        publisher: this.activeUser,
+        publicationDate: ((new Date(2024, 0, 1)).getTime()),
+        subtitleType: 'Audio',
+        audioName: 'Billie Jean',
+        artistName: 'Michael Jackson',
+        location: 'Heaven',
+        likers: [this.activeUser,this.activeUser,this.activeUser],
+        caption: 'nouvelle photo de profil ! \n \n #newprofilepic #paris #selfie',
+        language: 'fr',
+        comments: ['oui', 'génail'],
+        content: ['/assets/profileImage.jpeg','/assets/profileImage.jpeg']
+    },
+    {
+        id: 2,
+        publisher: this.activeUser,
+        publicationDate: ((new Date(2024, 0, 1)).getTime()),
+        subtitleType: 'Audio',
+        audioName: 'Billie Jean',
+        artistName: 'Michael Jackson',
+        location: 'Heaven',
+        likers: [this.activeUser,this.activeUser,this.activeUser],
+        caption: 'nouvelle photo de profil ! \n \n #newprofilepic #paris #selfie',
+        language: 'fr',
+        comments: ['oui', 'génail'],
+        content: ['/assets/profileImage.jpeg']
+    },
+    {
+        id: 3,
+        publisher: this.activeUser,
+        publicationDate: ((new Date(2024, 0, 1)).getTime()),
+        subtitleType: 'Audio',
+        audioName: 'Billie Jean',
+        artistName: 'Michael Jackson',
+        location: 'Heaven',
+        likers: [this.activeUser,this.activeUser,this.activeUser],
+        caption: 'nouvelle photo de profil ! \n \n #newprofilepic #paris #selfie',
+        language: 'fr',
+        comments: ['oui', 'génail'],
+        content: ['/assets/profileImage.jpeg']
+    }
+  ]
 }

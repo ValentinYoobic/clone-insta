@@ -1,5 +1,10 @@
 <div #captionText [ngClass]="truncation">
-  <a class="username">{{ userName }}</a>
+  <div class="username">
+    <a class="username">{{ userName }}</a>
+    @if (isCertified) {
+    <app-tag size="medium" type="Certified" />
+    }
+  </div>
   <div class="content">{{ caption }}</div>
 </div>
 @if(needsTruncation()){

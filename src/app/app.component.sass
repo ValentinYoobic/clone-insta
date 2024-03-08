@@ -2,16 +2,23 @@
     display: flex
     width: 100vw
     height: 100vh
+    overflow: hidden
 
 .application
+    flex: 1
+    justify-content: center
     display: flex
     margin-right: auto
     margin-left: auto
     padding-top: 22px
+    overflow-y: scroll 
 
     .main-section
         width: 630px
         height: auto
+        display: flex
+        flex-direction: column
+        align-items: center
 
         .feed-selector
             display: block
@@ -19,6 +26,18 @@
             border-bottom: 1px solid #dbdbdb
             margin-bottom: 25px
 
-    app-profile-section
-        padding-left: 64px
-        padding-top: 36px
+        .feed
+            margin-top: 30px
+
+            app-publication
+                display: block
+                margin-bottom: 10px
+                padding: 20px
+                border-bottom: solid 1px rgb(219,219,219)
+            
+                &:last-child
+                    border: none
+
+app-profile-section
+    padding-left: 64px
+    padding-top: 36px

@@ -4,6 +4,7 @@ import { LikesStatisticsComponent } from '../likes-statistics/likes-statistics.c
 import { PublicationCaptionComponent } from '../publication-caption/publication-caption.component';
 import { ViewCommentsComponent } from '../view-comments/view-comments.component';
 import { PostCommentsComponent } from '../post-comments/post-comments.component';
+import { InteractionBarComponent } from '../publication/interaction-bar/interaction-bar.component';
 
 @Component({
   selector: 'app-publication-under-text',
@@ -12,18 +13,19 @@ import { PostCommentsComponent } from '../post-comments/post-comments.component'
     LikesStatisticsComponent,
     PublicationCaptionComponent,
     ViewCommentsComponent,
-    PostCommentsComponent
+    PostCommentsComponent,
+    InteractionBarComponent
   ],
   templateUrl: './publication-under-text.component.html',
   styleUrl: './publication-under-text.component.sass',
 })
 export class PublicationUnderTextComponent {
-  @Input() likes!: number;
-  @Input() whoLiked: User[] | null = null;
+  @Input({required: true}) likes!: number;
+  @Input({required: true}) whoLiked: User[] | null = null;
+  @Input({required: true}) isCertified: boolean = false;
+  @Input({required: true}) userName!: string;
+  @Input({required: true}) caption: string | null = null;
+  @Input({required: true}) language: 'en' | 'fr' | null = null;
 
-  @Input() userName!: string;
-  @Input() caption: string | null = null;
-  @Input() language: 'en' | 'fr' | null = null;
-
-  @Input() commentsStatistics!: number;
+  @Input({required: true}) commentsStatistics!: number;
 }

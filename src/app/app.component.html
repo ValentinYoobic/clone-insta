@@ -1,16 +1,24 @@
 <div class="screen">
   <app-navigation-bar />
+
   <div class="application">
     <div class="main-section">
 
       <app-feed-selector class="feed-selector"/>
 
+
       <app-slider-carousel class="story-caroussel" type="story" [slides]="storyContent"/>
+      <div class="feed">
+        @for (publication of feedContent; track publication.id) {
+          <app-publication [publication]="publication" />
+        }
+      </div>
     </div>
+
     <app-profile-section [activeUser]="activeUser" [suggestedUsers]="suggestedUsers" />
 
-
   </div>
+
 </div>
 
 <router-outlet />

@@ -5,13 +5,14 @@ import {
   ElementRef,
   AfterViewInit,
   Renderer2,
-  ChangeDetectorRef
+  ChangeDetectorRef,
 } from '@angular/core';
+import { TagComponent } from '../general-components/tag/tag.component';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-publication-caption',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TagComponent],
   templateUrl: './publication-caption.component.html',
   styleUrl: './publication-caption.component.sass',
 })
@@ -19,7 +20,7 @@ export class PublicationCaptionComponent implements AfterViewInit {
   @Input() userName!: string;
   @Input() caption: string | null = null;
   @Input() language: 'en' | 'fr' | null = null;
-  
+  @Input() isCertified: boolean = false;
   @ViewChild('captionText', {static: true}) captionText!: ElementRef;
   isCaptionTruncated = true;
   ngAfterViewInit(): void {
