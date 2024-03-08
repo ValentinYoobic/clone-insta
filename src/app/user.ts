@@ -5,4 +5,5 @@ export type User = {
     profilePhotoUrl: string // starting by assets/
     isCertified: boolean
     isFollowed: boolean
+    subTitle?: string
 }

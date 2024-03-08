@@ -1,0 +1,24 @@
+<div class="profile-card">
+
+    <div class="profile-picture-wrapper">
+        <div class="profile-picture-wrapper">
+            <app-profile-picture size="medium" [profilePictureUrl]="this.user.profilePhotoUrl" />
+        </div>
+    </div>
+
+    <div class="info-wrapper">
+        <div class="username-wrapper">
+            <span class="bold">{{this.user.userName}}</span>
+            @if (this.user.isCertified) {
+            <app-tag type="Certified" size="medium" />
+            }
+        </div>
+        @if (subTitle) {
+        <div class="sub-title-wrapper">
+            <span>{{this.subTitle}}</span>
+        </div>
+        }
+    </div>
+
+    <app-text-buton>{{this.interactionButtonType}}</app-text-buton>
+</div>

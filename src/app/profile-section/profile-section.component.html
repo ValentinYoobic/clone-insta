@@ -1,0 +1,11 @@
+<div class="profile-section">
+    <app-profile-card [user]="activeUser" [interactionButtonType]="'Switch'" [subTitle]="this.activeUser.subTitle ?? null"/>
+    <div class="section-separator">
+        <span>Suggested for you</span>
+        <app-text-buton>See All</app-text-buton>
+    </div>
+    @for (user of suggestedUsers; track user.id) {
+        <app-profile-card [user]="user" [subTitle]="user.subTitle ?? 'Suggested for you'"></app-profile-card>
+    }
+
+</div>
