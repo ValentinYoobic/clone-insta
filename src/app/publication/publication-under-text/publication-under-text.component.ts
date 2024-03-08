@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { User } from '../user';
-import { LikesStatisticsComponent } from '../likes-statistics/likes-statistics.component';
+import { User } from '../../user';
+import { LikesStatisticsComponent } from '../../likes-statistics/likes-statistics.component';
 import { PublicationCaptionComponent } from '../publication-caption/publication-caption.component';
-import { ViewCommentsComponent } from '../view-comments/view-comments.component';
-import { PostCommentsComponent } from '../post-comments/post-comments.component';
-import { InteractionBarComponent } from '../publication/interaction-bar/interaction-bar.component';
+import { ViewCommentsComponent } from '../../view-comments/view-comments.component';
+import { PostCommentsComponent } from '../../post-comments/post-comments.component';
+import { InteractionBarComponent } from '../interaction-bar/interaction-bar.component';
 
 @Component({
   selector: 'app-publication-under-text',

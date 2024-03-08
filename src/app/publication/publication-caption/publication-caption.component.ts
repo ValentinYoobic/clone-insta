@@ -7,7 +7,7 @@ import {
   Renderer2,
   ChangeDetectorRef,
 } from '@angular/core';
-import { TagComponent } from '../general-components/tag/tag.component';
+import { TagComponent } from '../../general-components/tag/tag.component';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-publication-caption',

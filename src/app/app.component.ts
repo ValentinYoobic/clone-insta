@@ -176,7 +176,7 @@ export class AppComponent {
         caption: 'nouvelle photo de profil ! \n \n #newprofilepic #paris #selfie',
         language: 'fr',
         comments: ['oui', 'génail'],
-        content: ['/assets/profileImage.jpeg','/assets/profileImage.jpeg']
+        content: ['assets/profileImage.jpeg','assets/profileImage2.jpeg']
     },
     {
         id: 2,
@@ -190,7 +190,7 @@ export class AppComponent {
         caption: 'nouvelle photo de profil ! \n \n #newprofilepic #paris #selfie',
         language: 'fr',
         comments: ['oui', 'génail'],
-        content: ['/assets/profileImage.jpeg']
+        content: ['assets/profileImage.jpeg']
     },
     {
         id: 3,
@@ -204,7 +204,7 @@ export class AppComponent {
         caption: 'nouvelle photo de profil ! \n \n #newprofilepic #paris #selfie',
         language: 'fr',
         comments: ['oui', 'génail'],
-        content: ['/assets/profileImage.jpeg']
+        content: ['assets/profileImage.jpeg']
     }
   ]
 }

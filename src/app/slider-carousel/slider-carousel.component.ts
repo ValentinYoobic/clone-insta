@@ -34,10 +34,6 @@ export class SliderCarouselComponent {
       userName: 'marvin_gaye',
     },
   ];
-
-  // @Input()
-  // visibleSlides: 1 | 8 = 8;
-
   currentIndex: number = 0;
 
   goToNext(): void {
