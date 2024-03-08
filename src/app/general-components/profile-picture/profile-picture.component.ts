@@ -37,6 +37,9 @@ export class ProfilePictureComponent {
   @Input()
   viewedStory: boolean = false;
 
+  @Input()
+  hasTransparentBackground: boolean = false;
+
   @Output()
   onClick = new EventEmitter<Event>();
 
@@ -64,7 +67,7 @@ export class ProfilePictureComponent {
       ]
     }
     return [
-      ['profile-picture-padding', `profile-picture-padding--${this.size}`],
+      ['profile-picture-padding', `profile-picture-padding--${this.size}`, this.hasTransparentBackground ? 'transparent-background' : ""],
       []
     ]
   } 

@@ -23,8 +23,7 @@ export type IconType = 'Heart' |
   'Video-Filled' |
   'Send-Filled' |
   'Save-Filled' |
-  'Bouncing-Heart'
-
+  'Search-Filled'
 
 export type Size = 'medium' | 'small'
 
