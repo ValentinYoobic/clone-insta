@@ -1,4 +1,9 @@
-<a href="" class="container">
-    <app-icon [iconType]="iconType" size="medium"></app-icon>
+<a (click)="handleClick($event)" class="container">
+    @if (iconType === 'Profile') {
+        <app-profile-picture [profilePictureUrl]="userProfilePhotoUrl" size="xs" [hasTransparentBackground]="true"/>
+    }
+    @else {
+        <app-icon [iconType]="iconType" size="medium"></app-icon>
+    }
     {{label}}
 </a>

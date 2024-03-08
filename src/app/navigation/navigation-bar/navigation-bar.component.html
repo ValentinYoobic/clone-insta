@@ -1,13 +1,14 @@
 <nav>
     <div class="top-section">
         <img src="../../../assets/Instagram-logo.png" alt="instagram-logo" width="50%" class="main-logo">
-        <app-navigation-button iconType="Home" label="Home"></app-navigation-button>
-        <app-navigation-button iconType="Search" label="Search"></app-navigation-button>
-        <app-navigation-button iconType="Compass" label="Explore"></app-navigation-button>
-        <app-navigation-button iconType="Video" label="Reels"></app-navigation-button>
-        <app-navigation-button iconType="Send" label="Message"></app-navigation-button>
-        <app-navigation-button iconType="Heart" label="Notifications"></app-navigation-button>
-        <app-navigation-button iconType="Add" label="Create"></app-navigation-button>
+        <app-navigation-button [iconType]="currentMenu === 'Home' ? 'Home-Filled' : 'Home'" label="Home" [ngClass]="{'bold': currentMenu === 'Home'}" [handleClick]="changeCurrentMenu('Home')"></app-navigation-button>
+        <app-navigation-button [iconType]="currentMenu === 'Search' ? 'Search-Filled' : 'Search'" label="Search" [ngClass]="{'bold': currentMenu === 'Search'}" [handleClick]="changeCurrentMenu('Search')"></app-navigation-button>
+        <app-navigation-button [iconType]="currentMenu === 'Explore' ? 'Compass-Filled' : 'Compass'" label="Explore" [ngClass]="{'bold': currentMenu === 'Explore'}" [handleClick]="changeCurrentMenu('Explore')"></app-navigation-button>
+        <app-navigation-button [iconType]="currentMenu === 'Reels' ? 'Video-Filled' : 'Video'" label="Reels" [ngClass]="{'bold': currentMenu === 'Reels'}" [handleClick]="changeCurrentMenu('Reels')"></app-navigation-button>
+        <app-navigation-button [iconType]="currentMenu === 'Message' ? 'Send-Filled' : 'Send'" label="Message" [ngClass]="{'bold': currentMenu === 'Message'}" [handleClick]="changeCurrentMenu('Message')"></app-navigation-button>
+        <app-navigation-button [iconType]="currentMenu === 'Notifications' ? 'Heart-Filled' : 'Heart'" label="Notifications" [ngClass]="{'bold': currentMenu === 'Notifications'}" [handleClick]="changeCurrentMenu('Notifications')"></app-navigation-button>
+        <app-navigation-button [iconType]="currentMenu === 'Create' ? 'Add' : 'Add'" label="Create" [handleClick]="changeCurrentMenu('Create')"></app-navigation-button>
+        <app-navigation-button iconType="Profile" label="Profile" [userProfilePhotoUrl]="userProfilePhotoUrl" [handleClick]="changeCurrentMenu('Profile')"></app-navigation-button>
     </div>
 
     <div class="bottom-section">
