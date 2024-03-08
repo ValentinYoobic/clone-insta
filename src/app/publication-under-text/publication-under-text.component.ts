@@ -21,7 +21,7 @@ import { InteractionBarComponent } from '../publication/interaction-bar/interact
 })
 export class PublicationUnderTextComponent {
   @Input({required: true}) likes!: number;
-  @Input({required: true}) whoLiked: User[] | null = null;
+  @Input({required: true}) whoLiked!: User[];
   @Input({required: true}) isCertified: boolean = false;
   @Input({required: true}) userName!: string;
   @Input({required: true}) caption: string | null = null;
