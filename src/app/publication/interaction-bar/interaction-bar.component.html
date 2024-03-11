@@ -1,10 +1,31 @@
 <div class="interaction-bar">
-    <div class="left-section">
-        <app-like-button [buttonWidth]="40" [buttonHeight]="40"/>
-        <app-lighten-hover-icon-button iconType="ChatBubble" iconSize="medium" [buttonWidth]="40" [buttonHeight]="40"/>
-        <app-lighten-hover-icon-button iconType="Send" iconSize="medium" [buttonWidth]="40" [buttonHeight]="40" />
-    </div>
-    <div class="right-section">
-        <app-lighten-hover-icon-button iconType="Save" iconSize="medium" [buttonWidth]="40" [buttonHeight]="40" />
-    </div>
+  <div class="left-section">
+    <app-like-button
+      [buttonWidth]="40"
+      [buttonHeight]="40"
+      (liked)="handleClick2($event)"
+      [handleLike]="nullFunction"
+      [handleUnlike]="nullFunction"
+    />
+    <app-lighten-hover-icon-button
+      iconType="ChatBubble"
+      iconSize="medium"
+      [buttonWidth]="40"
+      [buttonHeight]="40"
+    />
+    <app-lighten-hover-icon-button
+      iconType="Send"
+      iconSize="medium"
+      [buttonWidth]="40"
+      [buttonHeight]="40"
+    />
+  </div>
+  <div class="right-section">
+    <app-lighten-hover-icon-button
+      iconType="Save"
+      iconSize="medium"
+      [buttonWidth]="40"
+      [buttonHeight]="40"
+    />
+  </div>
 </div>

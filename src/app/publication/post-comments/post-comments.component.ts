@@ -1,8 +1,8 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import { TextButonComponent } from '../general-components/text-buton/text-buton.component';
-import { LightenHoverIconButtonComponent } from '../general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.component';
+import { TextButonComponent } from '../../general-components/text-buton/text-buton.component';
+import { LightenHoverIconButtonComponent } from '../../general-components/icon-button/lighten-hover-icon-button/lighten-hover-icon-button.component';
 
 @Component({
   selector: 'app-post-comments',
@@ -12,13 +12,15 @@ import { LightenHoverIconButtonComponent } from '../general-components/icon-butt
   styleUrl: './post-comments.component.sass'
 })
 export class PostCommentsComponent implements AfterViewInit {
+  @Output() newComment= new EventEmitter<string>();
   applyForm = new FormGroup({
     comment: new FormControl(''),
   });
 
   submitComment() {
-    console.log(
-      `You commented: ${this.applyForm.value.comment ?? ''}`);
+    // console.log(
+    //   `You commented: ${this.applyForm.value.comment ?? ''}`);
+    this.newComment.emit(this.applyForm.value.comment?? '');
   }
   handleShowPostButton(): boolean {
     if (this.applyForm.value.comment && this.applyForm.value.comment.length>0) {

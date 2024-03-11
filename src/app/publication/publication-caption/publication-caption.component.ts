@@ -7,7 +7,7 @@ import {
   Renderer2,
   ChangeDetectorRef,
 } from '@angular/core';
-import { TagComponent } from '../general-components/tag/tag.component';
+import { TagComponent } from '../../general-components/tag/tag.component';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-publication-caption',
@@ -29,10 +29,9 @@ export class PublicationCaptionComponent implements AfterViewInit {
   needsTruncation(): boolean {
     if (this.captionText) {
       const nativeElement = this.captionText.nativeElement;
-
-      return (
-        nativeElement.offsetHeight < nativeElement.scrollHeight ||
-        nativeElement.offsetWidth < nativeElement.scrollWidth
+      return ( 
+        nativeElement.offsetHeight < nativeElement.scrollHeight 
+        || nativeElement.offsetWidth < nativeElement.scrollWidth
       );
     }
     return false;
@@ -51,11 +50,11 @@ export class PublicationCaptionComponent implements AfterViewInit {
   }
   private checkTruncation(): void {
     this.isCaptionTruncated = this.needsTruncation();
-    if (this.needsTruncation()) {
-      console.log('truncated');
-    } else {
-      console.log('not truncated');
-    }
+    // if (this.needsTruncation()) {
+    //   console.log('truncated');
+    // } else {
+    //   console.log('not truncated');
+    // }
   }
 
   isTranslated = false;

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { User } from '../user';
+import { User } from '../../user';
 import { LikesPicturesComponent } from '../likes-pictures/likes-pictures.component';
 
 @Component({

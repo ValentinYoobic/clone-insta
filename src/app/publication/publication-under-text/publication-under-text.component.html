@@ -1,17 +1,22 @@
 <div class="publication-info">
-  <app-interaction-bar/>
+  <app-interaction-bar
+    (liked)="handleClick3($event)"/>
   <app-likes-statistics
     [likes]="likes"
     [whoLiked]="whoLiked"
   ></app-likes-statistics>
+  @if (caption) {
   <app-publication-caption
     [isCertified]="isCertified"
     [userName]="userName"
     [caption]="caption"
     [language]="language"
-  ></app-publication-caption>
+  ></app-publication-caption>}
+  @if (commentsStatistics>0) {
   <app-view-comments
     [commentsStatistics]="commentsStatistics"
-  ></app-view-comments>
-  <app-post-comments></app-post-comments>
+  ></app-view-comments>}
+  <app-post-comments
+    (newComment)="handlePostComment($event)">
+  </app-post-comments>
 </div>

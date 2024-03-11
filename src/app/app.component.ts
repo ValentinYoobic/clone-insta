@@ -30,7 +30,7 @@ export class AppComponent {
   hasStory: false,
   profilePhotoUrl: '/assets/profileImage.jpeg',
   isCertified: true,
-  isFollowed: false,
+  isFollowed: true,
   subTitle: 'Michael Jackson'
 }
   suggestedUsers: User[] = [
@@ -172,11 +172,11 @@ export class AppComponent {
         audioName: 'Billie Jean',
         artistName: 'Michael Jackson',
         location: 'Heaven',
-        likers: [this.activeUser,this.activeUser,this.activeUser],
-        caption: 'nouvelle photo de profil ! \n \n #newprofilepic #paris #selfie',
+        likers: [this.activeUser,this.activeUser,this.activeUser,this.activeUser,this.activeUser ],
+        caption: 'nouvelle photo de profil ! ',
         language: 'fr',
         comments: ['oui', 'génail'],
-        content: ['/assets/profileImage.jpeg','/assets/profileImage.jpeg']
+        content: ['assets/profileImage.jpeg','assets/profileImage2.jpeg']
     },
     {
         id: 2,
@@ -190,7 +190,7 @@ export class AppComponent {
         caption: 'nouvelle photo de profil ! \n \n #newprofilepic #paris #selfie',
         language: 'fr',
         comments: ['oui', 'génail'],
-        content: ['/assets/profileImage.jpeg']
+        content: ['assets/profileImage.jpeg']
     },
     {
         id: 3,
@@ -201,10 +201,10 @@ export class AppComponent {
         artistName: 'Michael Jackson',
         location: 'Heaven',
         likers: [this.activeUser,this.activeUser,this.activeUser],
-        caption: 'nouvelle photo de profil ! \n \n #newprofilepic #paris #selfie',
+        caption: null,
         language: 'fr',
-        comments: ['oui', 'génail'],
-        content: ['/assets/profileImage.jpeg']
+        comments: [],
+        content: ['assets/profileImage.jpeg']
     }
   ]
 }

@@ -1,6 +1,23 @@
 @if (!isLiked) {
-    <app-lighten-hover-icon-button iconType="Heart" iconSize="medium" [buttonHeight]="buttonHeight" [buttonWidth]="buttonWidth" defaultIconColor="black" [handleClick]="handleLike" (click)="handleClick()"/>
-}
-@else {
-    <app-no-hover-icon-button [bounce]="makeLikeAnimation" [ngClass]="{'like-animation': makeLikeAnimation}" iconType="Heart-Filled" iconSize="medium" [buttonHeight]="buttonHeight" [buttonWidth]="buttonWidth" defaultIconColor="#FF3040" [handleClick]="handleUnlike" (click)="handleClick()"/>
+<app-lighten-hover-icon-button
+  iconType="Heart"
+  iconSize="medium"
+  [buttonHeight]="buttonHeight"
+  [buttonWidth]="buttonWidth"
+  defaultIconColor="black"
+  [handleClick]="handleLike"
+  (click)="handleClick()"
+/>
+} @else {
+<app-no-hover-icon-button
+  [bounce]="makeLikeAnimation"
+  [ngClass]="{ 'like-animation': makeLikeAnimation }"
+  iconType="Heart-Filled"
+  iconSize="medium"
+  [buttonHeight]="buttonHeight"
+  [buttonWidth]="buttonWidth"
+  defaultIconColor="#FF3040"
+  [handleClick]="handleUnlike"
+  (click)="handleClick()"
+/>
 }

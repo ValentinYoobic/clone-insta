@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div *ngFor="let user of whoLiked; index as i" [class]="getClass(i)">
+  <div *ngFor="let user of getLikeAvatars(); index as i" [class]="getClass(i)">
     <app-profile-picture
       size="xxs"
       [profilePictureUrl]="user.profilePhotoUrl"

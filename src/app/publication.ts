@@ -4,7 +4,7 @@ export interface Publication {
     id: number
     content: string[]
     publisher: User
-    caption: string
+    caption: string | null
     language: 'en' | 'fr' | null
     publicationDate: number
     subtitleType: 'Location' | 'Audio' | null
