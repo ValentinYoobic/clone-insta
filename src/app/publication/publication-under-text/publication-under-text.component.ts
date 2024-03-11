@@ -39,4 +39,8 @@ export class PublicationUnderTextComponent {
       // this.likes--;
     }
   }
+  @Output() newComment= new EventEmitter<string> ();
+  handlePostComment($event: string) {
+    this.newComment.emit($event);
+  }
 }

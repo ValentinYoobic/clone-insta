@@ -33,6 +33,9 @@ export class PublicationComponent {
     } else {
       const unliker=this.publication.likers.pop();
     }
-    console.log('Likers:',this.publication.likers)
+  }
+
+  handlePostComment($event: string) {
+    this.publication.comments.push($event);
   }
 }

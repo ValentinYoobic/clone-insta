@@ -173,7 +173,7 @@ export class AppComponent {
         artistName: 'Michael Jackson',
         location: 'Heaven',
         likers: [this.activeUser,this.activeUser,this.activeUser,this.activeUser,this.activeUser ],
-        caption: 'nouvelle photo de profil ! \n \n #newprofilepic #paris #selfie',
+        caption: 'nouvelle photo de profil ! ',
         language: 'fr',
         comments: ['oui', 'génail'],
         content: ['assets/profileImage.jpeg','assets/profileImage2.jpeg']
@@ -201,9 +201,9 @@ export class AppComponent {
         artistName: 'Michael Jackson',
         location: 'Heaven',
         likers: [this.activeUser,this.activeUser,this.activeUser],
-        caption: 'nouvelle photo de profil ! \n \n #newprofilepic #paris #selfie',
+        caption: null,
         language: 'fr',
-        comments: ['oui', 'génail'],
+        comments: [],
         content: ['assets/profileImage.jpeg']
     }
   ]

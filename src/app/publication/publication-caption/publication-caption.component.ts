@@ -29,10 +29,9 @@ export class PublicationCaptionComponent implements AfterViewInit {
   needsTruncation(): boolean {
     if (this.captionText) {
       const nativeElement = this.captionText.nativeElement;
-
-      return (
-        nativeElement.offsetHeight < nativeElement.scrollHeight ||
-        nativeElement.offsetWidth < nativeElement.scrollWidth
+      return ( 
+        nativeElement.offsetHeight < nativeElement.scrollHeight 
+        || nativeElement.offsetWidth < nativeElement.scrollWidth
       );
     }
     return false;
