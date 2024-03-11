@@ -13,7 +13,7 @@ import { IconButtonComponent } from "../icon-button.component"
 })
 export class LightenHoverIconButtonComponent extends IconButtonComponent {
   handleMouseEnter = () => {
-    this.currentIconColor = '#8E8E8E'
+    this.currentIconColor = 'var(--dark-grey)'
   }
   handleMouseLeave = () => {
     this.currentIconColor = this.defaultIconColor
