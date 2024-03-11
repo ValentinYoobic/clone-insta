@@ -12,6 +12,11 @@ import { ProfilePictureComponent } from '../../general-components/profile-pictur
 export class LikesPicturesComponent {
   @Input() whoLiked!: User[];
 
+  getLikeAvatars(): User[] {
+    const likePictures= this.whoLiked.filter((user: User)=> user.isFollowed);
+    return likePictures.slice(0,3);
+  } 
+  
   getClass(i:number): string[] {
     return [`picture--${i}`];
   } 

@@ -30,7 +30,7 @@ export class AppComponent {
   hasStory: false,
   profilePhotoUrl: '/assets/profileImage.jpeg',
   isCertified: true,
-  isFollowed: false,
+  isFollowed: true,
   subTitle: 'Michael Jackson'
 }
   suggestedUsers: User[] = [
