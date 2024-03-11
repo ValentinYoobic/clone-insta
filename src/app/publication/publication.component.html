@@ -1,5 +1,24 @@
-<div class="publication"> 
-    <app-publication-header [user]="publication.publisher" [publicationDate]="publication.publicationDate" [subTitleType]="publication.subtitleType" [audioName]="publication.audioName" [artistName]="publication.artistName" [location]="publication.location"/>
-    <app-slider-carousel type="picturePost" [slides]="generateSlides(publication.content)"/>
-    <app-publication-under-text [likes]="publication.likers.length" [whoLiked]="publication.likers" [userName]="publication.publisher.userName" [isCertified]="publication.publisher.isCertified" [caption]="publication.caption" [language]="publication.language" [commentsStatistics]="publication.comments.length"/>
+<div class="publication">
+  <app-publication-header
+    [user]="publication.publisher"
+    [publicationDate]="publication.publicationDate"
+    [subTitleType]="publication.subtitleType"
+    [audioName]="publication.audioName"
+    [artistName]="publication.artistName"
+    [location]="publication.location"
+  />
+  <app-slider-carousel
+    type="picturePost"
+    [slides]="generateSlides(publication.content)"
+  />
+  <app-publication-under-text
+    [likes]="publication.likers.length"
+    [whoLiked]="publication.likers"
+    [userName]="publication.publisher.userName"
+    [isCertified]="publication.publisher.isCertified"
+    [caption]="publication.caption"
+    [language]="publication.language"
+    [commentsStatistics]="publication.comments.length"
+    (liked)="handleClick4($event)"
+  ></app-publication-under-text>
 </div>

@@ -172,7 +172,7 @@ export class AppComponent {
         audioName: 'Billie Jean',
         artistName: 'Michael Jackson',
         location: 'Heaven',
-        likers: [this.activeUser,this.activeUser,this.activeUser],
+        likers: [this.activeUser,this.activeUser,this.activeUser,this.activeUser,this.activeUser ],
         caption: 'nouvelle photo de profil ! \n \n #newprofilepic #paris #selfie',
         language: 'fr',
         comments: ['oui', 'génail'],

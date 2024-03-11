@@ -51,11 +51,11 @@ export class PublicationCaptionComponent implements AfterViewInit {
   }
   private checkTruncation(): void {
     this.isCaptionTruncated = this.needsTruncation();
-    if (this.needsTruncation()) {
-      console.log('truncated');
-    } else {
-      console.log('not truncated');
-    }
+    // if (this.needsTruncation()) {
+    //   console.log('truncated');
+    // } else {
+    //   console.log('not truncated');
+    // }
   }
 
   isTranslated = false;

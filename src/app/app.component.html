@@ -10,7 +10,7 @@
       <app-slider-carousel class="story-caroussel" type="story" [slides]="storyContent"/>
       <div class="feed">
         @for (publication of feedContent; track publication.id) {
-          <app-publication [publication]="publication" />
+          <app-publication [publication]="publication" [activeUser]="activeUser"/>
         }
       </div>
     </div>

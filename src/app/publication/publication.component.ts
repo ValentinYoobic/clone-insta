@@ -17,6 +17,7 @@ import { Publication } from '../publication';
 })
 export class PublicationComponent {
   @Input({required: true}) publication!: Publication;
+  @Input({required: true}) activeUser!: User;
 
   generateSlides(imagePaths:string[]): Slide[] {
     return imagePaths.map(imagePath=> ({
@@ -24,5 +25,14 @@ export class PublicationComponent {
       type: 'picturePost',
       userName: this.publication.publisher.userName
     }));
+  }
+
+  handleClick4($event: boolean): void {
+    if ($event) {
+      this.publication.likers.push(this.activeUser);
+    } else {
+      const unliker=this.publication.likers.pop();
+    }
+    console.log('Likers:',this.publication.likers)
   }
 }

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-
-import { LikesStatisticsComponent } from './likes-statistics.component';
-import { User } from '../user';
-const meta: Meta<LikesStatisticsComponent> = {
-    title: 'Components/Likes Statistics',
-    component: LikesStatisticsComponent,
+import { LikesPicturesComponent } from './likes-pictures.component';
+import { User } from '../../user';
+const meta: Meta<LikesPicturesComponent> = {
+    title: 'Components/Likes Pictures',
+    component: LikesPicturesComponent,
+    tags: ['autodocs'],
 }
 
 const user1: User = {
@@ -35,11 +35,22 @@ const user3: User = {
   }
 
 export default meta;
-type Story = StoryObj<LikesStatisticsComponent>;
+type Story = StoryObj<LikesPicturesComponent>;
 
-export const LikesStatistics: Story = {
+export const oneUser: Story = {
     args: {
-        likes: 18000,
-        whoLiked: [user1, user2, user2],
+        whoLiked: [user1],
+    }
+};
+
+export const twoUsers: Story = {
+    args: {
+        whoLiked: [user1, user2],
+    }
+};
+
+export const threeUsers: Story = {
+    args: {
+        whoLiked: [user1, user2, user3],
     }
 };

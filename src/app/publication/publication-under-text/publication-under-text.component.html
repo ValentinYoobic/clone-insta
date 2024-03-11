@@ -1,5 +1,6 @@
 <div class="publication-info">
-  <app-interaction-bar/>
+  <app-interaction-bar
+    (liked)="handleClick3($event)"/>
   <app-likes-statistics
     [likes]="likes"
     [whoLiked]="whoLiked"
