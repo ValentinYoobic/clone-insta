@@ -4,7 +4,6 @@ import {
   ViewChild,
   ElementRef,
   AfterViewInit,
-  Renderer2,
   ChangeDetectorRef,
 } from '@angular/core';
 import { TagComponent } from '../../general-components/tag/tag.component';
@@ -23,8 +22,11 @@ export class PublicationCaptionComponent implements AfterViewInit {
   @Input() isCertified: boolean = false;
   @ViewChild('captionText', {static: true}) captionText!: ElementRef;
   isCaptionTruncated = true;
+
+  constructor(private cdr: ChangeDetectorRef) {}
   ngAfterViewInit(): void {
     this.checkTruncation();
+    this.cdr.detectChanges();
   }
   needsTruncation(): boolean {
     if (this.captionText) {
