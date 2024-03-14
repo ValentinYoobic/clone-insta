@@ -3,12 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { NavigationBarComponent } from './navigation/navigation-bar/navigation-bar.component';
 import { ProfileSectionComponent } from './profile-section/profile-section.component';
 import { User } from './user';
-import { SliderCarouselComponent } from './slider-carousel/slider-carousel.component';
 import { Slide } from './slide';
 import { FeedSelectorComponent } from './feed-selector/feed-selector.component';
 import { Publication } from './publication';
 import { PublicationComponent } from './publication/publication.component';
-
+import { SwiperComponentComponent } from './swiper-component/swiper-component.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -16,9 +15,9 @@ import { PublicationComponent } from './publication/publication.component';
     RouterOutlet,
     NavigationBarComponent,
     ProfileSectionComponent,
-    SliderCarouselComponent,
     FeedSelectorComponent,
-    PublicationComponent
+    PublicationComponent,
+    SwiperComponentComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
@@ -163,6 +162,94 @@ export class AppComponent {
         userName: 'this.activeUser7',
       },
 ]
+
+  slidesStory: Slide[] = [
+    {
+      pictureUrl: 'assets/profileImage.jpeg',
+      type: 'story',
+      userName: 'user1',
+    },
+    {
+      pictureUrl: 'assets/profileImage2.jpeg',
+      type: 'story',
+      userName: 'user2',
+    },
+    {
+      pictureUrl: 'assets/marvin_gaye.jpeg',
+      type: 'story',
+      userName: 'user3',
+    },
+    {
+      pictureUrl: 'assets/profileImage.jpeg',
+      type: 'story',
+      userName: 'user4',
+    },
+    {
+      pictureUrl: 'assets/profileImage2.jpeg',
+      type: 'story',
+      userName: 'user5',
+    },
+    {
+      pictureUrl: 'assets/profileImage.jpeg',
+      type: 'story',
+      userName: 'user6',
+    },
+    {
+      pictureUrl: 'assets/profileImage2.jpeg',
+      type: 'story',
+      userName: 'user7',
+    },
+    {
+      pictureUrl: 'assets/marvin_gaye.jpeg',
+      type: 'story',
+      userName: 'user8',
+    },
+    {
+      pictureUrl: 'assets/profileImage.jpeg',
+      type: 'story',
+      userName: 'user9',
+    },
+    {
+      pictureUrl: 'assets/profileImage2.jpeg',
+      type: 'story',
+      userName: 'user10',
+    },
+    {
+      pictureUrl: 'assets/profileImage.jpeg',
+      type: 'story',
+      userName: 'user11',
+    },
+    {
+      pictureUrl: 'assets/profileImage2.jpeg',
+      type: 'story',
+      userName: 'user12',
+    },
+    {
+      pictureUrl: 'assets/profileImage.jpeg',
+      type: 'story',
+      userName: 'user13',
+    },
+    {
+      pictureUrl: 'assets/profileImage2.jpeg',
+      type: 'story',
+      userName: 'user14',
+    },
+    {
+      pictureUrl: 'assets/marvin_gaye.jpeg',
+      type: 'story',
+      userName: 'user15',
+    },
+    {
+      pictureUrl: 'assets/profileImage.jpeg',
+      type: 'story',
+      userName: 'user16',
+    },
+    {
+      pictureUrl: 'assets/profileImage2.jpeg',
+      type: 'story',
+      userName: 'user17',
+    },
+    ]
   feedContent: Publication[] = [
     {
         id: 1,
@@ -176,7 +263,7 @@ export class AppComponent {
         caption: 'nouvelle photo de profil ! ',
         language: 'fr',
         comments: ['oui', 'génail'],
-        content: ['assets/profileImage.jpeg','assets/profileImage2.jpeg']
+        content: ['assets/profileImage.jpeg','assets/profileImage2.jpeg', 'assets/marvin_gaye.jpeg']
     },
     {
         id: 2,
@@ -204,7 +291,7 @@ export class AppComponent {
         caption: null,
         language: 'fr',
         comments: [],
-        content: ['assets/profileImage.jpeg']
+        content: ['assets/marvin_gaye.jpeg','assets/profileImage.jpeg']
     }
   ]
 }

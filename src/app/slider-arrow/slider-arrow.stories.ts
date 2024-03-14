@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { SliderArrowComponent } from './slider-arrow.component';
 
 const meta: Meta<SliderArrowComponent> = {
-    title: 'App/Slider Arrow',
+    title: 'Components/Slider Arrow',
     component: SliderArrowComponent,
     tags: ['autodocs'],
 }
