@@ -5,13 +5,13 @@ import { SubtitleType } from './publication-header/publication-header.component'
 import { Slide } from '../slide'
 import { PublicationHeaderComponent } from './publication-header/publication-header.component';
 import { PublicationUnderTextComponent } from './publication-under-text/publication-under-text.component';
-import { SliderCarouselComponent } from '../slider-carousel/slider-carousel.component';
 import { Publication } from '../publication';
+import { SwiperComponentComponent } from '../swiper-component/swiper-component.component';
 
 @Component({
   selector: 'app-publication',
   standalone: true,
-  imports: [CommonModule, PublicationHeaderComponent, PublicationUnderTextComponent, SliderCarouselComponent],
+  imports: [CommonModule, PublicationHeaderComponent, PublicationUnderTextComponent, SwiperComponentComponent],
   templateUrl: './publication.component.html',
   styleUrl: './publication.component.sass'
 })

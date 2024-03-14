@@ -1,0 +1,21 @@
+<div class='swiper-wrapper'>
+<swiper-container init="false" #swiperContainer>
+    @for (slide of slides(); track slide.userName) {
+        @if(slide.type==='story'){
+        <swiper-slide type="story" [avatarUrl]="slide.pictureUrl">
+            {{slide.userName}}
+        </swiper-slide>
+    } @else {
+        <swiper-slide type="picturePost" [avatarUrl]="slide.pictureUrl">
+        </swiper-slide>
+    }
+    }
+    
+  </swiper-container>
+  @if(isLeftArrowVisible){
+    <app-slider-arrow class="left-arrow" #buttonPrevious direction="left" (onClick)="handlePreviousSlide()"></app-slider-arrow>
+  }
+  @if(isRightArrowVisible){
+  <app-slider-arrow class="right-arrow" #buttonNext direction="right" (onClick)="handleNextSlide()"></app-slider-arrow>
+  }
+</div>

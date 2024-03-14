@@ -7,10 +7,7 @@
     [artistName]="publication.artistName"
     [location]="publication.location"
   />
-  <app-slider-carousel
-    type="picturePost"
-    [slides]="generateSlides(publication.content)"
-  />
+  <app-swiper-component [slidesPerViewNumber]="1" [slides]="generateSlides(publication.content)"></app-swiper-component>
   <app-publication-under-text
     [likes]="publication.likers.length"
     [whoLiked]="publication.likers"

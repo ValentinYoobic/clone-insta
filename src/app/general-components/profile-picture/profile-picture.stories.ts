@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { ProfilePictureComponent } from './profile-picture.component';
 
 const meta: Meta<ProfilePictureComponent>= {
-    title: 'App/Profile Picture',
+    title: 'Components/Profile Picture',
     component: ProfilePictureComponent,
     tags: ['autodocs'],
     // argTypes: {

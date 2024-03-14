@@ -1,24 +1,30 @@
 <div class="screen">
-  <app-navigation-bar [userProfilePhotoUrl]="this.activeUser.profilePhotoUrl"/>
+  <app-navigation-bar [userProfilePhotoUrl]="this.activeUser.profilePhotoUrl" />
 
   <div class="application">
     <div class="main-section">
+      <app-feed-selector class="feed-selector" />
 
-      <app-feed-selector class="feed-selector"/>
+      <app-swiper-component
+        class="slider-story"
+        [slidesPerViewNumber]="8"
+        [slides]="slidesStory"
+      ></app-swiper-component>
 
-
-      <app-slider-carousel class="story-caroussel" type="story" [slides]="storyContent"/>
       <div class="feed">
         @for (publication of feedContent; track publication.id) {
-          <app-publication [publication]="publication" [activeUser]="activeUser"/>
+        <app-publication
+          [publication]="publication"
+          [activeUser]="activeUser"
+        />
         }
       </div>
     </div>
 
-    <app-profile-section [activeUser]="activeUser" [suggestedUsers]="suggestedUsers" />
-
+    <app-profile-section
+      [activeUser]="activeUser"
+      [suggestedUsers]="suggestedUsers"
+    />
   </div>
-
 </div>
-
 <router-outlet />

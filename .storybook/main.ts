@@ -1,5 +1,4 @@
 import type { StorybookConfig } from "@storybook/angular";
-
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)", "../src/app/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   staticDirs: ['../src/'],
@@ -7,6 +6,7 @@ const config: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@storybook/addon-mdx-gfm"
   ],
   framework: {
     name: "@storybook/angular",
